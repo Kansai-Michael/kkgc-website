@@ -1,168 +1,243 @@
 import Link from "next/link";
-import TrialCTA from "@/components/TrialCTA";
+
+const OLD = "https://kansaikarategoldcoast.com.au/wp-content/uploads/sites/27/2025/02";
+const OLD_43 = "https://kansaikarategoldcoast.com.au/wp-content/uploads/sites/43/2025/09";
+
+const HERO_IMG = `${OLD}/photo-1603210185246-b1662978ea37.webp`;
+const BADGE_IMG = `${OLD}/KKA-Logo-Trans-background.png`;
+const DOJO_INTERIOR = `${OLD_43}/Michael-Hunt-Change_the_walls_in__subject_1__to_be_painted_white__Make_sure_to_keep_the_decorations_on_the_wall__-1.webp`;
+const KIDS_PHOTO = `${OLD}/Lillions2.webp`;
+const ADULTS_PHOTO = `${OLD}/adultgoogle6.webp`;
 
 const programs = [
   {
     name: "Cubs",
-    age: "Ages 3–4",
+    age: "Ages 3-4",
     href: "/programs/cubs",
-    color: "bg-yellow-50 border-yellow-300",
-    icon: "🐯",
-    tagline: "First steps in focus and fun",
-    description: "Short, high-energy classes designed for little ones. Builds listening skills, coordination, and confidence in a safe, nurturing environment.",
+    img: `${OLD}/cub1.webp`,
+    description:
+      "From listening skills to taking turns, our program for ages 3-4 teach way more than physical skills! Your child will learn how to interact in a social setting, plus learn valuable life lessons that will help them as they grow.",
   },
   {
     name: "Little Lions",
-    age: "Ages 5–7",
+    age: "Ages 5-7",
     href: "/programs/little-lions",
-    color: "bg-blue-50 border-blue-300",
-    icon: "🦁",
-    tagline: "Where big skills begin",
-    description: "Structured classes that channel boundless energy into focus, respect, and the foundations of real karate technique.",
+    img: `${OLD}/Lillionsgoogle.webp`,
+    description:
+      "There's nothing more satisfying than watching your 5-7 year old gain physical and social skills that you know will benefit them for life. Your little one will learn focus, self-confidence and discipline, while getting a full body work out.",
   },
   {
     name: "Juniors",
-    age: "Ages 8–12",
+    age: "Ages 8-12",
     href: "/programs/juniors",
-    color: "bg-green-50 border-green-300",
-    icon: "⭐",
-    tagline: "Build character under pressure",
-    description: "Technical karate training that builds resilience, self-discipline, and mental toughness — skills that transfer directly to school and life.",
+    img: `${OLD}/Juniors.webp`,
+    description:
+      "Martial Arts is one of the best possible activities for children. They'll learn to defend themselves physically, but more importantly they'll build the mental and emotional skill sets necessary to conquer challenges like high school, college, and becoming a healthy, balanced adult.",
   },
   {
-    name: "Teens & Adults",
+    name: "Teen Karate",
     age: "Ages 13+",
     href: "/programs/teens-adults",
-    color: "bg-purple-50 border-purple-300",
-    icon: "🥋",
-    tagline: "Fitness, focus, and real self-defence",
-    description: "A full-body workout that also trains your mind. Learn authentic karate in a welcoming community of adults who show up for themselves.",
+    img: `${OLD}/Teengoogle-1.webp`,
+    description:
+      "Martial Arts is the perfect activity for teenagers! It gives them an outlet for their unique energy through engagement, and cross motor skill activity, but at Kansai Karate, they'll do it in a structured class designed and taught just for them.",
+  },
+  {
+    name: "Adult Karate",
+    age: "",
+    href: "/programs/teens-adults",
+    img: `${OLD}/adultsgoogle4.webp`,
+    description:
+      "Whether it's losing weight, building muscle, learning to defend yourself, or just having a blast, our Adult Martial Arts classes have exactly what you need. You'll love the awesome workout, and your body will love the awesome workout, instruction, your body will love the awesome workout, and your spirit will love the camaraderie and positive atmosphere.",
   },
 ];
 
-const pillars = [
+const whyFeatures = [
   {
     icon: "📅",
-    title: "Fits Real Family Schedules",
-    body: "Mon–Thu afternoons and Saturday mornings. Convenient class times so karate fits your life — not the other way around.",
+    title: "Schedule Focused",
+    body: "Our programs were created for real family schedules. Convenient class times mean that kids, adults, and whole families can improve their quality of life without killing every moment of spare time.",
+  },
+  {
+    icon: "👥",
+    title: "Community Positive",
+    body: "Our positive atmosphere is contagious, and you'll know without a doubt that you're in a place where kids will learn positive habits and adults will make meaningful, lasting friendships.",
+  },
+  {
+    icon: "⭐",
+    title: "Values Oriented",
+    body: "All of our programs improve physical prowess, and that's important. But what's far more important is the mental and emotional benefits that our programs bring to everyday life.",
+  },
+  {
+    icon: "🏃",
+    title: "Movement Based",
+    body: "Both kids and adults will gain flexibility, agility, and strength, even if they aren't athletic! They'll love it, because it's not only super fun, it's inclusive and accommodating at every step.",
+  },
+];
+
+const kidsFeatures = [
+  {
+    icon: "🥋",
+    title: "Amazing Classes",
+    body: "Kids love classes at Kansai Karate because they're unbelievably fun (but parents love them because they build benefits for life!)",
+  },
+  {
+    icon: "📋",
+    title: "Structured Activity",
+    body: "Everything we do is intentionally structured based on our extensive experience. Kids at Kansai Karate actually like the structure, because it makes them feel safe and cared for.",
   },
   {
     icon: "🤝",
-    title: "Positive Community",
-    body: "No cliques. No cool-kids club. Every student is welcomed and supported. Our culture is one of the things families love most.",
+    title: "Full Inclusion",
+    body: "We take kids' emotions seriously. The culture at Kansai Karate is one of inclusion — no cliques, no cool kids club, no unkind actions or attitudes. Kids love it because they always feel like they belong!",
   },
   {
-    icon: "🧠",
-    title: "Values-Based Training",
-    body: "Traditional Shitoryu Shukokai karate teaches more than kicks and punches. Students learn respect, discipline, and self-control.",
-  },
-  {
-    icon: "💪",
-    title: "Real Physical Development",
-    body: "Flexibility, agility, strength, and coordination. Whether your child is sporty or not, they will surprise themselves.",
+    icon: "😄",
+    title: "Awesome Fun!",
+    body: "It's so much fun! At Kansai Karate, we know that getting your child out of the house, in the car, and across town to an activity is a big deal. We guarantee that when they leave, it will have been 100% worth it, every time!",
   },
 ];
 
-const testimonials = [
+const adultsFeatures = [
   {
-    text: "My son went from refusing to try anything new to earning his first belt in three months. The instructors are incredible with kids.",
-    author: "Parent of a Junior student",
+    icon: "📚",
+    title: "Curriculum",
+    body: "Our classes were designed specifically for the average person. You'll build skills step by step, without having to be a superstar to see improvement. But stick with it, and you'll see your abilities soar!",
   },
   {
-    text: "I started as a complete beginner at 38. Six months in and I am fitter than I have been in years. Great community, great instructors.",
-    author: "Adult student",
+    icon: "👥",
+    title: "Community",
+    body: "You'll be surrounded by peers striving towards the same goals you are, day in, day out. You'll build friendships and be supported in your individual journey.",
   },
   {
-    text: "Our daughter has been in Little Lions for two years. Her focus at school has improved noticeably. We cannot recommend it enough.",
-    author: "Parent of a Little Lions student",
+    icon: "🧠",
+    title: "Mental Health",
+    body: "We've always known it, but now the science agrees: You must take time for your own mental health. Our classes help you clear your mind, accomplish your goals, and be more healthy, from the inside out.",
+  },
+  {
+    icon: "💪",
+    title: "Physical Skills",
+    body: "It's more than just learning awesome looking moves — it's proprioception, balance, agility and more — physical skills that will remain with and benefit you for the rest of your life.",
   },
 ];
 
 export default function HomePage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-[#003087] text-white py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <p className="text-[#FFB800] font-semibold uppercase tracking-wider text-sm mb-4">
-            Upper Coomera QLD · Traditional Japanese Karate
+      {/* ── HERO ── */}
+      <section
+        className="relative flex items-center justify-center text-white"
+        style={{
+          minHeight: "100vh",
+          backgroundImage: `url(${HERO_IMG})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center 30%",
+        }}
+      >
+        {/* Blue-tinted dark overlay */}
+        <div
+          className="absolute inset-0"
+          style={{ background: "rgba(10, 30, 80, 0.62)" }}
+        />
+        <div className="relative z-10 text-center px-4 flex flex-col items-center">
+          {/* Badge — dominant */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={BADGE_IMG}
+            alt="Kansai Karate Academy"
+            className="w-48 md:w-64 mb-8"
+          />
+          {/* Subtext */}
+          <p className="text-lg md:text-xl text-white max-w-2xl mx-auto leading-relaxed">
+            Kids build Focus and Discipline, Teens find classes designed just for
+            them, and Adults have a workout that helps keep them fit &amp; safe
           </p>
-          <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
-            The Karate School<br />
-            <span className="text-[#FFB800]">Upper Coomera Families</span><br />
-            Keep Coming Back To
-          </h1>
-          <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-            Cubs through to Adults. Traditional Shitoryu Shukokai karate in a warm, family-focused dojo. 188+ students and growing.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="bg-[#FFB800] text-[#003087] font-bold text-lg px-10 py-4 rounded-lg hover:bg-[#E6A500] transition-colors shadow-lg"
-            >
-              Book Your Free Trial Class
-            </Link>
-            <Link
-              href="#programs"
-              className="border-2 border-white text-white font-semibold text-lg px-10 py-4 rounded-lg hover:bg-white hover:text-[#003087] transition-colors"
-            >
-              See Our Programs
-            </Link>
-          </div>
-          <p className="mt-6 text-white/50 text-sm">No contracts · No pressure · First class is free</p>
         </div>
       </section>
 
-      {/* Trust bar */}
-      <div className="bg-[#001A52] text-white/80 text-sm py-3 px-4">
-        <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-6 text-center">
-          <span>⭐ 188+ Active Students</span>
-          <span>📍 Upper Coomera, QLD 4209</span>
-          <span>🥋 Ages 3 to Adults</span>
-          <span>🏆 Affiliated: QKA · AKF</span>
-          <span>👨‍🏫 Sensei Michael Hunt (4th Dan)</span>
-        </div>
-      </div>
-
-      {/* Programs */}
-      <section id="programs" className="py-16 px-4 bg-white">
+      {/* ── PROGRAMS ── */}
+      <section className="py-16 px-4" style={{ background: "#1a1a2e" }}>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#003087] mb-4">Find the Right Program</h2>
-            <p className="text-gray-600 text-lg">Every age group has its own dedicated class — designed for where they are, not a one-size-fits-all approach.</p>
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
+              Proudly Serving Upper Coomera and surrounding communities.
+            </h2>
+            <p className="text-white/70 text-lg">
+              Find the Kansai Karate program for you:
+            </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {programs.map((p) => (
-              <Link
-                key={p.href}
-                href={p.href}
-                className={`block border-2 rounded-xl p-6 hover:shadow-lg transition-shadow ${p.color}`}
+
+          {/* Top row — 3 cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            {programs.slice(0, 3).map((p) => (
+              <div
+                key={p.href + p.name}
+                className="relative rounded overflow-hidden flex flex-col"
+                style={{ minHeight: "380px" }}
               >
-                <div className="text-4xl mb-3">{p.icon}</div>
-                <div className="text-xs font-semibold uppercase tracking-wider text-gray-500 mb-1">{p.age}</div>
-                <h3 className="text-xl font-bold text-[#003087] mb-2">{p.name}</h3>
-                <p className="text-sm font-medium text-gray-700 mb-3 italic">{p.tagline}</p>
-                <p className="text-sm text-gray-600">{p.description}</p>
-                <p className="mt-4 text-[#003087] font-semibold text-sm">Learn more →</p>
-              </Link>
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${p.img})` }}
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{ background: "rgba(10,20,50,0.78)" }}
+                />
+                <div className="relative z-10 flex flex-col h-full p-6">
+                  <h3 className="text-2xl font-bold text-white mb-1">
+                    {p.name}
+                    <br />
+                    <span className="text-xl font-normal">({p.age})</span>
+                  </h3>
+                  <p className="text-white/75 text-sm mt-3 leading-relaxed flex-1">
+                    {p.description}
+                  </p>
+                  <Link
+                    href={p.href}
+                    className="mt-6 block text-center border border-white text-white font-bold py-3 hover:bg-white hover:text-[#1a1a2e] transition-colors uppercase tracking-widest text-sm"
+                  >
+                    Learn More
+                  </Link>
+                </div>
+              </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* Why Kansai */}
-      <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#003087] mb-4">Why Upper Coomera Chooses Kansai Karate</h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-            {pillars.map((p) => (
-              <div key={p.title} className="flex gap-4">
-                <div className="text-3xl flex-shrink-0">{p.icon}</div>
-                <div>
-                  <h3 className="font-bold text-[#003087] text-lg mb-2">{p.title}</h3>
-                  <p className="text-gray-600">{p.body}</p>
+          {/* Bottom row — 2 cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {programs.slice(3).map((p) => (
+              <div
+                key={p.href + p.name}
+                className="relative rounded overflow-hidden flex flex-col"
+                style={{ minHeight: "340px" }}
+              >
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${p.img})` }}
+                />
+                <div
+                  className="absolute inset-0"
+                  style={{ background: "rgba(10,20,50,0.78)" }}
+                />
+                <div className="relative z-10 flex flex-col h-full p-6">
+                  <h3 className="text-2xl font-bold text-white mb-1">
+                    {p.name}
+                    {p.age && (
+                      <>
+                        <br />
+                        <span className="text-xl font-normal">({p.age})</span>
+                      </>
+                    )}
+                  </h3>
+                  <p className="text-white/75 text-sm mt-3 leading-relaxed flex-1">
+                    {p.description}
+                  </p>
+                  <Link
+                    href={p.href}
+                    className="mt-6 block text-center border border-white text-white font-bold py-3 hover:bg-white hover:text-[#1a1a2e] transition-colors uppercase tracking-widest text-sm"
+                  >
+                    Learn More
+                  </Link>
                 </div>
               </div>
             ))}
@@ -170,47 +245,120 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-16 px-4 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-[#003087] mb-4">What Our Members Say</h2>
-            <p className="text-gray-500">Real feedback from real families in Upper Coomera.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
-              <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-100">
-                <div className="text-[#FFB800] text-2xl mb-3">★★★★★</div>
-                <p className="text-gray-700 italic mb-4">&ldquo;{t.text}&rdquo;</p>
-                <p className="text-sm font-semibold text-[#003087]">— {t.author}</p>
-              </div>
-            ))}
+      {/* ── WHY UPPER COOMERA CHOOSES KANSAI ── */}
+      <section className="bg-white">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2">
+          {/* Photo left */}
+          <div
+            className="min-h-[500px]"
+            style={{
+              backgroundImage: `url(${DOJO_INTERIOR})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+          {/* Features right */}
+          <div className="py-16 px-10 lg:px-16 flex flex-col justify-center">
+            <p className="text-gray-400 text-sm uppercase tracking-widest mb-3">
+              The best in Upper Coomera
+            </p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 leading-snug">
+              Why Upper Coomera chooses Kansai Karate
+            </h2>
+            <hr className="border-gray-300 mb-8 w-16" />
+            <div className="grid grid-cols-2 gap-8">
+              {whyFeatures.map((f) => (
+                <div key={f.title}>
+                  <div className="text-2xl mb-2">{f.icon}</div>
+                  <h3 className="font-bold text-gray-800 mb-2">{f.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{f.body}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Trial CTA */}
-      <TrialCTA />
-
-      {/* Location */}
-      <section className="py-12 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl font-bold text-[#003087] mb-4">Find Us in Upper Coomera</h2>
-          <p className="text-gray-600 mb-6">
-            Unit 3/2 Sierra Place, Upper Coomera QLD 4209 ·{" "}
-            <a href="tel:0489265960" className="text-[#003087] font-semibold hover:underline">0489 265 960</a>
-          </p>
-          <div className="rounded-xl overflow-hidden shadow-md">
-            <iframe
-              src="https://maps.google.com/maps?q=Unit+3%2F2+Sierra+Place+Upper+Coomera+QLD+4209&output=embed"
-              width="100%"
-              height="300"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              title="Kansai Karate Gold Coast location"
-            />
+      {/* ── KIDS CHOOSE KANSAI ── */}
+      <section className="bg-white border-t border-gray-100">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2">
+          {/* Features left */}
+          <div className="py-16 px-10 lg:px-16 flex flex-col justify-center">
+            <p className="text-gray-400 text-sm uppercase tracking-widest mb-3">
+              Upper Coomera Kids agree:
+            </p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 leading-snug">
+              Kids choose Kansai Karate every time
+            </h2>
+            <hr className="border-gray-300 mb-8 w-16" />
+            <div className="grid grid-cols-2 gap-8">
+              {kidsFeatures.map((f) => (
+                <div key={f.title}>
+                  <div className="text-2xl mb-2">{f.icon}</div>
+                  <h3 className="font-bold text-gray-800 mb-2">{f.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{f.body}</p>
+                </div>
+              ))}
+            </div>
           </div>
+          {/* Photo right */}
+          <div
+            className="min-h-[500px]"
+            style={{
+              backgroundImage: `url(${KIDS_PHOTO})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+        </div>
+      </section>
+
+      {/* ── WHY ADULTS LOVE KANSAI ── */}
+      <section className="bg-white border-t border-gray-100">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2">
+          {/* Photo left */}
+          <div
+            className="min-h-[500px]"
+            style={{
+              backgroundImage: `url(${ADULTS_PHOTO})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+          {/* Features right */}
+          <div className="py-16 px-10 lg:px-16 flex flex-col justify-center">
+            <p className="text-gray-400 text-sm uppercase tracking-widest mb-3">
+              Programs built for real people
+            </p>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 leading-snug">
+              Why Adults love Kansai Karate Programs
+            </h2>
+            <hr className="border-gray-300 mb-8 w-16" />
+            <div className="grid grid-cols-2 gap-8">
+              {adultsFeatures.map((f) => (
+                <div key={f.title}>
+                  <div className="text-2xl mb-2">{f.icon}</div>
+                  <h3 className="font-bold text-gray-800 mb-2">{f.title}</h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">{f.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section className="py-20 px-4" style={{ background: "#1a1a2e" }}>
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">
+            Ready to be part of Kansai Karate? Select a Program and Get Started Today!
+          </h2>
+          <Link
+            href="/programs"
+            className="inline-block border-2 border-white text-white font-bold text-lg px-12 py-4 hover:bg-white hover:text-[#1a1a2e] transition-colors uppercase tracking-widest"
+          >
+            Select Your Program
+          </Link>
         </div>
       </section>
     </>

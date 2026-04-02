@@ -1,7 +1,20 @@
 import type { Metadata } from "next";
+import { Oswald, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  variable: "--font-oswald",
+  display: "swap",
+});
+
+const sourceSans = Source_Sans_3({
+  subsets: ["latin"],
+  variable: "--font-body",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Kansai Karate Gold Coast | Kids, Teens & Adult Karate in Upper Coomera",
@@ -15,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${oswald.variable} ${sourceSans.variable}`}>
       <body className="min-h-full flex flex-col">
         <Nav />
         <main className="flex-1">{children}</main>
