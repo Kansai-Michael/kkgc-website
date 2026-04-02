@@ -3,6 +3,7 @@ import { Oswald, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import ClientLayout from "@/components/ClientLayout";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -30,9 +31,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${oswald.variable} ${sourceSans.variable}`}>
       <body className="min-h-full flex flex-col">
-        <Nav />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <ClientLayout>
+          <Nav />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </ClientLayout>
       </body>
     </html>
   );

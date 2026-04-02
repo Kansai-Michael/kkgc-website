@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { useContactModal } from "@/components/ContactModal";
 
 const programs = [
   { name: "Cubs (Ages 3–4)", href: "/programs/cubs" },
@@ -14,6 +15,7 @@ const programs = [
 export default function Nav() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [programsOpen, setProgramsOpen] = useState(false);
+  const { openModal } = useContactModal();
 
   return (
     <nav className="bg-[#5B7DB1] text-white sticky top-0 z-50 shadow-lg">
@@ -58,16 +60,19 @@ export default function Nav() {
             )}
           </div>
 
-          <Link href="/contact" className="hover:text-[#FFB800] transition-colors">
+          <button
+            onClick={() => openModal()}
+            className="hover:text-[#FFB800] transition-colors"
+          >
             Contact
-          </Link>
+          </button>
 
-          <Link
-            href="/contact"
-            className="bg-[#FFB800] text-[#5B7DB1] font-bold px-5 py-2 rounded-lg hover:bg-[#E6A500] transition-colors"
+          <button
+            onClick={() => openModal()}
+            className="bg-[#FFB800] text-white font-bold px-5 py-2 rounded-lg hover:bg-[#E6A500] transition-colors"
           >
             Book Free Trial
-          </Link>
+          </button>
         </div>
 
         {/* Mobile hamburger */}
@@ -101,14 +106,18 @@ export default function Nav() {
             </Link>
           ))}
           <hr className="border-blue-700" />
-          <Link href="/contact" onClick={() => setMenuOpen(false)} className="block py-1 hover:text-[#FFB800]">Contact</Link>
-          <Link
-            href="/contact"
-            onClick={() => setMenuOpen(false)}
-            className="block bg-[#FFB800] text-[#5B7DB1] font-bold px-4 py-3 rounded-lg text-center mt-2"
+          <button
+            onClick={() => { setMenuOpen(false); openModal(); }}
+            className="block py-1 hover:text-[#FFB800] w-full text-left"
+          >
+            Contact
+          </button>
+          <button
+            onClick={() => { setMenuOpen(false); openModal(); }}
+            className="block bg-[#FFB800] text-white font-bold px-4 py-3 rounded-lg text-center mt-2 w-full"
           >
             Book Free Trial
-          </Link>
+          </button>
         </div>
       )}
     </nav>

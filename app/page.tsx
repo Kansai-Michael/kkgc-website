@@ -140,17 +140,17 @@ export default function HomePage() {
           style={{ background: "rgba(10, 30, 80, 0.62)" }}
         />
         <div className="relative z-10 text-center px-4 flex flex-col items-center">
-          {/* Badge — dominant */}
+          {/* Badge */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={BADGE_IMG}
             alt="Kansai Karate Academy"
-            className="w-48 md:w-64 mb-8"
+            className="w-32 md:w-40 mb-8"
           />
           {/* Subtext */}
-          <p className="text-lg md:text-xl text-white max-w-2xl mx-auto leading-relaxed">
-            Kids build Focus and Discipline, Teens find classes designed just for
-            them, and Adults have a workout that helps keep them fit &amp; safe
+          <p className="text-2xl md:text-3xl lg:text-4xl text-white max-w-3xl mx-auto leading-snug font-semibold">
+            <span className="text-[#FFB800]">Kids</span> build Focus and Discipline, <span className="text-[#FFB800]">Teens</span> find classes designed just for
+            them, and <span className="text-[#FFB800]">Adults</span> have a workout that helps keep them fit &amp; safe
           </p>
         </div>
       </section>

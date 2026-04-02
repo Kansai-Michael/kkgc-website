@@ -1,4 +1,4 @@
-import Link from "next/link";
+import BookTrialButton from "@/components/BookTrialButton";
 
 const OLD = "https://kansaikarategoldcoast.com.au/wp-content/uploads/sites/27/2025/02";
 const BADGE_IMG = `${OLD}/KKA-Logo-Trans-background.png`;
@@ -31,12 +31,10 @@ export default function TimetablePage({ name, slug, heroImg, headline, subheadli
             <img src={BADGE_IMG} alt="Kansai Karate Academy" className="w-24 mb-6" />
             <h1 className="text-3xl md:text-4xl font-bold mb-4">{headline}</h1>
             <p className="text-white/80 text-lg mb-6">{subheadline}</p>
-            <Link
-              href={`/contact?program=${slug}`}
-              className="inline-block bg-[#FFB800] text-[#5B7DB1] font-bold px-8 py-3 rounded-lg hover:bg-[#E6A500] transition-colors uppercase tracking-widest text-sm"
-            >
-              Book a FREE First Lesson
-            </Link>
+            <BookTrialButton
+              program={slug}
+              className="inline-block bg-[#FFB800] text-white font-bold px-8 py-3 rounded-lg hover:bg-[#E6A500] transition-colors uppercase tracking-widest text-sm"
+            />
           </div>
           <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
             <h2 className="text-xl font-bold text-[#FFB800] mb-4 uppercase">Current Class Schedule</h2>
@@ -54,12 +52,10 @@ export default function TimetablePage({ name, slug, heroImg, headline, subheadli
       <section className="bg-[#5B7DB1] text-white py-10 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-xl font-bold mb-4">Ready to get started with {name}?</h2>
-          <Link
-            href={`/contact?program=${slug}`}
+          <BookTrialButton
+            program={slug}
             className="inline-block border-2 border-white text-white font-bold px-10 py-3 hover:bg-white hover:text-[#5B7DB1] transition-colors uppercase tracking-widest text-sm"
-          >
-            Book a FREE First Lesson
-          </Link>
+          />
           <p className="mt-4 text-white/50 text-sm">
             Kansai Karate · Upper Coomera, QLD 4209
           </p>
