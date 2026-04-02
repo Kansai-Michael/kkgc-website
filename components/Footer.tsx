@@ -57,8 +57,26 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Other Locations */}
+        {/* Social / Other */}
         <div>
+          <h4 className="font-semibold mb-3 text-white/90">Follow Us:</h4>
+          <ul className="space-y-2 text-sm text-white/60 mb-6">
+            <li>
+              <a href="https://www.facebook.com/KansaiKarateUpperCoomera" target="_blank" rel="noopener noreferrer" className="hover:text-[#FFB800] transition-colors">
+                Facebook
+              </a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/kansaikarateuppercoomera" target="_blank" rel="noopener noreferrer" className="hover:text-[#FFB800] transition-colors">
+                Instagram
+              </a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/@kansaikarategoldcoast" target="_blank" rel="noopener noreferrer" className="hover:text-[#FFB800] transition-colors">
+                YouTube
+              </a>
+            </li>
+          </ul>
           <h4 className="font-semibold mb-3 text-white/90">Other Kansai Karate Locations:</h4>
           <ul className="space-y-2 text-sm text-white/60">
             {locations.map((loc) => (

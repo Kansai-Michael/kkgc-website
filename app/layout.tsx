@@ -51,7 +51,8 @@ const localBusinessSchema = {
   "image": "https://kansaikarategoldcoast.com.au/wp-content/uploads/sites/43/2025/02/KKA-Logo-Trans-background.png",
   "sameAs": [
     "https://www.facebook.com/KansaiKarateUpperCoomera",
-    "https://www.instagram.com/kansaikarateuppercoomera"
+    "https://www.instagram.com/kansaikarateuppercoomera",
+    "https://www.youtube.com/@kansaikarategoldcoast"
   ]
 };
 
