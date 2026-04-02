@@ -1,0 +1,17 @@
+import TimetablePage from "@/components/TimetablePage";
+
+const OLD = "https://kansaikarategoldcoast.com.au/wp-content/uploads/sites/27/2025/02";
+
+export const metadata = { title: "Cubs Class Timetable | Kansai Karate Gold Coast" };
+
+export default function CubsTimetable() {
+  return (
+    <TimetablePage
+      name="Cubs"
+      slug="cubs"
+      heroImg={`${OLD}/cub1.webp`}
+      headline="Unleash your child's inner superhero at Cubs!"
+      subheadline="Cubs is for ages 3-4. Book a FREE First Lesson and see your little one shine."
+    />
+  );
+}

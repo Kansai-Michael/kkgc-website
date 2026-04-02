@@ -1,25 +1,28 @@
 "use client";
 
 import { useState } from "react";
-import type { Metadata } from "next";
-
-// Note: Metadata must be in a server component. Move to a separate layout if needed.
-// export const metadata: Metadata = { ... }
+import { useSearchParams, useRouter } from "next/navigation";
+import { Suspense } from "react";
 
 const programs = [
-  "Cubs (Ages 3–4)",
-  "Little Lions (Ages 5–7)",
-  "Juniors (Ages 8–12)",
-  "Teens & Adults (13+)",
-  "Not sure yet",
+  { label: "Cubs (Ages 3–4)", value: "cubs", redirect: "/programs/cubs/timetable" },
+  { label: "Little Lions (Ages 5–7)", value: "little-lions", redirect: "/programs/little-lions/timetable" },
+  { label: "Juniors (Ages 8–12)", value: "juniors", redirect: "/programs/juniors/timetable" },
+  { label: "Teens Karate (Ages 13+)", value: "teens", redirect: "/programs/teens/timetable" },
+  { label: "Adult Karate", value: "adults", redirect: "/programs/adults/timetable" },
+  { label: "Not sure yet", value: "not-sure", redirect: "/programs" },
 ];
 
-export default function ContactPage() {
+function ContactForm() {
+  const searchParams = useSearchParams();
+  const router = useRouter();
+  const preselectedProgram = searchParams.get("program") || "";
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    program: "",
+    program: preselectedProgram,
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
@@ -35,6 +38,11 @@ export default function ContactPage() {
       });
       if (res.ok) {
         setStatus("success");
+        // Redirect to the timetable page for their selected program
+        const selected = programs.find((p) => p.value === formData.program);
+        if (selected) {
+          setTimeout(() => router.push(selected.redirect), 2000);
+        }
       } else {
         setStatus("error");
       }
@@ -60,9 +68,10 @@ export default function ContactPage() {
             <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center">
               <div className="text-5xl mb-4">🎉</div>
               <h2 className="text-2xl font-bold text-green-800 mb-2">Thanks — we will be in touch soon!</h2>
-              <p className="text-green-700">
+              <p className="text-green-700 mb-4">
                 We have received your enquiry and will contact you within 24 hours to confirm your free trial class.
               </p>
+              <p className="text-green-600 text-sm">Redirecting you to the class timetable...</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -113,7 +122,7 @@ export default function ContactPage() {
                 >
                   <option value="">Select a program...</option>
                   {programs.map((p) => (
-                    <option key={p} value={p}>{p}</option>
+                    <option key={p.value} value={p.value}>{p.label}</option>
                   ))}
                 </select>
               </div>
@@ -166,5 +175,13 @@ export default function ContactPage() {
         </div>
       </section>
     </>
+  );
+}
+
+export default function ContactPage() {
+  return (
+    <Suspense>
+      <ContactForm />
+    </Suspense>
   );
 }

@@ -3,7 +3,7 @@ import Link from "next/link";
 const OLD = "https://kansaikarategoldcoast.com.au/wp-content/uploads/sites/27/2025/02";
 const OLD_43 = "https://kansaikarategoldcoast.com.au/wp-content/uploads/sites/43/2025/09";
 
-const HERO_IMG = `${OLD}/photo-1603210185246-b1662978ea37.webp`;
+const HERO_IMG = `${OLD_43}/Michael-Hunt-In__subject_1___remove_the_parents_sitting_on_the_right_side_of_the_image_and_the_boxes_in_the_top_r.webp`;
 const BADGE_IMG = `${OLD}/KKA-Logo-Trans-background.png`;
 const DOJO_INTERIOR = `${OLD_43}/Michael-Hunt-Change_the_walls_in__subject_1__to_be_painted_white__Make_sure_to_keep_the_decorations_on_the_wall__-1.webp`;
 const KIDS_PHOTO = `${OLD}/Lillions2.webp`;
@@ -37,7 +37,7 @@ const programs = [
   {
     name: "Teen Karate",
     age: "Ages 13+",
-    href: "/programs/teens-adults",
+    href: "/programs/teens",
     img: `${OLD}/Teengoogle-1.webp`,
     description:
       "Martial Arts is the perfect activity for teenagers! It gives them an outlet for their unique energy through engagement, and cross motor skill activity, but at Kansai Karate, they'll do it in a structured class designed and taught just for them.",
@@ -45,10 +45,10 @@ const programs = [
   {
     name: "Adult Karate",
     age: "",
-    href: "/programs/teens-adults",
+    href: "/programs/adults",
     img: `${OLD}/adultsgoogle4.webp`,
     description:
-      "Whether it's losing weight, building muscle, learning to defend yourself, or just having a blast, our Adult Martial Arts classes have exactly what you need. You'll love the awesome workout, and your body will love the awesome workout, instruction, your body will love the awesome workout, and your spirit will love the camaraderie and positive atmosphere.",
+      "Whether it's losing weight, building muscle, learning to defend yourself, or just having a blast, our Adult Martial Arts classes have exactly what you need. You'll love the high energy class instruction, your body will love the awesome workout, and your spirit will love the camaraderie and positive atmosphere.",
   },
 ];
 
@@ -156,7 +156,7 @@ export default function HomePage() {
       </section>
 
       {/* ── PROGRAMS ── */}
-      <section className="py-16 px-4" style={{ background: "#1a1a2e" }}>
+      <section className="py-16 px-4" style={{ background: "#003087" }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
@@ -194,7 +194,7 @@ export default function HomePage() {
                   </p>
                   <Link
                     href={p.href}
-                    className="mt-6 block text-center border border-white text-white font-bold py-3 hover:bg-white hover:text-[#1a1a2e] transition-colors uppercase tracking-widest text-sm"
+                    className="mt-6 block text-center border border-white text-white font-bold py-3 hover:bg-white hover:text-[#003087] transition-colors uppercase tracking-widest text-sm"
                   >
                     Learn More
                   </Link>
@@ -234,7 +234,7 @@ export default function HomePage() {
                   </p>
                   <Link
                     href={p.href}
-                    className="mt-6 block text-center border border-white text-white font-bold py-3 hover:bg-white hover:text-[#1a1a2e] transition-colors uppercase tracking-widest text-sm"
+                    className="mt-6 block text-center border border-white text-white font-bold py-3 hover:bg-white hover:text-[#003087] transition-colors uppercase tracking-widest text-sm"
                   >
                     Learn More
                   </Link>
@@ -348,14 +348,14 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 px-4" style={{ background: "#1a1a2e" }}>
+      <section className="py-20 px-4" style={{ background: "#003087" }}>
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">
             Ready to be part of Kansai Karate? Select a Program and Get Started Today!
           </h2>
           <Link
             href="/programs"
-            className="inline-block border-2 border-white text-white font-bold text-lg px-12 py-4 hover:bg-white hover:text-[#1a1a2e] transition-colors uppercase tracking-widest"
+            className="inline-block border-2 border-white text-white font-bold text-lg px-12 py-4 hover:bg-white hover:text-[#003087] transition-colors uppercase tracking-widest"
           >
             Select Your Program
           </Link>

@@ -7,7 +7,8 @@ const programs = [
   { name: "Cubs (Ages 3–4)", href: "/programs/cubs" },
   { name: "Little Lions (Ages 5–7)", href: "/programs/little-lions" },
   { name: "Juniors (Ages 8–12)", href: "/programs/juniors" },
-  { name: "Teens & Adults (13+)", href: "/programs/teens-adults" },
+  { name: "Teens Karate (Ages 13+)", href: "/programs/teens" },
+  { name: "Adult Karate", href: "/programs/adults" },
 ];
 
 export default function Nav() {
@@ -60,12 +61,6 @@ export default function Nav() {
             )}
           </div>
 
-          <Link href="/timetable" className="hover:text-[#FFB800] transition-colors">
-            Timetable
-          </Link>
-          <Link href="/about" className="hover:text-[#FFB800] transition-colors">
-            About
-          </Link>
           <Link href="/contact" className="hover:text-[#FFB800] transition-colors">
             Contact
           </Link>
@@ -109,8 +104,6 @@ export default function Nav() {
             </Link>
           ))}
           <hr className="border-blue-700" />
-          <Link href="/timetable" onClick={() => setMenuOpen(false)} className="block py-1 hover:text-[#FFB800]">Timetable</Link>
-          <Link href="/about" onClick={() => setMenuOpen(false)} className="block py-1 hover:text-[#FFB800]">About</Link>
           <Link href="/contact" onClick={() => setMenuOpen(false)} className="block py-1 hover:text-[#FFB800]">Contact</Link>
           <Link
             href="/contact"
