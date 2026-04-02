@@ -5,8 +5,7 @@ export const metadata: Metadata = {
   description: "Class schedule for Kansai Karate Upper Coomera. Monday to Thursday afternoons and Saturday mornings. View the timetable and book your spot.",
 };
 
-// TODO: Replace KIHON_TIMETABLE_EMBED with your actual Kihon iframe embed code
-const KIHON_TIMETABLE_EMBED = "";
+const BOOKING_URL = "https://app.kihonsoft.au/book/1st-lesson-bookings";
 
 export default function TimetablePage() {
   return (
@@ -36,20 +35,30 @@ export default function TimetablePage() {
                 </thead>
                 <tbody>
                   {[
-                    { day: "Monday", time: "4:00 PM", program: "Little Lions (Ages 5–7)" },
-                    { day: "Monday", time: "5:00 PM", program: "Juniors Beginner (Ages 8–12)" },
-                    { day: "Monday", time: "6:00 PM", program: "Teens & Adults" },
-                    { day: "Tuesday", time: "4:00 PM", program: "Cubs (Ages 3–4)" },
-                    { day: "Tuesday", time: "5:00 PM", program: "Juniors Intermediate/Advanced" },
-                    { day: "Tuesday", time: "6:00 PM", program: "Teens & Adults" },
-                    { day: "Wednesday", time: "4:00 PM", program: "Little Lions (Ages 5–7)" },
-                    { day: "Wednesday", time: "5:00 PM", program: "Juniors Beginner (Ages 8–12)" },
-                    { day: "Thursday", time: "5:00 PM", program: "Juniors Intermediate/Advanced" },
-                    { day: "Thursday", time: "6:00 PM", program: "Teens & Adults" },
-                    { day: "Saturday", time: "8:30 AM", program: "Cubs (Ages 3–4)" },
-                    { day: "Saturday", time: "9:15 AM", program: "Little Lions (Ages 5–7)" },
-                    { day: "Saturday", time: "10:00 AM", program: "Juniors All Levels" },
-                    { day: "Saturday", time: "11:00 AM", program: "Teens & Adults" },
+                    { day: "Monday", time: "4:15 – 4:45 PM", program: "Cubs (Ages 3–4)" },
+                    { day: "Monday", time: "5:00 – 5:45 PM", program: "Little Lions (Ages 5–7)" },
+                    { day: "Monday", time: "5:45 – 6:30 PM", program: "Juniors Beginner (Ages 8–12)" },
+                    { day: "Monday", time: "6:30 – 7:15 PM", program: "Juniors Intermediate/Advanced (Ages 8–12)" },
+                    { day: "Monday", time: "7:15 – 8:00 PM", program: "Teens (13–18) & Adults (18+)" },
+                    { day: "Tuesday", time: "4:15 – 5:00 PM", program: "Little Lions (Ages 5–7)" },
+                    { day: "Tuesday", time: "5:00 – 5:45 PM", program: "Juniors Beginner (Ages 8–12)" },
+                    { day: "Tuesday", time: "5:45 – 6:30 PM", program: "Juniors Intermediate/Advanced (Ages 8–12)" },
+                    { day: "Tuesday", time: "6:30 – 7:15 PM", program: "Teens (Ages 13–18)" },
+                    { day: "Tuesday", time: "7:15 – 8:00 PM", program: "Adults (Ages 18+)" },
+                    { day: "Wednesday", time: "4:15 – 4:45 PM", program: "Cubs (Ages 3–4)" },
+                    { day: "Wednesday", time: "5:00 – 5:45 PM", program: "Little Lions (Ages 5–7)" },
+                    { day: "Wednesday", time: "5:45 – 6:30 PM", program: "Juniors Beginner (Ages 8–12)" },
+                    { day: "Wednesday", time: "6:30 – 7:15 PM", program: "Juniors Intermediate/Advanced (Ages 8–12)" },
+                    { day: "Wednesday", time: "7:15 – 8:00 PM", program: "Teens (13–18) & Adults (18+)" },
+                    { day: "Thursday", time: "4:15 – 5:00 PM", program: "Little Lions (Ages 5–7)" },
+                    { day: "Thursday", time: "5:00 – 5:45 PM", program: "Juniors Beginner (Ages 8–12)" },
+                    { day: "Thursday", time: "5:45 – 6:30 PM", program: "Juniors Intermediate/Advanced (Ages 8–12)" },
+                    { day: "Thursday", time: "6:30 – 7:15 PM", program: "Teens (13–18) & Adults (18+)" },
+                    { day: "Saturday", time: "8:00 – 8:30 AM", program: "Cubs (Ages 3–4)" },
+                    { day: "Saturday", time: "8:45 – 9:30 AM", program: "Little Lions (Ages 5–7)" },
+                    { day: "Saturday", time: "9:30 – 10:15 AM", program: "Juniors All Levels (Ages 8–12)" },
+                    { day: "Saturday", time: "10:15 – 11:00 AM", program: "Combined Class — Little Lions, Juniors, Teens & Adults" },
+                    { day: "Saturday", time: "11:00 – 11:45 AM", program: "Teens (13–18) & Adults (18+)" },
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? "bg-gray-50" : "bg-white"}>
                       <td className="p-3 font-medium text-[#003087]">{row.day}</td>
@@ -67,28 +76,20 @@ export default function TimetablePage() {
 
           {/* Kihon booking embed */}
           <div>
-            <h2 className="text-2xl font-bold text-[#003087] mb-6">Book Your Spot</h2>
-            {KIHON_TIMETABLE_EMBED ? (
-              <div
-                className="rounded-xl overflow-hidden border border-gray-200"
-                dangerouslySetInnerHTML={{ __html: KIHON_TIMETABLE_EMBED }}
+            <h2 className="text-2xl font-bold text-[#003087] mb-2">Book Your First Class</h2>
+            <p className="text-gray-500 text-sm mb-6">
+              Select your program, choose a day and time that suits you, then fill in your details to complete your booking.
+            </p>
+            <div className="rounded-xl overflow-hidden border border-gray-200">
+              <iframe
+                src={BOOKING_URL}
+                width="100%"
+                height="700"
+                frameBorder="0"
+                title="Book your first class at Kansai Karate Gold Coast"
+                style={{ display: "block" }}
               />
-            ) : (
-              <div className="bg-gray-100 rounded-xl p-8 text-center text-gray-500">
-                <p className="mb-2 font-medium">Booking calendar coming soon.</p>
-                <p className="text-sm">
-                  In the meantime, call us on{" "}
-                  <a href="tel:0489265960" className="text-[#003087] font-semibold hover:underline">
-                    0489 265 960
-                  </a>{" "}
-                  or{" "}
-                  <a href="/contact" className="text-[#003087] font-semibold hover:underline">
-                    send us a message
-                  </a>
-                  .
-                </p>
-              </div>
-            )}
+            </div>
           </div>
         </div>
       </section>

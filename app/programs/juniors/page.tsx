@@ -32,7 +32,7 @@ export default function JuniorsPage() {
       benefits={[
         {
           title: "Mental & Emotional Growth",
-          body: "They'll build the mental and emotional skill sets necessary to conquer challenges like high school, college, and becoming a healthy, balanced adult. Martial Arts is one of the best possible activities for children.",
+          body: "They'll build the mental and emotional skill sets necessary to conquer challenges like high school, university, and becoming a healthy, balanced adult. Martial Arts is one of the best possible activities for children.",
         },
         {
           title: "Real Technique & Physical Development",

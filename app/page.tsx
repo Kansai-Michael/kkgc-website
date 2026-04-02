@@ -32,7 +32,7 @@ const programs = [
     href: "/programs/juniors",
     img: `${OLD}/Juniors.webp`,
     description:
-      "Martial Arts is one of the best possible activities for children. They'll learn to defend themselves physically, but more importantly they'll build the mental and emotional skill sets necessary to conquer challenges like high school, college, and becoming a healthy, balanced adult.",
+      "Martial Arts is one of the best possible activities for children. They'll learn to defend themselves physically, but more importantly they'll build the mental and emotional skill sets necessary to conquer challenges like high school, university, and becoming a healthy, balanced adult.",
   },
   {
     name: "Teen Karate",
@@ -147,16 +147,16 @@ export default function HomePage() {
             alt="Kansai Karate Academy"
             className="w-32 md:w-40 mb-8"
           />
-          {/* Subtext */}
-          <p className="text-2xl md:text-3xl lg:text-4xl text-white max-w-3xl mx-auto leading-snug font-semibold">
+          {/* H1 */}
+          <h1 className="text-2xl md:text-3xl lg:text-4xl text-white max-w-3xl mx-auto leading-snug font-semibold">
             <span className="text-[#FFB800]">Kids</span> build Focus and Discipline, <span className="text-[#FFB800]">Teens</span> find classes designed just for
             them, and <span className="text-[#FFB800]">Adults</span> have a workout that helps keep them fit &amp; safe
-          </p>
+          </h1>
         </div>
       </section>
 
       {/* ── PROGRAMS ── */}
-      <section className="py-16 px-4" style={{ background: "#5B7DB1" }}>
+      <section id="programs" className="py-16 px-4" style={{ background: "#5B7DB1" }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
@@ -339,7 +339,7 @@ export default function HomePage() {
             Ready to be part of Kansai Karate? Select a Program and Get Started Today!
           </h2>
           <Link
-            href="/programs"
+            href="/#programs"
             className="inline-block border-2 border-white text-white font-bold text-lg px-12 py-4 hover:bg-white hover:text-[#5B7DB1] transition-colors uppercase tracking-widest"
           >
             Select Your Program
