@@ -74,39 +74,40 @@ export default function ProgramPage({
 
       {/* Benefits - alternating photo/text sections */}
       {benefits.length > 0 && (
-        <section className="bg-white">
-          {benefits.map((b, i) => (
-            <div key={b.title} className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-center py-14 px-4 border-b border-gray-100">
-              {i % 2 === 0 ? (
-                <>
-                  <div className="p-3 bg-[#5B7DB1] rounded-lg">
-                    <div
-                      className="rounded-lg overflow-hidden aspect-[4/5] bg-cover bg-center"
-                      style={{ backgroundImage: secondaryImages[i] ? `url(${secondaryImages[i]})` : undefined, backgroundColor: "#e5e7eb" }}
-                    />
-                  </div>
-                  <div className="md:col-span-2">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{b.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{b.body}</p>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="md:col-span-2">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{b.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{b.body}</p>
-                  </div>
-                  <div className="p-3 bg-[#5B7DB1] rounded-lg">
-                    <div
-                      className="rounded-lg overflow-hidden aspect-[4/5] bg-cover bg-center"
-                      style={{ backgroundImage: secondaryImages[i] ? `url(${secondaryImages[i]})` : undefined, backgroundColor: "#e5e7eb" }}
-                    />
-                  </div>
-                </>
-              )}
-            </div>
-          ))}
-        </section>
+        <>
+          {benefits.map((b, i) => {
+            const isBlue = i % 2 === 1;
+            return (
+              <section key={b.title} style={isBlue ? { background: "#5B7DB1" } : undefined} className={isBlue ? "" : "bg-white"}>
+                <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-center py-14 px-4">
+                  {i % 2 === 0 ? (
+                    <>
+                      <div
+                        className="rounded-lg overflow-hidden aspect-[4/5] bg-cover bg-center"
+                        style={{ backgroundImage: secondaryImages[i] ? `url(${secondaryImages[i]})` : undefined, backgroundColor: "#e5e7eb" }}
+                      />
+                      <div className="md:col-span-2">
+                        <h3 className="text-2xl font-bold text-gray-900 mb-4">{b.title}</h3>
+                        <p className="text-gray-600 leading-relaxed">{b.body}</p>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="md:col-span-2">
+                        <h3 className="text-2xl font-bold text-white mb-4">{b.title}</h3>
+                        <p className="text-white/80 leading-relaxed">{b.body}</p>
+                      </div>
+                      <div
+                        className="rounded-lg overflow-hidden aspect-[4/5] bg-cover bg-center"
+                        style={{ backgroundImage: secondaryImages[i] ? `url(${secondaryImages[i]})` : undefined, backgroundColor: "#4A6DA0" }}
+                      />
+                    </>
+                  )}
+                </div>
+              </section>
+            );
+          })}
+        </>
       )}
 
       {/* Mid CTA */}

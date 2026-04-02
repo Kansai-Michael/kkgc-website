@@ -248,13 +248,10 @@ export default function HomePage() {
       {/* ── WHY UPPER COOMERA CHOOSES KANSAI ── */}
       <section className="bg-white py-16 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
-          {/* Photo — 1/3, bordered */}
-          <div className="p-3 bg-[#5B7DB1] rounded-lg">
-            <div
-              className="rounded-lg overflow-hidden aspect-[4/5] bg-cover bg-center"
-              style={{ backgroundImage: `url(${DOJO_INTERIOR})` }}
-            />
-          </div>
+          {/* Photo — 1/3 */}
+          <div className="rounded-lg overflow-hidden aspect-[4/5] bg-cover bg-center"
+            style={{ backgroundImage: `url(${DOJO_INTERIOR})` }}
+          />
           {/* Features — 2/3 */}
           <div className="md:col-span-2">
             <p className="text-gray-400 text-sm uppercase tracking-widest mb-3">
@@ -278,47 +275,41 @@ export default function HomePage() {
       </section>
 
       {/* ── KIDS CHOOSE KANSAI ── */}
-      <section className="bg-white border-t border-gray-100 py-16 px-4">
+      <section className="py-16 px-4" style={{ background: "#5B7DB1" }}>
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
           {/* Features — 2/3 */}
           <div className="md:col-span-2">
-            <p className="text-gray-400 text-sm uppercase tracking-widest mb-3">
+            <p className="text-white/60 text-sm uppercase tracking-widest mb-3">
               Upper Coomera Kids agree:
             </p>
-            <h2 className="text-3xl font-bold text-gray-900 mb-4 leading-snug">
+            <h2 className="text-3xl font-bold text-white mb-4 leading-snug">
               Kids choose Kansai Karate every time
             </h2>
-            <hr className="border-gray-300 mb-8 w-16" />
+            <hr className="border-white/30 mb-8 w-16" />
             <div className="grid grid-cols-2 gap-8">
               {kidsFeatures.map((f) => (
                 <div key={f.title}>
                   <div className="text-2xl mb-2">{f.icon}</div>
-                  <h3 className="font-bold text-gray-800 mb-2">{f.title}</h3>
-                  <p className="text-gray-500 text-sm leading-relaxed">{f.body}</p>
+                  <h3 className="font-bold text-white mb-2">{f.title}</h3>
+                  <p className="text-white/75 text-sm leading-relaxed">{f.body}</p>
                 </div>
               ))}
             </div>
           </div>
-          {/* Photo — 1/3, bordered */}
-          <div className="p-3 bg-[#5B7DB1] rounded-lg">
-            <div
-              className="rounded-lg overflow-hidden aspect-[4/5] bg-cover bg-center"
-              style={{ backgroundImage: `url(${KIDS_PHOTO})` }}
-            />
-          </div>
+          {/* Photo — 1/3 */}
+          <div className="rounded-lg overflow-hidden aspect-[4/5] bg-cover bg-center"
+            style={{ backgroundImage: `url(${KIDS_PHOTO})` }}
+          />
         </div>
       </section>
 
       {/* ── WHY ADULTS LOVE KANSAI ── */}
-      <section className="bg-white border-t border-gray-100 py-16 px-4">
+      <section className="bg-white py-16 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
-          {/* Photo — 1/3, bordered */}
-          <div className="p-3 bg-[#5B7DB1] rounded-lg">
-            <div
-              className="rounded-lg overflow-hidden aspect-[4/5] bg-cover bg-center"
-              style={{ backgroundImage: `url(${ADULTS_PHOTO})` }}
-            />
-          </div>
+          {/* Photo — 1/3 */}
+          <div className="rounded-lg overflow-hidden aspect-[4/5] bg-cover bg-center"
+            style={{ backgroundImage: `url(${ADULTS_PHOTO})` }}
+          />
           {/* Features — 2/3 */}
           <div className="md:col-span-2">
             <p className="text-gray-400 text-sm uppercase tracking-widest mb-3">
