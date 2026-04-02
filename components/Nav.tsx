@@ -8,8 +8,8 @@ const programs = [
   { name: "Cubs (Ages 3–4)", href: "/programs/cubs" },
   { name: "Little Lions (Ages 5–7)", href: "/programs/little-lions" },
   { name: "Juniors (Ages 8–12)", href: "/programs/juniors" },
-  { name: "Teens Karate (Ages 13+)", href: "/programs/teens" },
-  { name: "Adult Karate", href: "/programs/adults" },
+  { name: "Teens (Ages 13–18)", href: "/programs/teens" },
+  { name: "Adults (Ages 18+)", href: "/programs/adults" },
 ];
 
 export default function Nav() {
