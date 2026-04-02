@@ -63,12 +63,12 @@ export default function ProgramPage({
       </section>
 
       {/* Intro + CTA strip */}
-      <section className="bg-[#003087] text-white py-8 px-4">
+      <section className="bg-[#5B7DB1] text-white py-8 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl font-bold mb-4">{benefitsHeading}</h2>
           <Link
             href={`/contact?program=${slug}`}
-            className="inline-block border-2 border-white text-white font-bold px-10 py-3 hover:bg-white hover:text-[#003087] transition-colors uppercase tracking-widest text-sm"
+            className="inline-block border-2 border-white text-white font-bold px-10 py-3 hover:bg-white hover:text-[#5B7DB1] transition-colors uppercase tracking-widest text-sm"
           >
             Book a FREE First Lesson
           </Link>
@@ -79,28 +79,32 @@ export default function ProgramPage({
       {benefits.length > 0 && (
         <section className="bg-white">
           {benefits.map((b, i) => (
-            <div key={b.title} className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 border-b border-gray-100">
+            <div key={b.title} className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-center py-14 px-4 border-b border-gray-100">
               {i % 2 === 0 ? (
                 <>
-                  <div
-                    className="min-h-[350px] bg-cover bg-center"
-                    style={{ backgroundImage: secondaryImages[i] ? `url(${secondaryImages[i]})` : undefined, backgroundColor: "#e5e7eb" }}
-                  />
-                  <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
+                  <div className="p-3 bg-[#5B7DB1] rounded-lg">
+                    <div
+                      className="rounded-lg overflow-hidden aspect-[4/5] bg-cover bg-center"
+                      style={{ backgroundImage: secondaryImages[i] ? `url(${secondaryImages[i]})` : undefined, backgroundColor: "#e5e7eb" }}
+                    />
+                  </div>
+                  <div className="md:col-span-2">
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">{b.title}</h3>
                     <p className="text-gray-600 leading-relaxed">{b.body}</p>
                   </div>
                 </>
               ) : (
                 <>
-                  <div className="py-12 px-10 lg:px-16 flex flex-col justify-center">
+                  <div className="md:col-span-2">
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">{b.title}</h3>
                     <p className="text-gray-600 leading-relaxed">{b.body}</p>
                   </div>
-                  <div
-                    className="min-h-[350px] bg-cover bg-center"
-                    style={{ backgroundImage: secondaryImages[i] ? `url(${secondaryImages[i]})` : undefined, backgroundColor: "#e5e7eb" }}
-                  />
+                  <div className="p-3 bg-[#5B7DB1] rounded-lg">
+                    <div
+                      className="rounded-lg overflow-hidden aspect-[4/5] bg-cover bg-center"
+                      style={{ backgroundImage: secondaryImages[i] ? `url(${secondaryImages[i]})` : undefined, backgroundColor: "#e5e7eb" }}
+                    />
+                  </div>
                 </>
               )}
             </div>
@@ -109,12 +113,12 @@ export default function ProgramPage({
       )}
 
       {/* Mid CTA */}
-      <section className="bg-[#003087] text-white py-10 px-4">
+      <section className="bg-[#5B7DB1] text-white py-10 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-xl font-bold mb-4">Ready to get started with {name}?</h2>
           <Link
             href={`/contact?program=${slug}`}
-            className="inline-block border-2 border-white text-white font-bold px-10 py-3 hover:bg-white hover:text-[#003087] transition-colors uppercase tracking-widest text-sm"
+            className="inline-block border-2 border-white text-white font-bold px-10 py-3 hover:bg-white hover:text-[#5B7DB1] transition-colors uppercase tracking-widest text-sm"
           >
             Book a FREE First Lesson
           </Link>
@@ -129,7 +133,7 @@ export default function ProgramPage({
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {whyFeatures.map((f) => (
                 <div key={f.title} className="p-6 bg-gray-50 rounded-lg">
-                  <h3 className="font-bold text-[#003087] text-lg mb-2">{f.title}</h3>
+                  <h3 className="font-bold text-[#5B7DB1] text-lg mb-2">{f.title}</h3>
                   <p className="text-gray-600 text-sm leading-relaxed">{f.body}</p>
                 </div>
               ))}
@@ -140,7 +144,7 @@ export default function ProgramPage({
 
       {/* Testimonial */}
       {testimonial && (
-        <section className="py-16 px-4" style={{ background: "#001A52" }}>
+        <section className="py-16 px-4" style={{ background: "#4A6DA0" }}>
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-2xl font-bold text-white mb-6">What Parents Say</h2>
             <blockquote className="text-white/80 text-lg italic leading-relaxed mb-4">
@@ -166,7 +170,7 @@ export default function ProgramPage({
           <p className="text-white/70 text-lg mb-8">{ctaText}</p>
           <Link
             href={`/contact?program=${slug}`}
-            className="inline-block bg-[#FFB800] text-[#003087] font-bold text-lg px-10 py-4 rounded-lg hover:bg-[#E6A500] transition-colors uppercase tracking-widest"
+            className="inline-block bg-[#FFB800] text-[#5B7DB1] font-bold text-lg px-10 py-4 rounded-lg hover:bg-[#E6A500] transition-colors uppercase tracking-widest"
           >
             Book a FREE First Lesson
           </Link>

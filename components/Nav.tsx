@@ -16,15 +16,12 @@ export default function Nav() {
   const [programsOpen, setProgramsOpen] = useState(false);
 
   return (
-    <nav className="bg-[#003087] text-white sticky top-0 z-50 shadow-lg">
+    <nav className="bg-[#5B7DB1] text-white sticky top-0 z-50 shadow-lg">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2">
-          <span className="text-[#FFB800] font-bold text-xl leading-tight">
-            KANSAI KARATE
-          </span>
-          <span className="text-white/70 text-sm font-light hidden sm:inline">
-            Gold Coast
+        <Link href="/" className="flex items-center">
+          <span className="text-white font-bold text-xl leading-tight">
+            Kansai Karate Gold Coast
           </span>
         </Link>
 
@@ -46,13 +43,13 @@ export default function Nav() {
               <div
                 onMouseEnter={() => setProgramsOpen(true)}
                 onMouseLeave={() => setProgramsOpen(false)}
-                className="absolute top-full left-0 bg-white text-[#003087] shadow-xl rounded-lg py-2 min-w-[220px]"
+                className="absolute top-full left-0 bg-white text-[#5B7DB1] shadow-xl rounded-lg py-2 min-w-[220px]"
               >
                 {programs.map((p) => (
                   <Link
                     key={p.href}
                     href={p.href}
-                    className="block px-4 py-2 hover:bg-blue-50 hover:text-[#003087] font-medium text-sm"
+                    className="block px-4 py-2 hover:bg-blue-50 hover:text-[#5B7DB1] font-medium text-sm"
                   >
                     {p.name}
                   </Link>
@@ -67,7 +64,7 @@ export default function Nav() {
 
           <Link
             href="/contact"
-            className="bg-[#FFB800] text-[#003087] font-bold px-5 py-2 rounded-lg hover:bg-[#E6A500] transition-colors"
+            className="bg-[#FFB800] text-[#5B7DB1] font-bold px-5 py-2 rounded-lg hover:bg-[#E6A500] transition-colors"
           >
             Book Free Trial
           </Link>
@@ -91,7 +88,7 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden bg-[#001A52] border-t border-blue-800 px-4 py-4 space-y-3 text-sm">
+        <div className="md:hidden bg-[#4A6DA0] border-t border-blue-800 px-4 py-4 space-y-3 text-sm">
           <p className="text-white/50 uppercase text-xs tracking-wider">Programs</p>
           {programs.map((p) => (
             <Link
@@ -108,7 +105,7 @@ export default function Nav() {
           <Link
             href="/contact"
             onClick={() => setMenuOpen(false)}
-            className="block bg-[#FFB800] text-[#003087] font-bold px-4 py-3 rounded-lg text-center mt-2"
+            className="block bg-[#FFB800] text-[#5B7DB1] font-bold px-4 py-3 rounded-lg text-center mt-2"
           >
             Book Free Trial
           </Link>

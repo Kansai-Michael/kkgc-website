@@ -33,7 +33,7 @@ export default function TimetablePage({ name, slug, heroImg, headline, subheadli
             <p className="text-white/80 text-lg mb-6">{subheadline}</p>
             <Link
               href={`/contact?program=${slug}`}
-              className="inline-block bg-[#FFB800] text-[#003087] font-bold px-8 py-3 rounded-lg hover:bg-[#E6A500] transition-colors uppercase tracking-widest text-sm"
+              className="inline-block bg-[#FFB800] text-[#5B7DB1] font-bold px-8 py-3 rounded-lg hover:bg-[#E6A500] transition-colors uppercase tracking-widest text-sm"
             >
               Book a FREE First Lesson
             </Link>
@@ -51,12 +51,12 @@ export default function TimetablePage({ name, slug, heroImg, headline, subheadli
       </section>
 
       {/* CTA */}
-      <section className="bg-[#003087] text-white py-10 px-4">
+      <section className="bg-[#5B7DB1] text-white py-10 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-xl font-bold mb-4">Ready to get started with {name}?</h2>
           <Link
             href={`/contact?program=${slug}`}
-            className="inline-block border-2 border-white text-white font-bold px-10 py-3 hover:bg-white hover:text-[#003087] transition-colors uppercase tracking-widest text-sm"
+            className="inline-block border-2 border-white text-white font-bold px-10 py-3 hover:bg-white hover:text-[#5B7DB1] transition-colors uppercase tracking-widest text-sm"
           >
             Book a FREE First Lesson
           </Link>

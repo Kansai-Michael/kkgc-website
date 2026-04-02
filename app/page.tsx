@@ -156,7 +156,7 @@ export default function HomePage() {
       </section>
 
       {/* ── PROGRAMS ── */}
-      <section className="py-16 px-4" style={{ background: "#003087" }}>
+      <section className="py-16 px-4" style={{ background: "#5B7DB1" }}>
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-10">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-3">
@@ -194,7 +194,7 @@ export default function HomePage() {
                   </p>
                   <Link
                     href={p.href}
-                    className="mt-6 block text-center border border-white text-white font-bold py-3 hover:bg-white hover:text-[#003087] transition-colors uppercase tracking-widest text-sm"
+                    className="mt-6 block text-center border border-white text-white font-bold py-3 hover:bg-white hover:text-[#5B7DB1] transition-colors uppercase tracking-widest text-sm"
                   >
                     Learn More
                   </Link>
@@ -234,7 +234,7 @@ export default function HomePage() {
                   </p>
                   <Link
                     href={p.href}
-                    className="mt-6 block text-center border border-white text-white font-bold py-3 hover:bg-white hover:text-[#003087] transition-colors uppercase tracking-widest text-sm"
+                    className="mt-6 block text-center border border-white text-white font-bold py-3 hover:bg-white hover:text-[#5B7DB1] transition-colors uppercase tracking-widest text-sm"
                   >
                     Learn More
                   </Link>
@@ -246,19 +246,17 @@ export default function HomePage() {
       </section>
 
       {/* ── WHY UPPER COOMERA CHOOSES KANSAI ── */}
-      <section className="bg-white">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2">
-          {/* Photo left */}
-          <div
-            className="min-h-[500px]"
-            style={{
-              backgroundImage: `url(${DOJO_INTERIOR})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          />
-          {/* Features right */}
-          <div className="py-16 px-10 lg:px-16 flex flex-col justify-center">
+      <section className="bg-white py-16 px-4">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+          {/* Photo — 1/3, bordered */}
+          <div className="p-3 bg-[#5B7DB1] rounded-lg">
+            <div
+              className="rounded-lg overflow-hidden aspect-[4/5] bg-cover bg-center"
+              style={{ backgroundImage: `url(${DOJO_INTERIOR})` }}
+            />
+          </div>
+          {/* Features — 2/3 */}
+          <div className="md:col-span-2">
             <p className="text-gray-400 text-sm uppercase tracking-widest mb-3">
               The best in Upper Coomera
             </p>
@@ -280,10 +278,10 @@ export default function HomePage() {
       </section>
 
       {/* ── KIDS CHOOSE KANSAI ── */}
-      <section className="bg-white border-t border-gray-100">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2">
-          {/* Features left */}
-          <div className="py-16 px-10 lg:px-16 flex flex-col justify-center">
+      <section className="bg-white border-t border-gray-100 py-16 px-4">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+          {/* Features — 2/3 */}
+          <div className="md:col-span-2">
             <p className="text-gray-400 text-sm uppercase tracking-widest mb-3">
               Upper Coomera Kids agree:
             </p>
@@ -301,32 +299,28 @@ export default function HomePage() {
               ))}
             </div>
           </div>
-          {/* Photo right */}
-          <div
-            className="min-h-[500px]"
-            style={{
-              backgroundImage: `url(${KIDS_PHOTO})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          />
+          {/* Photo — 1/3, bordered */}
+          <div className="p-3 bg-[#5B7DB1] rounded-lg">
+            <div
+              className="rounded-lg overflow-hidden aspect-[4/5] bg-cover bg-center"
+              style={{ backgroundImage: `url(${KIDS_PHOTO})` }}
+            />
+          </div>
         </div>
       </section>
 
       {/* ── WHY ADULTS LOVE KANSAI ── */}
-      <section className="bg-white border-t border-gray-100">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2">
-          {/* Photo left */}
-          <div
-            className="min-h-[500px]"
-            style={{
-              backgroundImage: `url(${ADULTS_PHOTO})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          />
-          {/* Features right */}
-          <div className="py-16 px-10 lg:px-16 flex flex-col justify-center">
+      <section className="bg-white border-t border-gray-100 py-16 px-4">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
+          {/* Photo — 1/3, bordered */}
+          <div className="p-3 bg-[#5B7DB1] rounded-lg">
+            <div
+              className="rounded-lg overflow-hidden aspect-[4/5] bg-cover bg-center"
+              style={{ backgroundImage: `url(${ADULTS_PHOTO})` }}
+            />
+          </div>
+          {/* Features — 2/3 */}
+          <div className="md:col-span-2">
             <p className="text-gray-400 text-sm uppercase tracking-widest mb-3">
               Programs built for real people
             </p>
@@ -348,14 +342,14 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 px-4" style={{ background: "#003087" }}>
+      <section className="py-20 px-4" style={{ background: "#5B7DB1" }}>
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">
             Ready to be part of Kansai Karate? Select a Program and Get Started Today!
           </h2>
           <Link
             href="/programs"
-            className="inline-block border-2 border-white text-white font-bold text-lg px-12 py-4 hover:bg-white hover:text-[#003087] transition-colors uppercase tracking-widest"
+            className="inline-block border-2 border-white text-white font-bold text-lg px-12 py-4 hover:bg-white hover:text-[#5B7DB1] transition-colors uppercase tracking-widest"
           >
             Select Your Program
           </Link>

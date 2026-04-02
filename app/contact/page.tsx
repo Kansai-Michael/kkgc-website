@@ -1,174 +1,122 @@
 "use client";
 
 import { useState } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 
-const programs = [
-  { label: "Cubs (Ages 3–4)", value: "cubs", redirect: "/programs/cubs/timetable" },
-  { label: "Little Lions (Ages 5–7)", value: "little-lions", redirect: "/programs/little-lions/timetable" },
-  { label: "Juniors (Ages 8–12)", value: "juniors", redirect: "/programs/juniors/timetable" },
-  { label: "Teens Karate (Ages 13+)", value: "teens", redirect: "/programs/teens/timetable" },
-  { label: "Adult Karate", value: "adults", redirect: "/programs/adults/timetable" },
-  { label: "Not sure yet", value: "not-sure", redirect: "/programs" },
-];
+const programForms: Record<string, { label: string; iframe: string }> = {
+  cubs: {
+    label: "Cubs (Ages 3–4)",
+    iframe: "https://app.kihonsoft.au/f/fx2husne",
+  },
+  "little-lions": {
+    label: "Little Lions (Ages 5–7)",
+    iframe: "https://app.kihonsoft.au/f/69eqhhr8",
+  },
+  juniors: {
+    label: "Juniors (Ages 8–12)",
+    iframe: "https://app.kihonsoft.au/f/jytbwwjt",
+  },
+  teens: {
+    label: "Teens Karate (Ages 13+)",
+    iframe: "https://app.kihonsoft.au/f/9puwpf2s",
+  },
+  adults: {
+    label: "Adult Karate",
+    iframe: "https://app.kihonsoft.au/f/aseg2ppc",
+  },
+};
+
+const programKeys = Object.keys(programForms);
 
 function ContactForm() {
   const searchParams = useSearchParams();
-  const router = useRouter();
-  const preselectedProgram = searchParams.get("program") || "";
+  const preselected = searchParams.get("program") || "";
+  const [selected, setSelected] = useState(preselected);
 
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    program: preselectedProgram,
-    message: "",
-  });
-  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setStatus("sending");
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      if (res.ok) {
-        setStatus("success");
-        // Redirect to the timetable page for their selected program
-        const selected = programs.find((p) => p.value === formData.program);
-        if (selected) {
-          setTimeout(() => router.push(selected.redirect), 2000);
-        }
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
-  };
+  const currentForm = selected ? programForms[selected] : null;
 
   return (
     <>
-      <section className="bg-[#003087] text-white py-16 px-4">
-        <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Book Your Free Trial Class</h1>
-          <p className="text-xl text-white/80">
-            Fill in the form below and we will be in touch to confirm your booking. No contracts, no pressure — just come and try it.
+      {/* Hero */}
+      <section className="bg-[#5B7DB1] text-white py-16 px-4">
+        <div className="max-w-3xl mx-auto text-center">
+          <h1 className="text-3xl md:text-5xl font-bold mb-4 uppercase">
+            See Up-To-Date Schedule and Registration Options
+          </h1>
+          <p className="text-lg text-white/80">
+            Get more info via text and email, plus see our current schedule and enrollment options on the next page (regularly updated)
           </p>
         </div>
       </section>
 
-      <section className="py-16 px-4 bg-white">
+      <section className="py-12 px-4 bg-white">
         <div className="max-w-2xl mx-auto">
-          {status === "success" ? (
-            <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center">
-              <div className="text-5xl mb-4">🎉</div>
-              <h2 className="text-2xl font-bold text-green-800 mb-2">Thanks — we will be in touch soon!</h2>
-              <p className="text-green-700 mb-4">
-                We have received your enquiry and will contact you within 24 hours to confirm your free trial class.
-              </p>
-              <p className="text-green-600 text-sm">Redirecting you to the class timetable...</p>
+          {/* Program selector (if not pre-selected) */}
+          {!selected && (
+            <div className="mb-8">
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">Which program are you interested in?</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {programKeys.map((key) => (
+                  <button
+                    key={key}
+                    onClick={() => setSelected(key)}
+                    className="text-left p-4 border-2 border-gray-200 rounded-lg hover:border-[#5B7DB1] hover:bg-blue-50 transition-colors font-semibold text-gray-700"
+                  >
+                    {programForms[key].label}
+                  </button>
+                ))}
+              </div>
             </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Your Name *</label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#003087]"
-                    placeholder="e.g. Sarah Smith"
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number *</label>
-                  <input
-                    type="tel"
-                    required
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#003087]"
-                    placeholder="e.g. 0412 345 678"
-                  />
-                </div>
-              </div>
+          )}
 
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
-                <input
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#003087]"
-                  placeholder="e.g. sarah@email.com"
+          {/* Kihon iframe form */}
+          {currentForm && (
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <h2 className="text-xl font-bold text-gray-900">
+                  {currentForm.label}
+                </h2>
+                {selected && (
+                  <button
+                    onClick={() => setSelected("")}
+                    className="text-sm text-[#5B7DB1] hover:underline"
+                  >
+                    Change program
+                  </button>
+                )}
+              </div>
+              <div className="rounded-xl overflow-hidden border border-gray-200">
+                <iframe
+                  src={currentForm.iframe}
+                  width="100%"
+                  height="500"
+                  frameBorder="0"
+                  title={`${currentForm.label} contact form`}
+                  className="w-full"
                 />
               </div>
-
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Which program are you interested in? *</label>
-                <select
-                  required
-                  value={formData.program}
-                  onChange={(e) => setFormData({ ...formData, program: e.target.value })}
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#003087] bg-white"
-                >
-                  <option value="">Select a program...</option>
-                  {programs.map((p) => (
-                    <option key={p.value} value={p.value}>{p.label}</option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-semibold text-gray-700 mb-2">Anything else you would like to tell us? (optional)</label>
-                <textarea
-                  rows={4}
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[#003087]"
-                  placeholder="e.g. My son is 7 and has never done karate before..."
-                />
-              </div>
-
-              {status === "error" && (
-                <p className="text-red-600 text-sm">Something went wrong. Please try again or call us on 0489 265 960.</p>
-              )}
-
-              <button
-                type="submit"
-                disabled={status === "sending"}
-                className="w-full bg-[#FFB800] text-[#003087] font-bold text-lg py-4 rounded-lg hover:bg-[#E6A500] transition-colors disabled:opacity-60"
-              >
-                {status === "sending" ? "Sending..." : "Book My Free Trial Class"}
-              </button>
-
-              <p className="text-center text-gray-500 text-sm">
-                Or call us directly:{" "}
-                <a href="tel:0489265960" className="text-[#003087] font-semibold hover:underline">0489 265 960</a>
+              <p className="text-center text-gray-400 text-xs mt-4">
+                Why do we need your contact information? This is a &quot;static&quot; page. Entering your information will forward you to a page with up-to-date scheduling and registration details.
               </p>
-            </form>
+              <p className="text-center text-gray-400 text-xs mt-1 italic">
+                We will never sell or share your information for any reason, ever.
+              </p>
+            </div>
           )}
 
           {/* Contact details */}
           <div className="mt-12 pt-8 border-t border-gray-200 grid grid-cols-1 sm:grid-cols-3 gap-6 text-center text-sm text-gray-600">
             <div>
-              <p className="font-semibold text-[#003087] mb-1">Phone</p>
+              <p className="font-semibold text-[#5B7DB1] mb-1">Phone</p>
               <a href="tel:0489265960" className="hover:underline">0489 265 960</a>
             </div>
             <div>
-              <p className="font-semibold text-[#003087] mb-1">Email</p>
+              <p className="font-semibold text-[#5B7DB1] mb-1">Email</p>
               <a href="mailto:info@kansaikarategoldcoast.com.au" className="hover:underline break-all">info@kansaikarategoldcoast.com.au</a>
             </div>
             <div>
-              <p className="font-semibold text-[#003087] mb-1">Location</p>
+              <p className="font-semibold text-[#5B7DB1] mb-1">Location</p>
               <p>Unit 3/2 Sierra Place<br />Upper Coomera QLD 4209</p>
             </div>
           </div>

@@ -12,7 +12,7 @@ const locations = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#001040] text-white">
+    <footer className="bg-[#4A6DA0] text-white">
       <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Brand */}
         <div>
