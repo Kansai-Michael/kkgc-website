@@ -2,8 +2,7 @@ import TimetablePage from "@/components/TimetablePage";
 
 const OLD = "https://kansaikarategoldcoast.com.au/wp-content/uploads/sites/27/2025/02";
 
-// TODO: Replace with Kihon booking calendar group URL when available
-const BOOKING_URL = "https://app.kihonsoft.au/f/fx2husne";
+const BOOKING_URL = "https://app.kihonsoft.au/book/1st-lesson-bookings";
 
 export const metadata = { title: "Cubs Class Timetable | Kansai Karate Gold Coast" };
 
