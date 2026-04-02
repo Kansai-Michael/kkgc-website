@@ -8,9 +8,20 @@ export const metadata: Metadata = {
   description: "Karate classes for 8–12 year olds in Upper Coomera. Juniors builds discipline, resilience, and technical karate skills in a structured, encouraging environment.",
 };
 
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kansaikarategoldcoast.com.au" },
+    { "@type": "ListItem", "position": 2, "name": "Juniors Karate (Ages 8–12)", "item": "https://kansaikarategoldcoast.com.au/programs/juniors" }
+  ]
+};
+
 export default function JuniorsPage() {
   return (
-    <ProgramPage
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <ProgramPage
       name="Juniors"
       slug="juniors"
       heroImg={`${OLD}/Juniors.webp`}
@@ -51,5 +62,6 @@ export default function JuniorsPage() {
         `${OLD}/Juniors.webp`,
       ]}
     />
+    </>
   );
 }

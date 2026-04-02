@@ -8,9 +8,20 @@ export const metadata: Metadata = {
   description: "Karate classes for 3 and 4 year olds in Upper Coomera. Our Cubs program builds listening skills, coordination, and confidence through fun, structured movement.",
 };
 
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kansaikarategoldcoast.com.au" },
+    { "@type": "ListItem", "position": 2, "name": "Cubs Karate (Ages 3–4)", "item": "https://kansaikarategoldcoast.com.au/programs/cubs" }
+  ]
+};
+
 export default function CubsPage() {
   return (
-    <ProgramPage
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <ProgramPage
       name="Cubs"
       slug="cubs"
       heroImg={`${OLD}/cub1.webp`}
@@ -51,5 +62,6 @@ export default function CubsPage() {
         `${OLD}/cub1.webp`,
       ]}
     />
+    </>
   );
 }

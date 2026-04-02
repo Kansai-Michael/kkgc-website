@@ -6,9 +6,24 @@ export const metadata: Metadata = {
   description: "Kansai Karate Gold Coast is led by Sensei Michael Hunt (4th Dan Shitoryu Shukokai). Traditional Japanese karate in Upper Coomera, affiliated with QKA and AKF.",
 };
 
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Michael Hunt",
+  "honorificPrefix": "Sensei",
+  "jobTitle": "Head Instructor",
+  "description": "4th Dan Shitoryu Shukokai karate instructor. Head instructor at Kansai Karate Gold Coast in Upper Coomera QLD.",
+  "worksFor": {
+    "@type": "SportsActivityLocation",
+    "name": "Kansai Karate Gold Coast",
+    "url": "https://kansaikarategoldcoast.com.au"
+  }
+};
+
 export default function AboutPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       <section className="bg-[#003087] text-white py-16 px-4">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">About Kansai Karate Gold Coast</h1>

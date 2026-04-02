@@ -8,9 +8,20 @@ export const metadata: Metadata = {
   description: "Adult karate classes in Upper Coomera. Whether it's fitness, self-defence, or mental health — our classes are designed for the average person to see real results.",
 };
 
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kansaikarategoldcoast.com.au" },
+    { "@type": "ListItem", "position": 2, "name": "Adult Karate Classes", "item": "https://kansaikarategoldcoast.com.au/programs/adults" }
+  ]
+};
+
 export default function AdultsPage() {
   return (
-    <ProgramPage
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <ProgramPage
       name="Adult Karate"
       slug="adults"
       heroImg={`${OLD}/adultsgoogle4.webp`}
@@ -51,5 +62,6 @@ export default function AdultsPage() {
         `${OLD}/adultsgoogle4.webp`,
       ]}
     />
+    </>
   );
 }

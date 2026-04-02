@@ -8,9 +8,20 @@ export const metadata: Metadata = {
   description: "Karate classes for 5, 6, and 7 year olds in Upper Coomera. Little Lions builds focus, respect, and real karate foundations in a fun, structured environment.",
 };
 
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kansaikarategoldcoast.com.au" },
+    { "@type": "ListItem", "position": 2, "name": "Little Lions Karate (Ages 5–7)", "item": "https://kansaikarategoldcoast.com.au/programs/little-lions" }
+  ]
+};
+
 export default function LittleLionsPage() {
   return (
-    <ProgramPage
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <ProgramPage
       name="Little Lions"
       slug="little-lions"
       heroImg={`${OLD}/Lillionsgoogle.webp`}
@@ -51,5 +62,6 @@ export default function LittleLionsPage() {
         `${OLD}/llllllllllll.webp`,
       ]}
     />
+    </>
   );
 }

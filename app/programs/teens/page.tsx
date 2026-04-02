@@ -8,9 +8,20 @@ export const metadata: Metadata = {
   description: "Teen karate classes in Upper Coomera. Build fitness, focus, and real self-defence skills in a structured class designed specifically for teenagers.",
 };
 
+const breadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kansaikarategoldcoast.com.au" },
+    { "@type": "ListItem", "position": 2, "name": "Teens Karate (Ages 13–18)", "item": "https://kansaikarategoldcoast.com.au/programs/teens" }
+  ]
+};
+
 export default function TeensPage() {
   return (
-    <ProgramPage
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <ProgramPage
       name="Teens Karate"
       slug="teens"
       heroImg={`${OLD}/Teengoogle-1.webp`}
@@ -51,5 +62,6 @@ export default function TeensPage() {
         `${OLD}/Teengoogle-1.webp`,
       ]}
     />
+    </>
   );
 }

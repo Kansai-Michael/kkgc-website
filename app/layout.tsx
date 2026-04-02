@@ -23,6 +23,53 @@ export const metadata: Metadata = {
   keywords: "karate upper coomera, kids karate gold coast, martial arts upper coomera, karate classes gold coast",
 };
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  "name": "Kansai Karate Gold Coast",
+  "description": "Traditional Japanese karate for kids, teens and adults in Upper Coomera, Gold Coast QLD. Programs for all ages: Cubs (3-4), Little Lions (5-7), Juniors (8-12), Teens (13-18) and Adults.",
+  "url": "https://kansaikarategoldcoast.com.au",
+  "telephone": "+61489265960",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Unit 3 / 2 Sierra Place",
+    "addressLocality": "Upper Coomera",
+    "addressRegion": "QLD",
+    "postalCode": "4209",
+    "addressCountry": "AU"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -27.8897,
+    "longitude": 153.3011
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "16:00", "closes": "20:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "11:30" }
+  ],
+  "priceRange": "$$",
+  "image": "https://kansaikarategoldcoast.com.au/wp-content/uploads/sites/43/2025/02/KKA-Logo-Trans-background.png",
+  "sameAs": [
+    "https://www.facebook.com/KansaiKarateUpperCoomera",
+    "https://www.instagram.com/kansaikarateuppercoomera"
+  ]
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Kansai Karate Gold Coast",
+  "url": "https://kansaikarategoldcoast.com.au",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://kansaikarategoldcoast.com.au/?s={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -30,6 +77,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${oswald.variable} ${sourceSans.variable}`}>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col">
         <ClientLayout>
           <Nav />
