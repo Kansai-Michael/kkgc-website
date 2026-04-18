@@ -68,32 +68,31 @@ export default function TimetablePage({
 }: TimetablePageProps) {
   return (
     <>
-      {/* Hero */}
+      {/* Hero + Timetable + Booking — full bleed background */}
       <section
-        className="relative text-white py-14 px-4"
+        className="relative text-white px-4 pt-14 pb-12"
         style={{
           backgroundImage: `url(${heroImg})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          minHeight: "38vh",
         }}
       >
-        <div className="absolute inset-0" style={{ background: "rgba(10,30,80,0.75)" }} />
-        <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center justify-center min-h-[28vh]">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={BADGE_IMG} alt="Kansai Karate Academy" className="w-20 mb-4" />
-          <h1 className="text-3xl md:text-4xl font-bold mb-3">{headline}</h1>
-          <p className="text-white/80 text-lg">{subheadline}</p>
-        </div>
-      </section>
+        <div className="absolute inset-0" style={{ background: "rgba(10,30,80,0.80)" }} />
+        <div className="relative z-10 max-w-5xl mx-auto">
 
-      {/* Timetable */}
-      <section className="bg-white py-12 px-4">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl font-bold text-gray-900 mb-5">
-            Class Schedule — {name}
+          {/* Hero text */}
+          <div className="text-center flex flex-col items-center mb-10">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src={BADGE_IMG} alt="Kansai Karate Academy" className="w-20 mb-4" />
+            <h1 className="text-3xl md:text-4xl font-bold mb-3">{headline}</h1>
+            <p className="text-white/80 text-lg">{subheadline}</p>
+          </div>
+
+          {/* Timetable */}
+          <h2 className="text-xl font-bold text-white mb-4 uppercase tracking-wide text-center">
+            Current Class Schedule
           </h2>
-          <div className="overflow-x-auto rounded-lg shadow-sm border border-gray-200">
+          <div className="overflow-x-auto rounded-lg shadow-lg mb-10">
             <table className="w-full border-collapse text-xs">
               <thead>
                 <tr style={{ backgroundColor: TABLE_HEADER_BG }}>
@@ -142,16 +141,12 @@ export default function TimetablePage({
               </tbody>
             </table>
           </div>
-        </div>
-      </section>
 
-      {/* Booking */}
-      <section className="bg-white pb-12 px-4">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+          {/* Booking */}
+          <h2 className="text-2xl font-bold text-white mb-4">
             Book Your Free Trial Class
           </h2>
-          <div className="rounded-lg p-4 mb-5" style={{ backgroundColor: "#5B7DB1" }}>
+          <div className="rounded-lg p-4 mb-5 bg-white/10 border border-white/20">
             <p className="text-white font-semibold text-sm mb-2">How to book:</p>
             <ol className="text-white/90 text-sm space-y-1.5 list-decimal list-inside">
               <li>Select your program from the options below</li>
@@ -163,6 +158,13 @@ export default function TimetablePage({
             url={bookingIframeUrl}
             title={`Book a free trial class — ${name}`}
           />
+          <p className="text-white/70 text-sm text-center mt-4">
+            Not sure about booking online? Call us on{" "}
+            <a href="tel:0489265960" className="text-white font-semibold underline hover:text-[#FFB800] transition-colors">
+              0489 265 960
+            </a>
+          </p>
+
         </div>
       </section>
 
@@ -252,6 +254,12 @@ export default function TimetablePage({
                 url={bookingIframeUrl}
                 title="Book your free trial class"
               />
+              <p className="text-gray-500 text-sm text-center mt-4">
+                Not sure about booking online? Call us on{" "}
+                <a href="tel:0489265960" className="text-gray-700 font-semibold underline hover:text-[#5B7DB1] transition-colors">
+                  0489 265 960
+                </a>
+              </p>
             </div>
           </section>
 
