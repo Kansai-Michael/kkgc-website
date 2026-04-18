@@ -1,4 +1,5 @@
 import BookTrialButton from "@/components/BookTrialButton";
+import BookingCalendar from "@/components/BookingCalendar";
 
 const OLD = "https://kansaikarategoldcoast.com.au/wp-content/uploads/sites/27/2025/02";
 const BADGE_IMG = `${OLD}/KKA-Logo-Trans-background.png`;
@@ -86,91 +87,82 @@ export default function TimetablePage({
         </div>
       </section>
 
-      {/* Timetable + Booking */}
+      {/* Timetable */}
       <section className="bg-white py-12 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="lg:grid lg:grid-cols-5 lg:gap-10 items-start">
-
-            {/* LEFT: Timetable — 3/5 */}
-            <div className="lg:col-span-3 mb-12 lg:mb-0">
-              <h2 className="text-2xl font-bold text-gray-900 mb-5">
-                Class Schedule — {name}
-              </h2>
-              <div className="overflow-x-auto rounded-lg shadow-sm border border-gray-200">
-                <table className="w-full border-collapse text-xs">
-                  <thead>
-                    <tr style={{ backgroundColor: TABLE_HEADER_BG }}>
-                      <th className="p-3 text-center" style={{ minWidth: "90px" }}>
-                        <span className="text-2xl">🥋</span>
-                      </th>
-                      {DAYS.map((d) => (
-                        <th
-                          key={d.key}
-                          className="p-3 text-center text-white font-bold tracking-wider uppercase"
-                          style={{ minWidth: "80px" }}
-                        >
-                          {d.label}
-                        </th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {scheduleRows.map((row, i) => (
-                      <tr key={i} className="border-t border-gray-200">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold text-gray-900 mb-5">
+            Class Schedule — {name}
+          </h2>
+          <div className="overflow-x-auto rounded-lg shadow-sm border border-gray-200">
+            <table className="w-full border-collapse text-xs">
+              <thead>
+                <tr style={{ backgroundColor: TABLE_HEADER_BG }}>
+                  <th className="p-3 text-center" style={{ minWidth: "90px" }}>
+                    <span className="text-2xl">🥋</span>
+                  </th>
+                  {DAYS.map((d) => (
+                    <th
+                      key={d.key}
+                      className="p-3 text-center text-white font-bold tracking-wider uppercase"
+                      style={{ minWidth: "80px" }}
+                    >
+                      {d.label}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {scheduleRows.map((row, i) => (
+                  <tr key={i} className="border-t border-gray-200">
+                    <td
+                      className="p-3 text-center text-white font-bold leading-tight"
+                      style={{ backgroundColor: TABLE_HEADER_BG }}
+                    >
+                      <div className="text-xs">{row.label}</div>
+                      {row.sublabel && (
+                        <div className="font-normal text-white/80 mt-0.5 whitespace-pre-line text-xs">
+                          {row.sublabel}
+                        </div>
+                      )}
+                    </td>
+                    {DAYS.map((d) => {
+                      const value = row[d.key];
+                      return (
                         <td
-                          className="p-3 text-center text-white font-bold leading-tight"
-                          style={{ backgroundColor: TABLE_HEADER_BG }}
+                          key={d.key}
+                          className="p-3 text-center text-gray-700"
+                          style={{ backgroundColor: d.light ? LIGHT_COL_BG : "white" }}
                         >
-                          <div className="text-xs">{row.label}</div>
-                          {row.sublabel && (
-                            <div className="font-normal text-white/80 mt-0.5 whitespace-pre-line text-xs">
-                              {row.sublabel}
-                            </div>
-                          )}
+                          {value || ""}
                         </td>
-                        {DAYS.map((d) => {
-                          const value = row[d.key];
-                          return (
-                            <td
-                              key={d.key}
-                              className="p-3 text-center text-gray-700"
-                              style={{ backgroundColor: d.light ? LIGHT_COL_BG : "white" }}
-                            >
-                              {value || ""}
-                            </td>
-                          );
-                        })}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
-
-            {/* RIGHT: Booking — 2/5 */}
-            <div className="lg:col-span-2">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                Book Your Free Trial Class
-              </h2>
-              <div className="rounded-lg p-4 mb-5" style={{ backgroundColor: "#5B7DB1" }}>
-                <p className="text-white font-semibold text-sm mb-2">How to book:</p>
-                <ol className="text-white/90 text-sm space-y-1.5 list-decimal list-inside">
-                  <li>Select your program from the options below</li>
-                  <li>Choose a date and time that suits your family</li>
-                  <li>Fill in your details to complete the booking</li>
-                </ol>
-              </div>
-              <div className="rounded-lg overflow-hidden border border-gray-200 shadow-sm">
-                <iframe
-                  src={bookingIframeUrl}
-                  className="w-full"
-                  style={{ minHeight: "650px", border: "none" }}
-                  title={`Book a free trial class — ${name}`}
-                />
-              </div>
-            </div>
-
+                      );
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
+        </div>
+      </section>
+
+      {/* Booking */}
+      <section className="bg-white pb-12 px-4">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">
+            Book Your Free Trial Class
+          </h2>
+          <div className="rounded-lg p-4 mb-5" style={{ backgroundColor: "#5B7DB1" }}>
+            <p className="text-white font-semibold text-sm mb-2">How to book:</p>
+            <ol className="text-white/90 text-sm space-y-1.5 list-decimal list-inside">
+              <li>Select your program from the options below</li>
+              <li>Choose a date and time that suits your family</li>
+              <li>Fill in your details to complete the booking</li>
+            </ol>
+          </div>
+          <BookingCalendar
+            url={bookingIframeUrl}
+            title={`Book a free trial class — ${name}`}
+          />
         </div>
       </section>
 
@@ -256,16 +248,10 @@ export default function TimetablePage({
               <p className="text-gray-500 text-center text-sm mb-8">
                 Pick a date and time that suits your family — it&apos;s free, no commitment required.
               </p>
-              <div className="rounded-lg overflow-hidden border border-gray-200 shadow-sm">
-                <iframe
-                  src={bookingIframeUrl}
-                  width="100%"
-                  height="600"
-                  frameBorder={0}
-                  title="Book your free trial class"
-                  className="w-full"
-                />
-              </div>
+              <BookingCalendar
+                url={bookingIframeUrl}
+                title="Book your free trial class"
+              />
             </div>
           </section>
 
