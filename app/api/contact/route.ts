@@ -1,37 +1,47 @@
 import { NextRequest, NextResponse } from "next/server";
 
-// TODO: Set this environment variable in Vercel dashboard
-// NEXT_PUBLIC_N8N_WEBHOOK_URL=https://michael-kansai.app.n8n.cloud/webhook/kkgc-lead
-const N8N_WEBHOOK_URL = process.env.N8N_WEBHOOK_URL || "";
+const KIHON_API_URL = "https://app.kihonsoft.au/api/leads/inbound";
+const KIHON_API_KEY = process.env.KIHON_API_KEY || "";
+
+// Maps the program value from the form to the source label expected by Kihon
+const SOURCE_MAP: Record<string, string> = {
+  cubs: "website-cubs",
+  "little-lions": "website-little-lions",
+  juniors: "website-juniors",
+  teens: "website-teens-adults",
+  adults: "website-teens-adults",
+  general: "website-general",
+};
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
-  const { name, email, phone, program, message } = body;
+  const { name, email, phone, program } = body;
 
   if (!name || !email || !phone || !program) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
   }
 
-  // Forward to n8n webhook
-  if (N8N_WEBHOOK_URL) {
-    try {
-      await fetch(N8N_WEBHOOK_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          source: "kkgc-website",
-          name,
-          email,
-          phone,
-          program,
-          message: message || "",
-          submitted_at: new Date().toISOString(),
-        }),
-      });
-    } catch (err) {
-      console.error("Failed to send to n8n:", err);
-      // Don't fail the user-facing response if n8n is down
+  const [first_name, ...rest] = (name as string).trim().split(" ");
+  const last_name = rest.join(" ");
+  const source = SOURCE_MAP[program] ?? "website-general";
+
+  try {
+    const res = await fetch(KIHON_API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "X-API-Key": KIHON_API_KEY,
+      },
+      body: JSON.stringify({ email, phone, first_name, last_name, source }),
+    });
+
+    if (!res.ok) {
+      console.error("Kihon API error:", res.status, await res.text());
+      return NextResponse.json({ error: "Submission failed" }, { status: 500 });
     }
+  } catch (err) {
+    console.error("Failed to reach Kihon:", err);
+    return NextResponse.json({ error: "Submission failed" }, { status: 500 });
   }
 
   return NextResponse.json({ success: true });

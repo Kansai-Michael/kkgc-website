@@ -247,6 +247,28 @@ export default function TimetablePage({
             </div>
           </section>
 
+          {/* Booking calendar */}
+          <section className="bg-white py-16 px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-2xl font-bold text-gray-900 text-center mb-2">
+                Ready to Book Your First Lesson?
+              </h2>
+              <p className="text-gray-500 text-center text-sm mb-8">
+                Pick a date and time that suits your family — it&apos;s free, no commitment required.
+              </p>
+              <div className="rounded-lg overflow-hidden border border-gray-200 shadow-sm">
+                <iframe
+                  src={bookingIframeUrl}
+                  width="100%"
+                  height="600"
+                  frameBorder={0}
+                  title="Book your free trial class"
+                  className="w-full"
+                />
+              </div>
+            </div>
+          </section>
+
           {/* Closing CTA */}
           <section className="py-16 px-4 text-center" style={{ background: "#5B7DB1" }}>
             <div className="max-w-3xl mx-auto">
