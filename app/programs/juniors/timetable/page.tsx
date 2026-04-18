@@ -1,8 +1,8 @@
 import TimetablePage from "@/components/TimetablePage";
 import type { MoreInfoContent } from "@/components/TimetablePage";
 
-const OLD = "https://kansaikarategoldcoast.com.au/wp-content/uploads/sites/27/2025/02";
-const OLD_43 = "https://kansaikarategoldcoast.com.au/wp-content/uploads/sites/43/2025/09";
+const OLD = "/images";
+const OLD_43 = "/images";
 const BOOKING_URL = "https://app.kihonsoft.au/book/1st-lesson-bookings";
 
 export const metadata = { title: "Juniors Class Timetable | Kansai Karate Gold Coast" };

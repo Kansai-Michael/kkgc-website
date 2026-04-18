@@ -1,7 +1,7 @@
 import ProgramPage from "@/components/ProgramPage";
 import type { Metadata } from "next";
 
-const OLD = "https://kansaikarategoldcoast.com.au/wp-content/uploads/sites/27/2025/02";
+const OLD = "/images";
 
 export const metadata: Metadata = {
   title: "Adult Karate Classes | Kansai Karate Gold Coast",

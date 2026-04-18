@@ -1,7 +1,7 @@
 import Link from "next/link";
 
-const OLD = "https://kansaikarategoldcoast.com.au/wp-content/uploads/sites/27/2025/02";
-const OLD_43 = "https://kansaikarategoldcoast.com.au/wp-content/uploads/sites/43/2025/09";
+const OLD = "/images";
+const OLD_43 = "/images";
 
 const HERO_IMG = `${OLD_43}/Michael-Hunt-In__subject_1___remove_the_parents_sitting_on_the_right_side_of_the_image_and_the_boxes_in_the_top_r.webp`;
 const BADGE_IMG = `${OLD}/KKA-Logo-Trans-background.png`;

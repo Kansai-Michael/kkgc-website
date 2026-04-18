@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const BADGE_IMG = "https://kansaikarategoldcoast.com.au/wp-content/uploads/sites/27/2025/02/KKA-Logo-Trans-background.png";
+const BADGE_IMG = "/images/KKA-Logo-Trans-background.png";
 
 const locations = [
   { name: "Sumner Park", href: "https://www.kansaikarate.com.au/" },

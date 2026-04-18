@@ -48,7 +48,7 @@ const localBusinessSchema = {
     { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "11:30" }
   ],
   "priceRange": "$$",
-  "image": "https://kansaikarategoldcoast.com.au/wp-content/uploads/sites/43/2025/02/KKA-Logo-Trans-background.png",
+  "image": "/images/KKA-Logo-Trans-background.png",
   "sameAs": [
     "https://www.facebook.com/KansaiKarateUpperCoomera",
     "https://www.instagram.com/kansaikarateuppercoomera",

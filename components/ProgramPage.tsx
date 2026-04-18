@@ -1,6 +1,6 @@
 import BookTrialButton from "@/components/BookTrialButton";
 
-const OLD = "https://kansaikarategoldcoast.com.au/wp-content/uploads/sites/27/2025/02";
+const OLD = "/images";
 const BADGE_IMG = `${OLD}/KKA-Logo-Trans-background.png`;
 
 interface Feature {
