@@ -1,4 +1,5 @@
 import Link from "next/link";
+import IframeEscape from "@/components/IframeEscape";
 
 const OLD_43 = "https://kansaikarategoldcoast.com.au/wp-content/uploads/sites/43/2025/09";
 const HERO_IMG = `${OLD_43}/Michael-Hunt-In__subject_1___remove_the_parents_sitting_on_the_right_side_of_the_image_and_the_boxes_in_the_top_r.webp`;
@@ -10,6 +11,8 @@ export const metadata = {
 
 export default function ThankYouPage() {
   return (
+    <>
+      <IframeEscape />
     <section
       className="relative flex items-center justify-center text-white"
       style={{
@@ -39,5 +42,6 @@ export default function ThankYouPage() {
         </Link>
       </div>
     </section>
+    </>
   );
 }
