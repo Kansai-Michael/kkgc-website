@@ -1,5 +1,6 @@
 import BookTrialButton from "@/components/BookTrialButton";
 import BookingCalendar from "@/components/BookingCalendar";
+import { Swords } from "lucide-react";
 
 const OLD = "/images";
 const BADGE_IMG = `${OLD}/KKA-Logo-Trans-background.png`;
@@ -97,7 +98,7 @@ export default function TimetablePage({
               <thead>
                 <tr style={{ backgroundColor: TABLE_HEADER_BG }}>
                   <th className="p-3 text-center" style={{ minWidth: "90px" }}>
-                    <span className="text-2xl">🥋</span>
+                    <Swords className="w-5 h-5 text-white mx-auto" />
                   </th>
                   {DAYS.map((d) => (
                     <th

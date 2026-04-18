@@ -58,8 +58,8 @@ export default function TeensPage() {
       ctaText="Teen Karate Classes Build Benefits for Life"
       secondaryImages={[
         `${OLD}/Teengoogle-1.jpg`,
-        `${OLD}/Teengoogle-1.jpg`,
-        `${OLD}/Teengoogle-1.jpg`,
+        `${OLD}/teens.jpg`,
+        `${OLD}/adultgoogle6.jpg`,
       ]}
     />
     </>

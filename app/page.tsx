@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Calendar, Users, Star, Activity, Award, ClipboardList, HeartHandshake, Smile, BookOpen, Brain, Dumbbell } from "lucide-react";
 
 const OLD = "/images";
 const OLD_43 = "/images";
@@ -54,22 +55,22 @@ const programs = [
 
 const whyFeatures = [
   {
-    icon: "📅",
+    icon: <Calendar className="w-8 h-8 text-[#5B7DB1]" />,
     title: "Schedule Focused",
     body: "Our programs were created for real family schedules. Convenient class times mean that kids, adults, and whole families can improve their quality of life without killing every moment of spare time.",
   },
   {
-    icon: "👥",
+    icon: <Users className="w-8 h-8 text-[#5B7DB1]" />,
     title: "Community Positive",
     body: "Our positive atmosphere is contagious, and you'll know without a doubt that you're in a place where kids will learn positive habits and adults will make meaningful, lasting friendships.",
   },
   {
-    icon: "⭐",
+    icon: <Star className="w-8 h-8 text-[#5B7DB1]" />,
     title: "Values Oriented",
     body: "All of our programs improve physical prowess, and that's important. But what's far more important is the mental and emotional benefits that our programs bring to everyday life.",
   },
   {
-    icon: "🏃",
+    icon: <Activity className="w-8 h-8 text-[#5B7DB1]" />,
     title: "Movement Based",
     body: "Both kids and adults will gain flexibility, agility, and strength, even if they aren't athletic! They'll love it, because it's not only super fun, it's inclusive and accommodating at every step.",
   },
@@ -77,22 +78,22 @@ const whyFeatures = [
 
 const kidsFeatures = [
   {
-    icon: "🥋",
+    icon: <Award className="w-8 h-8 text-[#FFB800]" />,
     title: "Amazing Classes",
     body: "Kids love classes at Kansai Karate because they're unbelievably fun (but parents love them because they build benefits for life!)",
   },
   {
-    icon: "📋",
+    icon: <ClipboardList className="w-8 h-8 text-[#FFB800]" />,
     title: "Structured Activity",
     body: "Everything we do is intentionally structured based on our extensive experience. Kids at Kansai Karate actually like the structure, because it makes them feel safe and cared for.",
   },
   {
-    icon: "🤝",
+    icon: <HeartHandshake className="w-8 h-8 text-[#FFB800]" />,
     title: "Full Inclusion",
     body: "We take kids' emotions seriously. The culture at Kansai Karate is one of inclusion — no cliques, no cool kids club, no unkind actions or attitudes. Kids love it because they always feel like they belong!",
   },
   {
-    icon: "😄",
+    icon: <Smile className="w-8 h-8 text-[#FFB800]" />,
     title: "Awesome Fun!",
     body: "It's so much fun! At Kansai Karate, we know that getting your child out of the house, in the car, and across town to an activity is a big deal. We guarantee that when they leave, it will have been 100% worth it, every time!",
   },
@@ -100,22 +101,22 @@ const kidsFeatures = [
 
 const adultsFeatures = [
   {
-    icon: "📚",
+    icon: <BookOpen className="w-8 h-8 text-[#5B7DB1]" />,
     title: "Curriculum",
     body: "Our classes were designed specifically for the average person. You'll build skills step by step, without having to be a superstar to see improvement. But stick with it, and you'll see your abilities soar!",
   },
   {
-    icon: "👥",
+    icon: <Users className="w-8 h-8 text-[#5B7DB1]" />,
     title: "Community",
     body: "You'll be surrounded by peers striving towards the same goals you are, day in, day out. You'll build friendships and be supported in your individual journey.",
   },
   {
-    icon: "🧠",
+    icon: <Brain className="w-8 h-8 text-[#5B7DB1]" />,
     title: "Mental Health",
     body: "We've always known it, but now the science agrees: You must take time for your own mental health. Our classes help you clear your mind, accomplish your goals, and be more healthy, from the inside out.",
   },
   {
-    icon: "💪",
+    icon: <Dumbbell className="w-8 h-8 text-[#5B7DB1]" />,
     title: "Physical Skills",
     body: "It's more than just learning awesome looking moves — it's proprioception, balance, agility and more — physical skills that will remain with and benefit you for the rest of your life.",
   },
@@ -150,7 +151,7 @@ export default function HomePage() {
           {/* H1 */}
           <h1 className="text-2xl md:text-3xl lg:text-4xl text-white max-w-3xl mx-auto leading-snug font-semibold">
             <span className="text-[#FFB800]">Kids</span> build Focus and Discipline, <span className="text-[#FFB800]">Teens</span> find classes designed just for
-            them, and <span className="text-[#FFB800]">Adults</span> have a workout that helps keep them fit &amp; safe
+            them, and <span className="text-[#FFB800]">Adults</span>{" "}have a workout that helps keep them fit &amp; safe
           </h1>
         </div>
       </section>
@@ -264,7 +265,7 @@ export default function HomePage() {
             <div className="grid grid-cols-2 gap-8">
               {whyFeatures.map((f) => (
                 <div key={f.title}>
-                  <div className="text-2xl mb-2">{f.icon}</div>
+                  <div className="mb-3">{f.icon}</div>
                   <h3 className="font-bold text-gray-800 mb-2">{f.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{f.body}</p>
                 </div>
@@ -289,7 +290,7 @@ export default function HomePage() {
             <div className="grid grid-cols-2 gap-8">
               {kidsFeatures.map((f) => (
                 <div key={f.title}>
-                  <div className="text-2xl mb-2">{f.icon}</div>
+                  <div className="mb-3">{f.icon}</div>
                   <h3 className="font-bold text-white mb-2">{f.title}</h3>
                   <p className="text-white/75 text-sm leading-relaxed">{f.body}</p>
                 </div>
@@ -322,7 +323,7 @@ export default function HomePage() {
             <div className="grid grid-cols-2 gap-8">
               {adultsFeatures.map((f) => (
                 <div key={f.title}>
-                  <div className="text-2xl mb-2">{f.icon}</div>
+                  <div className="mb-3">{f.icon}</div>
                   <h3 className="font-bold text-gray-800 mb-2">{f.title}</h3>
                   <p className="text-gray-500 text-sm leading-relaxed">{f.body}</p>
                 </div>

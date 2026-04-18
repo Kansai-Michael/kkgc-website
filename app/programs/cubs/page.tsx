@@ -58,8 +58,8 @@ export default function CubsPage() {
       ctaText="Cubs Classes Build Benefits for Life"
       secondaryImages={[
         `${OLD}/cub3.jpg`,
-        `${OLD}/cub3.jpg`,
-        `${OLD}/cub3.jpg`,
+        `${OLD}/cub4.jpg`,
+        `${OLD}/Cubs-1.jpg`,
       ]}
     />
     </>

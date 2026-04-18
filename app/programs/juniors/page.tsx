@@ -58,8 +58,8 @@ export default function JuniorsPage() {
       ctaText="Junior Classes Build Benefits for Life"
       secondaryImages={[
         `${OLD}/juniorsgoogle.jpg`,
-        `${OLD}/juniorsgoogle.jpg`,
-        `${OLD}/juniorsgoogle.jpg`,
+        `${OLD}/j3.jpg`,
+        `${OLD}/j4.jpg`,
       ]}
     />
     </>

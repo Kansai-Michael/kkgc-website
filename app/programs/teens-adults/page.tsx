@@ -1,5 +1,6 @@
 import TrialCTA from "@/components/TrialCTA";
 import type { Metadata } from "next";
+import { Dumbbell, Brain, ShieldCheck, HeartHandshake } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Teens & Adults Karate (Ages 13+) | Kansai Karate Gold Coast",
@@ -24,13 +25,13 @@ export default function TeensAdultsPage() {
           <h2 className="text-2xl font-bold text-[#003087] mb-6">Why Adults Choose Kansai Karate</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
             {[
-              { icon: "💪", title: "Real Fitness", body: "Cardiovascular fitness, strength, flexibility, and coordination. A full-body workout that never gets boring because you are always learning something." },
-              { icon: "🧠", title: "Mental Clarity", body: "An hour of karate clears your head like nothing else. Training is a break from everything — fully present, fully focused." },
-              { icon: "🛡️", title: "Practical Self-Defence", body: "Traditional karate contains highly effective self-defence principles. You will learn skills that build real confidence." },
-              { icon: "🤝", title: "Genuine Community", body: "Adult students at Kansai Karate form real friendships. Training side-by-side through shared challenge creates bonds that last." },
+              { icon: <Dumbbell className="w-7 h-7 text-[#003087] flex-shrink-0" />, title: "Real Fitness", body: "Cardiovascular fitness, strength, flexibility, and coordination. A full-body workout that never gets boring because you are always learning something." },
+              { icon: <Brain className="w-7 h-7 text-[#003087] flex-shrink-0" />, title: "Mental Clarity", body: "An hour of karate clears your head like nothing else. Training is a break from everything — fully present, fully focused." },
+              { icon: <ShieldCheck className="w-7 h-7 text-[#003087] flex-shrink-0" />, title: "Practical Self-Defence", body: "Traditional karate contains highly effective self-defence principles. You will learn skills that build real confidence." },
+              { icon: <HeartHandshake className="w-7 h-7 text-[#003087] flex-shrink-0" />, title: "Genuine Community", body: "Adult students at Kansai Karate form real friendships. Training side-by-side through shared challenge creates bonds that last." },
             ].map((item) => (
               <div key={item.title} className="flex gap-4 p-4 bg-purple-50 rounded-xl border border-purple-200">
-                <span className="text-2xl flex-shrink-0">{item.icon}</span>
+                {item.icon}
                 <div>
                   <h3 className="font-bold text-[#003087] mb-1">{item.title}</h3>
                   <p className="text-sm text-gray-600">{item.body}</p>
