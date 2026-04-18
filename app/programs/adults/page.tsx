@@ -57,9 +57,9 @@ export default function AdultsPage() {
       ctaHeading="This Could be the Best Thing you've ever done for yourself."
       ctaText="Adult Karate Classes Build Benefits for Life"
       secondaryImages={[
-        `${OLD}/adultsgoogle4.jpg`,
+        `${OLD}/Adults.jpg`,
         `${OLD}/adultgoogle6.jpg`,
-        `${OLD}/adultsgoogle4.jpg`,
+        `${OLD}/adultsgoogle2.jpg`,
       ]}
     />
     </>
