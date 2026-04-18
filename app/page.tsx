@@ -3,18 +3,18 @@ import Link from "next/link";
 const OLD = "/images";
 const OLD_43 = "/images";
 
-const HERO_IMG = `${OLD_43}/Michael-Hunt-In__subject_1___remove_the_parents_sitting_on_the_right_side_of_the_image_and_the_boxes_in_the_top_r.webp`;
+const HERO_IMG = `${OLD_43}/kansai-homeheader.webp`;
 const BADGE_IMG = `${OLD}/KKA-Logo-Trans-background.png`;
-const DOJO_INTERIOR = `${OLD_43}/Michael-Hunt-Change_the_walls_in__subject_1__to_be_painted_white__Make_sure_to_keep_the_decorations_on_the_wall__-1.webp`;
-const KIDS_PHOTO = `${OLD}/Lillions2.webp`;
-const ADULTS_PHOTO = `${OLD}/adultgoogle6.webp`;
+const DOJO_INTERIOR = `${OLD_43}/Adults.jpg`;
+const KIDS_PHOTO = `${OLD}/Lillions2.jpg`;
+const ADULTS_PHOTO = `${OLD}/adultgoogle6.jpg`;
 
 const programs = [
   {
     name: "Cubs",
     age: "Ages 3-4",
     href: "/programs/cubs",
-    img: `${OLD}/cub1.webp`,
+    img: `${OLD}/cub3.jpg`,
     description:
       "From listening skills to taking turns, our program for ages 3-4 teach way more than physical skills! Your child will learn how to interact in a social setting, plus learn valuable life lessons that will help them as they grow.",
   },
@@ -22,7 +22,7 @@ const programs = [
     name: "Little Lions",
     age: "Ages 5-7",
     href: "/programs/little-lions",
-    img: `${OLD}/Lillionsgoogle.webp`,
+    img: `${OLD}/lll.jpg`,
     description:
       "There's nothing more satisfying than watching your 5-7 year old gain physical and social skills that you know will benefit them for life. Your little one will learn focus, self-confidence and discipline, while getting a full body work out.",
   },
@@ -30,7 +30,7 @@ const programs = [
     name: "Juniors",
     age: "Ages 8-12",
     href: "/programs/juniors",
-    img: `${OLD}/Juniors.webp`,
+    img: `${OLD}/juniorsgoogle.jpg`,
     description:
       "Martial Arts is one of the best possible activities for children. They'll learn to defend themselves physically, but more importantly they'll build the mental and emotional skill sets necessary to conquer challenges like high school, university, and becoming a healthy, balanced adult.",
   },
@@ -38,7 +38,7 @@ const programs = [
     name: "Teen Karate",
     age: "Ages 13+",
     href: "/programs/teens",
-    img: `${OLD}/Teengoogle-1.webp`,
+    img: `${OLD}/Teengoogle-1.jpg`,
     description:
       "Martial Arts is the perfect activity for teenagers! It gives them an outlet for their unique energy through engagement, and cross motor skill activity, but at Kansai Karate, they'll do it in a structured class designed and taught just for them.",
   },
@@ -46,7 +46,7 @@ const programs = [
     name: "Adult Karate",
     age: "",
     href: "/programs/adults",
-    img: `${OLD}/adultsgoogle4.webp`,
+    img: `${OLD}/adultsgoogle4.jpg`,
     description:
       "Whether it's losing weight, building muscle, learning to defend yourself, or just having a blast, our Adult Martial Arts classes have exactly what you need. You'll love the high energy class instruction, your body will love the awesome workout, and your spirit will love the camaraderie and positive atmosphere.",
   },

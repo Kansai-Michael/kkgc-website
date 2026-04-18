@@ -24,7 +24,7 @@ export default function CubsPage() {
       <ProgramPage
       name="Cubs"
       slug="cubs"
-      heroImg={`${OLD}/cub1.webp`}
+      heroImg={`${OLD}/cub3.jpg`}
       headline="Cubs Classes at Kansai Karate set positive pathways for life!"
       subheadline="Our Cubs program for ages 3-4 teaches way more than physical skills! Your child will learn how to interact in a social setting, plus learn valuable life lessons."
       introText=""
@@ -57,9 +57,9 @@ export default function CubsPage() {
       ctaHeading="This could be the best thing you've ever done for your child."
       ctaText="Cubs Classes Build Benefits for Life"
       secondaryImages={[
-        `${OLD}/cub1.webp`,
-        `${OLD}/cub1.webp`,
-        `${OLD}/cub1.webp`,
+        `${OLD}/cub3.jpg`,
+        `${OLD}/cub3.jpg`,
+        `${OLD}/cub3.jpg`,
       ]}
     />
     </>

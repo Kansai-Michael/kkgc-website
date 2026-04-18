@@ -43,7 +43,7 @@ const moreInfo: MoreInfoContent = {
       body: "Students are often given challenges and drills to complete with partners and larger teams. This creates an opportunity for them to learn to interact positively with other children, effectively communicate their ideas, and be pushed by their teams to do their absolute best.",
     },
   ],
-  classPhoto: `${OLD}/Cubs2.webp`,
+  classPhoto: `${OLD}/Cubs-1.jpg`,
   faqs: [
     {
       q: "Can we try it before signing up?",
@@ -67,7 +67,7 @@ export default function CubsTimetable() {
     <TimetablePage
       name="Cubs"
       slug="cubs"
-      heroImg={`${OLD}/cub1.webp`}
+      heroImg={`${OLD}/cub3.jpg`}
       headline="Unleash your child's inner superhero at Cubs!"
       subheadline="Cubs is for ages 3–4. Book a FREE First Lesson and see your little one shine."
       scheduleRows={[

@@ -67,7 +67,7 @@ export default function TeensTimetable() {
     <TimetablePage
       name="Teens Karate"
       slug="teens"
-      heroImg={`${OLD}/Teengoogle-1.webp`}
+      heroImg={`${OLD}/Teengoogle-1.jpg`}
       headline="Build fitness, focus, and real self-defence skills!"
       subheadline="Teens Karate is for ages 13–18. Book a FREE First Lesson and discover what you're capable of."
       scheduleRows={[

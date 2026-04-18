@@ -23,7 +23,7 @@ const moreInfo: MoreInfoContent = {
       body: "Not only will your child be surrounded by positive leadership examples in class, as they advance they'll get opportunities to be in leadership positions of their own if they choose. They'll learn firsthand how to be a positive example in their own lives!",
     },
   ],
-  dividerPhoto: `${OLD_43}/Michael-Hunt-In__subject_1___remove_the_parents_sitting_on_the_right_side_of_the_image_and_the_boxes_in_the_top_r.png`,
+  dividerPhoto: `${OLD_43}/kansai-homeheader.webp`,
   classHeading: "What do kids do in Juniors Karate classes?",
   classIntro: "Most parents understand traditional sports. There will be practices, games, and you'll have to bring snacks at least once. But what is Juniors Karate like?",
   classItems: [
@@ -44,7 +44,7 @@ const moreInfo: MoreInfoContent = {
       body: "Students are often given challenges and drills to complete with partners and larger teams. This creates an opportunity for them to learn to interact positively with other children, effectively communicate their ideas, and be pushed by their teams to do their absolute best.",
     },
   ],
-  classPhoto: `${OLD_43}/Michael-Hunt-Change_the_walls_in__subject_1__to_be_painted_white__Make_sure_to_keep_the_decorations_on_the_wall__-1.png`,
+  classPhoto: `${OLD_43}/Adults.jpg`,
   faqs: [
     {
       q: "Can we try it before signing up?",
@@ -68,7 +68,7 @@ export default function JuniorsTimetable() {
     <TimetablePage
       name="Juniors"
       slug="juniors"
-      heroImg={`${OLD}/Juniors.webp`}
+      heroImg={`${OLD}/juniorsgoogle.jpg`}
       headline="Take your child's skills to the next level with Juniors!"
       subheadline="Juniors is for ages 8–12. Book a FREE First Lesson and see real growth in confidence and discipline."
       scheduleRows={[

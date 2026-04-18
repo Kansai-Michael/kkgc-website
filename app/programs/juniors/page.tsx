@@ -24,7 +24,7 @@ export default function JuniorsPage() {
       <ProgramPage
       name="Juniors"
       slug="juniors"
-      heroImg={`${OLD}/Juniors.webp`}
+      heroImg={`${OLD}/juniorsgoogle.jpg`}
       headline="Kansai Karate Junior Martial Arts Classes set positive pathways for life!"
       subheadline="Martial Arts is one of the best possible activities for children. They'll learn to defend themselves physically, but more importantly they'll build the mental and emotional skill sets necessary to conquer challenges."
       introText=""
@@ -57,9 +57,9 @@ export default function JuniorsPage() {
       ctaHeading="This could be the best thing you've ever done for your child."
       ctaText="Junior Classes Build Benefits for Life"
       secondaryImages={[
-        `${OLD}/Juniors.webp`,
-        `${OLD}/Juniors.webp`,
-        `${OLD}/Juniors.webp`,
+        `${OLD}/juniorsgoogle.jpg`,
+        `${OLD}/juniorsgoogle.jpg`,
+        `${OLD}/juniorsgoogle.jpg`,
       ]}
     />
     </>

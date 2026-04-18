@@ -55,7 +55,7 @@ const moreInfo: MoreInfoContent = {
       body: "Members are often given challenges and drills to complete with partners, teams and groups. This creates an opportunity for you to learn from and support your fellow members as you all strive to be the best version of yourselves!",
     },
   ],
-  classPhoto: `${OLD}/ADULTS-3.jpg`,
+  classPhoto: `${OLD}/ADULTS-3-1.webp`,
   faqs: [
     {
       q: "Can I try it before signing up?",
@@ -80,7 +80,7 @@ export default function AdultsTimetable() {
     <TimetablePage
       name="Adult Karate"
       slug="adults"
-      heroImg={`${OLD}/adultsgoogle4.webp`}
+      heroImg={`${OLD}/adultsgoogle4.jpg`}
       headline="The best workout in Upper Coomera — for real people."
       subheadline="Book a FREE First Lesson and find out why our adults keep coming back."
       scheduleRows={[

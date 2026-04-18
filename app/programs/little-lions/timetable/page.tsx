@@ -22,7 +22,7 @@ const moreInfo: MoreInfoContent = {
       body: "Your child will be surrounded by positive leadership examples in class, and this matters! It can be difficult for young children to know how to choose positive actions when they're with peers. But if they're enrolled in Little Lions, they'll learn firsthand how to be a positive example in their own lives!",
     },
   ],
-  dividerPhoto: `${OLD}/Little-Lions-2.webp`,
+  dividerPhoto: `${OLD}/LL1.jpg`,
   classHeading: "What do kids do in Little Lions classes?",
   classIntro: "Most parents understand traditional sports. There will be practices, games, and you'll have to bring snacks at least once! But what is Little Lions like?",
   classItems: [
@@ -67,7 +67,7 @@ export default function LittleLionsTimetable() {
     <TimetablePage
       name="Little Lions"
       slug="little-lions"
-      heroImg={`${OLD}/Lillionsgoogle.webp`}
+      heroImg={`${OLD}/lll.jpg`}
       headline="Unleash your child's inner superhero at Little Lions!"
       subheadline="Little Lions is for ages 5–7. Book a FREE First Lesson and watch your child's confidence grow."
       scheduleRows={[

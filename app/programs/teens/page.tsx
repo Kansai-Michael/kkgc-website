@@ -24,7 +24,7 @@ export default function TeensPage() {
       <ProgramPage
       name="Teens Karate"
       slug="teens"
-      heroImg={`${OLD}/Teengoogle-1.webp`}
+      heroImg={`${OLD}/Teengoogle-1.jpg`}
       headline="Kansai Karate Teen Martial Arts Classes set positive pathways for life!"
       subheadline="Martial Arts is the perfect activity for teenagers! It gives them an outlet for their unique energy through engagement, and cross motor skill activity, in a structured class designed just for them."
       introText=""
@@ -57,9 +57,9 @@ export default function TeensPage() {
       ctaHeading="This Could be the Best Thing you've ever done for your teen."
       ctaText="Teen Karate Classes Build Benefits for Life"
       secondaryImages={[
-        `${OLD}/Teengoogle-1.webp`,
-        `${OLD}/Teengoogle-1.webp`,
-        `${OLD}/Teengoogle-1.webp`,
+        `${OLD}/Teengoogle-1.jpg`,
+        `${OLD}/Teengoogle-1.jpg`,
+        `${OLD}/Teengoogle-1.jpg`,
       ]}
     />
     </>

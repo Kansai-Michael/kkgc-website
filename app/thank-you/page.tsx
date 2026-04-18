@@ -2,7 +2,7 @@ import Link from "next/link";
 import IframeEscape from "@/components/IframeEscape";
 
 const OLD_43 = "/images";
-const HERO_IMG = `${OLD_43}/Michael-Hunt-In__subject_1___remove_the_parents_sitting_on_the_right_side_of_the_image_and_the_boxes_in_the_top_r.webp`;
+const HERO_IMG = `${OLD_43}/kansai-homeheader.webp`;
 
 export const metadata = {
   title: "You're In! | Kansai Karate Gold Coast",

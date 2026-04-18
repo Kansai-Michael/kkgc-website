@@ -24,7 +24,7 @@ export default function AdultsPage() {
       <ProgramPage
       name="Adult Karate"
       slug="adults"
-      heroImg={`${OLD}/adultsgoogle4.webp`}
+      heroImg={`${OLD}/adultsgoogle4.jpg`}
       headline="See why Adult Karate Classes Are the Best Workout in Upper Coomera!"
       subheadline="Whether it's losing weight, building muscle, learning to defend yourself, or just having a blast, our Adult Martial Arts classes have exactly what you need."
       introText=""
@@ -57,9 +57,9 @@ export default function AdultsPage() {
       ctaHeading="This Could be the Best Thing you've ever done for yourself."
       ctaText="Adult Karate Classes Build Benefits for Life"
       secondaryImages={[
-        `${OLD}/adultsgoogle4.webp`,
-        `${OLD}/adultgoogle6.webp`,
-        `${OLD}/adultsgoogle4.webp`,
+        `${OLD}/adultsgoogle4.jpg`,
+        `${OLD}/adultgoogle6.jpg`,
+        `${OLD}/adultsgoogle4.jpg`,
       ]}
     />
     </>

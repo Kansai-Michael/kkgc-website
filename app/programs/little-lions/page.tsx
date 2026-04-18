@@ -24,7 +24,7 @@ export default function LittleLionsPage() {
       <ProgramPage
       name="Little Lions"
       slug="little-lions"
-      heroImg={`${OLD}/Lillionsgoogle.webp`}
+      heroImg={`${OLD}/lll.jpg`}
       headline="Little Lions Classes at Kansai Karate set positive pathways for life!"
       subheadline="There's nothing more satisfying than watching your 5-7 year old gain physical and social skills that you know will benefit them for life."
       introText=""
@@ -57,9 +57,9 @@ export default function LittleLionsPage() {
       ctaHeading="This could be the best thing you've ever done for your child."
       ctaText="Little Lions Classes Build Benefits for Life"
       secondaryImages={[
-        `${OLD}/Lillionsgoogle3.webp`,
-        `${OLD}/lilgoogle4.webp`,
-        `${OLD}/llllllllllll.webp`,
+        `${OLD}/ll6.jpg`,
+        `${OLD}/lilgoogle4.jpg`,
+        `${OLD}/llllllllllll.jpg`,
       ]}
     />
     </>
