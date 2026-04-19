@@ -1,3 +1,4 @@
+import Image from "next/image";
 import BookTrialButton from "@/components/BookTrialButton";
 
 const OLD = "/images";
@@ -45,13 +46,15 @@ export default function ProgramPage({
       {/* Hero */}
       <section
         className="relative text-white py-20 px-4"
-        style={{
-          backgroundImage: `url(${heroImg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          minHeight: "60vh",
-        }}
+        style={{ minHeight: "60vh" }}
       >
+        <Image
+          src={heroImg}
+          alt={`${name} karate program at Kansai Karate Gold Coast`}
+          fill
+          priority
+          style={{ objectFit: "cover", objectPosition: "center" }}
+        />
         <div className="absolute inset-0" style={{ background: "rgba(10,30,80,0.70)" }} />
         <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center justify-center min-h-[40vh]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -82,10 +85,9 @@ export default function ProgramPage({
                 <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-center py-14 px-4">
                   {i % 2 === 0 ? (
                     <>
-                      <div
-                        className="rounded-lg overflow-hidden aspect-[4/5] bg-cover bg-center"
-                        style={{ backgroundImage: secondaryImages[i] ? `url(${secondaryImages[i]})` : undefined, backgroundColor: "#e5e7eb" }}
-                      />
+                      <div className="relative rounded-lg overflow-hidden aspect-[4/5]" style={{ backgroundColor: "#e5e7eb" }}>
+                        {secondaryImages[i] && <Image src={secondaryImages[i]} alt="" fill style={{ objectFit: "cover" }} />}
+                      </div>
                       <div className="md:col-span-2">
                         <h3 className="text-2xl font-bold text-gray-900 mb-4">{b.title}</h3>
                         <p className="text-gray-600 leading-relaxed">{b.body}</p>
@@ -97,10 +99,9 @@ export default function ProgramPage({
                         <h3 className="text-2xl font-bold text-white mb-4">{b.title}</h3>
                         <p className="text-white/80 leading-relaxed">{b.body}</p>
                       </div>
-                      <div
-                        className="rounded-lg overflow-hidden aspect-[4/5] bg-cover bg-center"
-                        style={{ backgroundImage: secondaryImages[i] ? `url(${secondaryImages[i]})` : undefined, backgroundColor: "#4A6DA0" }}
-                      />
+                      <div className="relative rounded-lg overflow-hidden aspect-[4/5]" style={{ backgroundColor: "#4A6DA0" }}>
+                        {secondaryImages[i] && <Image src={secondaryImages[i]} alt="" fill style={{ objectFit: "cover" }} />}
+                      </div>
                     </>
                   )}
                 </div>
@@ -154,12 +155,8 @@ export default function ProgramPage({
       {/* Bottom CTA */}
       <section
         className="relative py-20 px-4 text-white"
-        style={{
-          backgroundImage: `url(${heroImg})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
       >
+        <Image src={heroImg} alt="" fill aria-hidden="true" style={{ objectFit: "cover", objectPosition: "center" }} />
         <div className="absolute inset-0" style={{ background: "rgba(10,30,80,0.85)" }} />
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <h2 className="text-3xl font-bold mb-4">{ctaHeading}</h2>

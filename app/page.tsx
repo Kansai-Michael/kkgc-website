@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Calendar, Users, Star, Activity, Award, ClipboardList, HeartHandshake, Smile, BookOpen, Brain, Dumbbell } from "lucide-react";
 
 const OLD = "/images";
@@ -128,13 +129,15 @@ export default function HomePage() {
       {/* ── HERO ── */}
       <section
         className="relative flex items-center justify-center text-white"
-        style={{
-          minHeight: "100vh",
-          backgroundImage: `url(${HERO_IMG})`,
-          backgroundSize: "cover",
-          backgroundPosition: "center 30%",
-        }}
+        style={{ minHeight: "100vh" }}
       >
+        <Image
+          src={HERO_IMG}
+          alt="Kansai Karate Gold Coast dojo, Upper Coomera"
+          fill
+          priority
+          style={{ objectFit: "cover", objectPosition: "center 30%" }}
+        />
         {/* Blue-tinted dark overlay */}
         <div
           className="absolute inset-0"
@@ -176,10 +179,7 @@ export default function HomePage() {
                 className="relative rounded overflow-hidden flex flex-col"
                 style={{ minHeight: "380px" }}
               >
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${p.img})` }}
-                />
+                <Image src={p.img} alt={`${p.name} karate program`} fill style={{ objectFit: "cover" }} />
                 <div
                   className="absolute inset-0"
                   style={{ background: "rgba(10,20,50,0.78)" }}
@@ -212,10 +212,7 @@ export default function HomePage() {
                 className="relative rounded overflow-hidden flex flex-col"
                 style={{ minHeight: "340px" }}
               >
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${p.img})` }}
-                />
+                <Image src={p.img} alt={`${p.name} karate program`} fill style={{ objectFit: "cover" }} />
                 <div
                   className="absolute inset-0"
                   style={{ background: "rgba(10,20,50,0.78)" }}
@@ -250,9 +247,9 @@ export default function HomePage() {
       <section className="bg-white py-16 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
           {/* Photo — 1/3 */}
-          <div className="rounded-lg overflow-hidden aspect-[4/5] bg-cover bg-center"
-            style={{ backgroundImage: `url(${DOJO_INTERIOR})` }}
-          />
+          <div className="relative rounded-lg overflow-hidden aspect-[4/5]">
+            <Image src={DOJO_INTERIOR} alt="Kansai Karate dojo interior" fill style={{ objectFit: "cover" }} />
+          </div>
           {/* Features — 2/3 */}
           <div className="md:col-span-2">
             <p className="text-gray-400 text-sm uppercase tracking-widest mb-3">
@@ -298,9 +295,9 @@ export default function HomePage() {
             </div>
           </div>
           {/* Photo — 1/3 */}
-          <div className="rounded-lg overflow-hidden aspect-[4/5] bg-cover bg-center"
-            style={{ backgroundImage: `url(${KIDS_PHOTO})` }}
-          />
+          <div className="relative rounded-lg overflow-hidden aspect-[4/5]">
+            <Image src={KIDS_PHOTO} alt="Kids karate class at Kansai Karate Gold Coast" fill style={{ objectFit: "cover" }} />
+          </div>
         </div>
       </section>
 
@@ -308,9 +305,9 @@ export default function HomePage() {
       <section className="bg-white py-16 px-4">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 items-center">
           {/* Photo — 1/3 */}
-          <div className="rounded-lg overflow-hidden aspect-[4/5] bg-cover bg-center"
-            style={{ backgroundImage: `url(${ADULTS_PHOTO})` }}
-          />
+          <div className="relative rounded-lg overflow-hidden aspect-[4/5]">
+            <Image src={ADULTS_PHOTO} alt="Adult karate class at Kansai Karate Gold Coast" fill style={{ objectFit: "cover" }} />
+          </div>
           {/* Features — 2/3 */}
           <div className="md:col-span-2">
             <p className="text-gray-400 text-sm uppercase tracking-widest mb-3">
