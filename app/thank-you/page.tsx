@@ -7,6 +7,7 @@ const HERO_IMG = `${OLD_43}/kansai-homeheader.webp`;
 export const metadata = {
   title: "You're In! | Kansai Karate Gold Coast",
   description: "Thanks for booking your free trial class at Kansai Karate Gold Coast.",
+  robots: { index: false, follow: false },
 };
 
 export default function ThankYouPage() {

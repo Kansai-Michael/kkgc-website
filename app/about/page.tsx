@@ -66,14 +66,14 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold text-[#003087] mb-4">Affiliations</h2>
             <div className="flex flex-wrap gap-4">
               {[
-                { name: "QKA", full: "Queensland Karate Association" },
-                { name: "AKF", full: "Australian Karate Federation" },
-                { name: "Kansai Karate Academy", full: "Licensee of Kansai Karate Academy" },
+                { name: "QKA", full: "Queensland Karate Association", href: "https://www.qka.com.au" },
+                { name: "AKF", full: "Australian Karate Federation", href: "https://www.karate.org.au" },
+                { name: "Kansai Karate Academy", full: "Licensee of Kansai Karate Academy", href: "https://www.kansaikarate.com.au" },
               ].map((a) => (
-                <div key={a.name} className="bg-gray-50 border border-gray-200 rounded-lg px-5 py-3 text-sm">
+                <a key={a.name} href={a.href} target="_blank" rel="noopener noreferrer" className="block bg-gray-50 border border-gray-200 rounded-lg px-5 py-3 text-sm hover:border-[#5B7DB1] transition-colors">
                   <span className="font-bold text-[#003087]">{a.name}</span>
                   <span className="text-gray-500 ml-2">— {a.full}</span>
-                </div>
+                </a>
               ))}
             </div>
           </div>

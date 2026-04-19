@@ -18,9 +18,32 @@ const sourceSans = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://kansaikarategoldcoast.com.au"),
   title: "Kansai Karate Gold Coast | Kids, Teens & Adult Karate in Upper Coomera",
   description: "Traditional Japanese karate for all ages in Upper Coomera, QLD. Cubs (3-4), Little Lions (5-7), Juniors (8-12), Teens & Adults. Book your free trial class today.",
   keywords: "karate upper coomera, kids karate gold coast, martial arts upper coomera, karate classes gold coast",
+  openGraph: {
+    type: "website",
+    siteName: "Kansai Karate Gold Coast",
+    locale: "en_AU",
+    url: "https://kansaikarategoldcoast.com.au",
+    title: "Kansai Karate Gold Coast | Kids, Teens & Adult Karate in Upper Coomera",
+    description: "Traditional Japanese karate for all ages in Upper Coomera, QLD. Cubs (3-4), Little Lions (5-7), Juniors (8-12), Teens & Adults. Book your free trial class today.",
+    images: [
+      {
+        url: "https://kansaikarategoldcoast.com.au/images/KKA-Logo-Trans-background.png",
+        width: 800,
+        height: 600,
+        alt: "Kansai Karate Gold Coast",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: "Kansai Karate Gold Coast | Kids, Teens & Adult Karate in Upper Coomera",
+    description: "Traditional Japanese karate for all ages in Upper Coomera, QLD. Cubs (3-4), Little Lions (5-7), Juniors (8-12), Teens & Adults. Book your free trial class today.",
+    images: ["https://kansaikarategoldcoast.com.au/images/KKA-Logo-Trans-background.png"],
+  },
 };
 
 const localBusinessSchema = {
