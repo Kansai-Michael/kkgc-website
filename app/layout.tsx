@@ -48,7 +48,8 @@ const localBusinessSchema = {
     { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "11:30" }
   ],
   "priceRange": "$$",
-  "image": "/images/KKA-Logo-Trans-background.png",
+  "image": "https://kansaikarategoldcoast.com.au/images/KKA-Logo-Trans-background.png",
+  "email": "info@kansaikarategoldcoast.com.au",
   "sameAs": [
     "https://www.facebook.com/KansaiKarateUpperCoomera",
     "https://www.instagram.com/kansaikarateuppercoomera",
@@ -60,15 +61,7 @@ const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   "name": "Kansai Karate Gold Coast",
-  "url": "https://kansaikarategoldcoast.com.au",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://kansaikarategoldcoast.com.au/?s={search_term_string}"
-    },
-    "query-input": "required name=search_term_string"
-  }
+  "url": "https://kansaikarategoldcoast.com.au"
 };
 
 export default function RootLayout({
@@ -77,7 +70,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${oswald.variable} ${sourceSans.variable}`}>
+    <html lang="en-AU" className={`${oswald.variable} ${sourceSans.variable}`}>
       <head>
         <script
           type="application/ld+json"
