@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Kansai Karate Gold Coast | Sensei Michael Hunt",
-  description: "Kansai Karate Gold Coast is led by Sensei Michael Hunt (4th Dan Shitoryu Shukokai). Traditional Japanese karate in Upper Coomera, affiliated with QKA and AKF.",
+  description: "Kansai Karate Gold Coast is led by Sensei Michael Hunt (4th Dan Shitoryu Shukokai). Traditional Japanese karate in Upper Coomera, affiliated with Karate Queensland and Karate Australia.",
   alternates: { canonical: "/about" },
 };
 
@@ -65,11 +65,14 @@ export default function AboutPage() {
           {/* Affiliations */}
           <div>
             <h2 className="text-2xl font-bold text-[#003087] mb-4">Affiliations</h2>
+            <p className="text-gray-600 mb-4">
+              Kansai Karate Academy and its affiliated dojos are proud members of Karate Queensland and Karate Australia, recognised as the governing bodies for karate by the Australian Sports Commission.
+            </p>
             <div className="flex flex-wrap gap-4">
               {[
-                { name: "QKA", full: "Queensland Karate Association", href: "https://www.qka.com.au" },
-                { name: "AKF", full: "Australian Karate Federation", href: "https://www.karate.org.au" },
-                { name: "Kansai Karate Academy", full: "Licensee of Kansai Karate Academy", href: "https://www.kansaikarate.com.au" },
+                { name: "Karate Queensland", full: "State governing body for karate", href: "https://karatequeensland.com.au/" },
+                { name: "Karate Australia", full: "National governing body for karate", href: "https://www.karateaustralia.org.au/" },
+                { name: "Kansai Karate Academy", full: "Licensee of Kansai Karate Academy", href: "https://kansaikarate.com.au/" },
               ].map((a) => (
                 <a key={a.name} href={a.href} target="_blank" rel="noopener noreferrer" className="block bg-gray-50 border border-gray-200 rounded-lg px-5 py-3 text-sm hover:border-[#5B7DB1] transition-colors">
                   <span className="font-bold text-[#003087]">{a.name}</span>
