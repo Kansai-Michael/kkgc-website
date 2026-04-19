@@ -13,7 +13,7 @@ const locations = [
 export default function Footer() {
   return (
     <footer className="bg-[#4A6DA0] text-white">
-      <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-5 gap-8">
         {/* Brand */}
         <div>
           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -57,10 +57,10 @@ export default function Footer() {
           </ul>
         </div>
 
-        {/* Social / Other */}
+        {/* Follow Us */}
         <div>
           <h4 className="font-semibold mb-3 text-white/90">Follow Us:</h4>
-          <ul className="space-y-2 text-sm text-white/60 mb-6">
+          <ul className="space-y-2 text-sm text-white/60">
             <li>
               <a href="https://www.facebook.com/KansaiKarateUpperCoomera" target="_blank" rel="noopener noreferrer" className="hover:text-[#FFB800] transition-colors">
                 Facebook
@@ -77,6 +77,10 @@ export default function Footer() {
               </a>
             </li>
           </ul>
+        </div>
+
+        {/* Other Locations */}
+        <div>
           <h4 className="font-semibold mb-3 text-white/90">Other Kansai Karate Locations:</h4>
           <ul className="space-y-2 text-sm text-white/60">
             {locations.map((loc) => (
