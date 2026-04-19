@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy | Kansai Karate Gold Coast",
   description: "Privacy Policy for Kansai Karate Gold Coast — how we collect, use, and protect your personal information in accordance with the Australian Privacy Act 1988.",
+  alternates: { canonical: "/privacy" },
 };
 
 export default function PrivacyPage() {

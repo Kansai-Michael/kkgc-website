@@ -6,6 +6,7 @@ const OLD = "/images";
 export const metadata: Metadata = {
   title: "Teens Karate (Ages 13+) | Kansai Karate Gold Coast",
   description: "Teen karate classes in Upper Coomera. Build fitness, focus, and real self-defence skills in a structured class designed specifically for teenagers.",
+  alternates: { canonical: "/programs/teens" },
 };
 
 const breadcrumb = {

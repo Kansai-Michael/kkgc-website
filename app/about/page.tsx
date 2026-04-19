@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About Kansai Karate Gold Coast | Sensei Michael Hunt",
   description: "Kansai Karate Gold Coast is led by Sensei Michael Hunt (4th Dan Shitoryu Shukokai). Traditional Japanese karate in Upper Coomera, affiliated with QKA and AKF.",
+  alternates: { canonical: "/about" },
 };
 
 const personSchema = {

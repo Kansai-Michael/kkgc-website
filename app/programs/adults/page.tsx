@@ -6,6 +6,7 @@ const OLD = "/images";
 export const metadata: Metadata = {
   title: "Adult Karate Classes | Kansai Karate Gold Coast",
   description: "Adult karate classes in Upper Coomera. Whether it's fitness, self-defence, or mental health — our classes are designed for the average person to see real results.",
+  alternates: { canonical: "/programs/adults" },
 };
 
 const breadcrumb = {

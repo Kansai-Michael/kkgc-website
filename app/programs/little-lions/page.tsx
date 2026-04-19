@@ -6,6 +6,7 @@ const OLD = "/images";
 export const metadata: Metadata = {
   title: "Little Lions Program (Ages 5–7) | Kansai Karate Gold Coast",
   description: "Karate classes for 5, 6, and 7 year olds in Upper Coomera. Little Lions builds focus, respect, and real karate foundations in a fun, structured environment.",
+  alternates: { canonical: "/programs/little-lions" },
 };
 
 const breadcrumb = {

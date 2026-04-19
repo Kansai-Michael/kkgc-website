@@ -6,6 +6,7 @@ const OLD = "/images";
 export const metadata: Metadata = {
   title: "Juniors Program (Ages 8–12) | Kansai Karate Gold Coast",
   description: "Karate classes for 8–12 year olds in Upper Coomera. Juniors builds discipline, resilience, and technical karate skills in a structured, encouraging environment.",
+  alternates: { canonical: "/programs/juniors" },
 };
 
 const breadcrumb = {

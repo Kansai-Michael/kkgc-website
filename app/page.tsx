@@ -123,6 +123,12 @@ const adultsFeatures = [
   },
 ];
 
+export const metadata = {
+  title: "Kansai Karate Gold Coast | Kids, Teens & Adult Karate in Upper Coomera",
+  description: "Traditional Japanese karate classes for kids, teens and adults in Upper Coomera. Book a free trial class at Kansai Karate Gold Coast.",
+  alternates: { canonical: "/" },
+};
+
 export default function HomePage() {
   return (
     <>

@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Use | Kansai Karate Gold Coast",
   description: "Terms of Use for Kansai Karate Gold Coast — conditions for using our website and enrolling in classes.",
+  alternates: { canonical: "/terms" },
 };
 
 export default function TermsPage() {

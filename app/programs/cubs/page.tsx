@@ -6,6 +6,7 @@ const OLD = "/images";
 export const metadata: Metadata = {
   title: "Cubs Program (Ages 3–4) | Kansai Karate Gold Coast",
   description: "Karate classes for 3 and 4 year olds in Upper Coomera. Our Cubs program builds listening skills, coordination, and confidence through fun, structured movement.",
+  alternates: { canonical: "/programs/cubs" },
 };
 
 const breadcrumb = {

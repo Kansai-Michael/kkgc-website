@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Class Timetable | Kansai Karate Gold Coast",
   description: "Class schedule for Kansai Karate Upper Coomera. Monday to Thursday afternoons and Saturday mornings. View the timetable and book your spot.",
+  alternates: { canonical: "/timetable" },
 };
 
 const BOOKING_URL = "https://app.kihonsoft.au/book/1st-lesson-bookings";
