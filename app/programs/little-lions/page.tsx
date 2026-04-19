@@ -51,8 +51,8 @@ export default function LittleLionsPage() {
         { title: "Awesome Fun!", body: "We guarantee that when they leave, it will have been 100% worth it, every time!" },
       ]}
       testimonial={{
-        text: "Our daughter has been in Little Lions for two years. Her focus at school has improved noticeably. We cannot recommend Kansai Karate enough.",
-        author: "Parent of a Little Lions student",
+        text: "Joining Kansai Karate has been one of the best decisions we have made. Our daughter loves it. She learns not only karate, but respect, discipline, confidence and pride in her achievements.",
+        author: "Lauren H., Upper Coomera",
       }}
       ctaHeading="This could be the best thing you've ever done for your child."
       ctaText="Little Lions Classes Build Benefits for Life"

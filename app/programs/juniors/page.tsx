@@ -51,8 +51,8 @@ export default function JuniorsPage() {
         { title: "Tournament Squad", body: "Juniors who want to compete can join the Tournament Squad — additional training focused on competition performance." },
       ]}
       testimonial={{
-        text: "My son went from refusing to try anything new to earning his first belt in three months. The instructors are incredible with kids.",
-        author: "Parent of a Junior student",
+        text: "We have gone for a couple of lessons so far and my son really enjoys himself. It is a lovely environment for the children and I look forward to seeing my son grow in his confidence with this class.",
+        author: "Laka S., Upper Coomera",
       }}
       ctaHeading="This could be the best thing you've ever done for your child."
       ctaText="Junior Classes Build Benefits for Life"

@@ -51,8 +51,8 @@ export default function TeensPage() {
         { title: "Positive Community", body: "Training alongside peers who share the same goals creates genuine friendships built on mutual respect." },
       ]}
       testimonial={{
-        text: "Our teenager was reluctant to try anything new, but after the first class he was hooked. His confidence has grown enormously and he actually looks forward to training.",
-        author: "Parent of a Teen student",
+        text: "My kids enjoy it thoroughly. Building confidence — and big compliments to the friendly staff.",
+        author: "Sherna S., Upper Coomera",
       }}
       ctaHeading="This Could be the Best Thing you've ever done for your teen."
       ctaText="Teen Karate Classes Build Benefits for Life"

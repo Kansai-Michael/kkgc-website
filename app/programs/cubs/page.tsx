@@ -51,8 +51,8 @@ export default function CubsPage() {
         { title: "Parent Friendly", body: "Convenient class times that fit around family schedules. Parents can watch from the viewing area." },
       ]}
       testimonial={{
-        text: "My 3-year-old absolutely loves Cubs! She has come out of her shell so much since starting. The instructors are so patient and caring with the little ones.",
-        author: "Parent of a Cubs student",
+        text: "Great karate school — my son started at age 4 in Cubs and is now 6 and still loving it. Very good with the kids especially the little ones and makes learning karate fun for them. Highly recommended!",
+        author: "Amy C., Upper Coomera",
       }}
       ctaHeading="This could be the best thing you've ever done for your child."
       ctaText="Cubs Classes Build Benefits for Life"

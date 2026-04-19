@@ -51,8 +51,8 @@ export default function AdultsPage() {
         { title: "Physical Skills", body: "It's proprioception, balance, agility and more — physical skills that will remain with and benefit you for the rest of your life." },
       ]}
       testimonial={{
-        text: "I started as a complete beginner at 38. Six months in and I am fitter than I have been in years. Great community, great instructors.",
-        author: "Adult student",
+        text: "Fantastic dojo for the whole family! Wonderful atmosphere of support and friendly teachers. Highly recommended!",
+        author: "Liz L., Upper Coomera",
       }}
       ctaHeading="This Could be the Best Thing you've ever done for yourself."
       ctaText="Adult Karate Classes Build Benefits for Life"
