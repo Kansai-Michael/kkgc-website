@@ -54,6 +54,28 @@ export default function AdultsPage() {
         text: "Fantastic dojo for the whole family! Wonderful atmosphere of support and friendly teachers. Highly recommended!",
         author: "Liz L., Upper Coomera",
       }}
+      faqs={[
+        {
+          q: "Am I too old or unfit to start karate?",
+          a: "Not at all. Most adults in our program start as complete beginners with no martial arts background. Our classes are designed for real people with real bodies — you build fitness and technique progressively, at your own pace.",
+        },
+        {
+          q: "What fitness level do I need?",
+          a: "None required to start. The classes build your fitness over time. Whether you're a runner or someone who hasn't exercised in years, you'll work at a level that challenges you without overwhelming you.",
+        },
+        {
+          q: "Will I be training with teenagers or children?",
+          a: "No. Adults train in their own dedicated sessions. The pace, content, and atmosphere are tailored to adult learners — focused, respectful, and enjoyable.",
+        },
+        {
+          q: "What style of karate do you teach?",
+          a: "We teach Shitoryu Shukokai — a traditional Japanese karate style known for technical precision, powerful striking, and practical self-defence application. You'll learn kata (forms), kihon (basics), and kumite (sparring).",
+        },
+        {
+          q: "Is there a free trial for adults?",
+          a: "Yes. Book a free trial class with no obligation. Come along in comfortable clothing — we'll show you how a class runs and you can decide from there with no pressure.",
+        },
+      ]}
       ctaHeading="This Could be the Best Thing you've ever done for yourself."
       ctaText="Adult Karate Classes Build Benefits for Life"
       secondaryImages={[

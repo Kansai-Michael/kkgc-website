@@ -54,6 +54,28 @@ export default function LittleLionsPage() {
         text: "Joining Kansai Karate has been one of the best decisions we have made. Our daughter loves it. She learns not only karate, but respect, discipline, confidence and pride in her achievements.",
         author: "Lauren H., Upper Coomera",
       }}
+      faqs={[
+        {
+          q: "My child is shy — will they cope in a group class?",
+          a: "Many of our Little Lions students start shy and blossom within the first few weeks. Our instructors are experienced with this age group and create an encouraging environment where every child feels included and safe.",
+        },
+        {
+          q: "What will my child learn in Little Lions?",
+          a: "Focus, listening skills, coordination, self-confidence, and the foundations of Shitoryu Shukokai karate — including basic stances, blocks, and strikes — delivered through fun, structured activities.",
+        },
+        {
+          q: "How often should they train?",
+          a: "We recommend twice a week for the best results. Once a week is a great starting point if you want to ease in, and many families find their kids quickly want to come more often.",
+        },
+        {
+          q: "Can they earn belts?",
+          a: "Yes! Little Lions can grade for their first coloured belt. Gradings happen every few months and are a huge confidence milestone for kids this age.",
+        },
+        {
+          q: "Is there a free trial?",
+          a: "Yes — we offer a free trial class with no obligation. Book online and bring your child along. If they love it (they usually do), we'll get them started from there.",
+        },
+      ]}
       ctaHeading="This could be the best thing you've ever done for your child."
       ctaText="Little Lions Classes Build Benefits for Life"
       secondaryImages={[

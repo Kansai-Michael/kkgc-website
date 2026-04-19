@@ -54,6 +54,28 @@ export default function TeensPage() {
         text: "My kids enjoy it thoroughly. Building confidence — and big compliments to the friendly staff.",
         author: "Sherna S., Upper Coomera",
       }}
+      faqs={[
+        {
+          q: "My teenager isn't interested in sport — could karate still work for them?",
+          a: "Karate appeals to teens who don't fit the team-sport mould. It's individual, progressive, and non-competitive by default (though competition is available if they want it). Many of our most committed teen students started reluctantly and found something they genuinely love.",
+        },
+        {
+          q: "Will teens train with adults?",
+          a: "No. Teens have their own dedicated classes designed specifically for their age group — the pace, content, and social environment are tailored to teenagers, not mixed with adult beginners or younger kids.",
+        },
+        {
+          q: "Is karate good for teenagers' mental health?",
+          a: "Yes. Structured physical activity is one of the most effective ways to manage stress and anxiety. Karate adds the mental benefits of goal-setting, self-discipline, and a supportive community — all of which are particularly valuable during the high school years.",
+        },
+        {
+          q: "Can teens compete?",
+          a: "Yes, through QKA and AKF affiliated tournaments. Competition is entirely optional — plenty of our teen students train purely for fitness, confidence, and the art itself.",
+        },
+        {
+          q: "How do I book a free trial for my teen?",
+          a: "Use the Book Free Trial button on this page. We'll confirm a session time and have everything ready for their first visit. No uniform or equipment needed to start.",
+        },
+      ]}
       ctaHeading="This Could be the Best Thing you've ever done for your teen."
       ctaText="Teen Karate Classes Build Benefits for Life"
       secondaryImages={[

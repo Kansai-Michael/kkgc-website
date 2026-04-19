@@ -54,6 +54,28 @@ export default function CubsPage() {
         text: "Great karate school — my son started at age 4 in Cubs and is now 6 and still loving it. Very good with the kids especially the little ones and makes learning karate fun for them. Highly recommended!",
         author: "Amy C., Upper Coomera",
       }}
+      faqs={[
+        {
+          q: "What age can my child start Cubs?",
+          a: "Cubs is designed for children aged 3 to 4 years old. If your child has just turned 3 and you think they're ready, book a free trial and we'll let you know after the first class.",
+        },
+        {
+          q: "Is karate safe for such young children?",
+          a: "Absolutely. Cubs classes are specifically designed for 3–4 year olds — there is no contact sparring. Everything is age-appropriate movement, games, and basic techniques in a safe, padded environment with patient instructors.",
+        },
+        {
+          q: "How long are Cubs classes?",
+          a: "Cubs classes run for 30 minutes — the ideal length for this age group's attention span. Short, structured, and high-energy so they leave happy every time.",
+        },
+        {
+          q: "Do they need a uniform to start?",
+          a: "No. For your free trial class, comfortable clothing is perfectly fine. Once your child decides to join, we'll help you get set up with a gi (uniform).",
+        },
+        {
+          q: "Can parents watch?",
+          a: "Yes — parents are welcome to watch from the viewing area. Many parents find it just as enjoyable as the kids do!",
+        },
+      ]}
       ctaHeading="This could be the best thing you've ever done for your child."
       ctaText="Cubs Classes Build Benefits for Life"
       secondaryImages={[

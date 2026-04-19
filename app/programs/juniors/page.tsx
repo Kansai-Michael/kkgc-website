@@ -54,6 +54,28 @@ export default function JuniorsPage() {
         text: "We have gone for a couple of lessons so far and my son really enjoys himself. It is a lovely environment for the children and I look forward to seeing my son grow in his confidence with this class.",
         author: "Laka S., Upper Coomera",
       }}
+      faqs={[
+        {
+          q: "My child gets bored with activities quickly — will they stick with karate?",
+          a: "Juniors classes are progressive and structured around belt gradings every few months, which gives kids a clear goal to work towards. The combination of new techniques, partner drills, and the satisfaction of earning each belt keeps kids engaged long-term.",
+        },
+        {
+          q: "Can Juniors compete in tournaments?",
+          a: "Yes. Through our QKA (Queensland Karate Association) and AKF (Australian Karate Federation) affiliations, Juniors can enter regional and state competitions. We also run a Tournament Squad for students who want additional competitive training.",
+        },
+        {
+          q: "What style of karate do you teach?",
+          a: "We teach Shitoryu Shukokai — a traditional Japanese karate style known for its technical precision and practical application. Students learn kata (forms), kihon (basics), and kumite (sparring) in a structured, safe environment.",
+        },
+        {
+          q: "How large are the Junior classes?",
+          a: "We keep class sizes small enough that our instructors know every student by name. Your child won't get lost in a crowd — they'll receive genuine individual attention and feedback.",
+        },
+        {
+          q: "Do you offer a free trial for Juniors?",
+          a: "Yes — book a free trial class with no obligation. Bring your child along in comfortable clothing and see how they go. We'll take care of the rest.",
+        },
+      ]}
       ctaHeading="This could be the best thing you've ever done for your child."
       ctaText="Junior Classes Build Benefits for Life"
       secondaryImages={[

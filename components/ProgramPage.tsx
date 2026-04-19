@@ -1,12 +1,16 @@
 import Image from "next/image";
 import BookTrialButton from "@/components/BookTrialButton";
 
-const OLD = "/images";
-const BADGE_IMG = `${OLD}/KKA-Logo-Trans-background.png`;
+const BADGE_IMG = "/images/KKA-Logo-Trans-background.png";
 
 interface Feature {
   title: string;
   body: string;
+}
+
+interface Faq {
+  q: string;
+  a: string;
 }
 
 interface ProgramPageProps {
@@ -21,6 +25,7 @@ interface ProgramPageProps {
   whyHeading: string;
   whyFeatures: Feature[];
   testimonial?: { text: string; author: string };
+  faqs?: Faq[];
   ctaHeading: string;
   ctaText: string;
   secondaryImages: string[];
@@ -37,6 +42,7 @@ export default function ProgramPage({
   whyHeading,
   whyFeatures,
   testimonial,
+  faqs,
   ctaHeading,
   ctaText,
   secondaryImages,
@@ -57,8 +63,7 @@ export default function ProgramPage({
         />
         <div className="absolute inset-0" style={{ background: "rgba(10,30,80,0.70)" }} />
         <div className="relative z-10 max-w-4xl mx-auto text-center flex flex-col items-center justify-center min-h-[40vh]">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={BADGE_IMG} alt="Kansai Karate Academy" className="w-24 md:w-32 mb-6" />
+          <Image src={BADGE_IMG} alt="Kansai Karate Academy" width={128} height={128} className="w-24 md:w-32 mb-6" />
           <h1 className="text-3xl md:text-5xl font-bold mb-4">{headline}</h1>
           <p className="text-lg md:text-xl text-white/80 max-w-2xl">{subheadline}</p>
         </div>
@@ -148,6 +153,23 @@ export default function ProgramPage({
               &ldquo;{testimonial.text}&rdquo;
             </blockquote>
             <p className="text-[#FFB800] font-semibold">— {testimonial.author}</p>
+          </div>
+        </section>
+      )}
+
+      {/* FAQ */}
+      {faqs && faqs.length > 0 && (
+        <section className="py-16 px-4 bg-white">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-2xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
+            <div className="space-y-6">
+              {faqs.map((faq) => (
+                <div key={faq.q} className="border-b border-gray-200 pb-6">
+                  <h3 className="font-bold text-[#5B7DB1] mb-2">{faq.q}</h3>
+                  <p className="text-gray-600 leading-relaxed">{faq.a}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       )}

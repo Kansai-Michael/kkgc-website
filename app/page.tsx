@@ -144,11 +144,11 @@ export default function HomePage() {
           style={{ background: "rgba(10, 30, 80, 0.62)" }}
         />
         <div className="relative z-10 text-center px-4 flex flex-col items-center">
-          {/* Badge */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={BADGE_IMG}
             alt="Kansai Karate Academy"
+            width={128}
+            height={128}
             className="w-32 md:w-40 mb-8"
           />
           {/* H1 */}
