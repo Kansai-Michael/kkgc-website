@@ -77,6 +77,12 @@ const localBusinessSchema = {
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "16:00", "closes": "20:00" },
     { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "11:45" }
   ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "reviewCount": "39",
+    "bestRating": "5"
+  },
   "priceRange": "$$",
   "image": "https://kansaikarategoldcoast.com.au/images/KKA-Logo-Trans-background.png",
   "email": "info@kansaikarategoldcoast.com.au",
