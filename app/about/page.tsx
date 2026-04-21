@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Kansai Karate Gold Coast | Sensei Michael Hunt",
-  description: "Led by Sensei Michael Hunt (4th Dan), Kansai Karate Gold Coast offers traditional Shitoryu Shukokai karate in Upper Coomera. Free trial available.",
+  description: "Led by Sensei Michael Hunt (5th Dan), Kansai Karate Gold Coast offers traditional Shitoryu Shukokai karate in Upper Coomera. Free trial available.",
   alternates: { canonical: "/about" },
 };
 
@@ -13,7 +13,7 @@ const personSchema = {
   "name": "Michael Hunt",
   "honorificPrefix": "Sensei",
   "jobTitle": "Head Instructor",
-  "description": "4th Dan Shitoryu Shukokai karate instructor. Head instructor at Kansai Karate Gold Coast in Upper Coomera QLD.",
+  "description": "5th Dan Shitoryu Shukokai karate instructor with over 25 years training and teaching experience. Head instructor at Kansai Karate Gold Coast in Upper Coomera QLD. Qualified National Kata Judge and National Kumite Judge.",
   "worksFor": {
     "@type": "SportsActivityLocation",
     "name": "Kansai Karate Gold Coast",
@@ -37,28 +37,60 @@ export default function AboutPage() {
       <section className="py-16 px-4 bg-white">
         <div className="max-w-3xl mx-auto space-y-12">
 
-          {/* Sensei */}
+          {/* About the Organisation */}
           <div>
-            <h2 className="text-2xl font-bold text-[#003087] mb-4">Your Instructor</h2>
+            <h2 className="text-2xl font-bold text-[#003087] mb-4">About Kansai Karate</h2>
             <p className="text-gray-600 mb-4">
-              <strong>Sensei Michael Hunt</strong> holds a 4th Dan in Shitoryu Shukokai karate. He has been training and teaching for over two decades and is a licensed instructor under <strong>Sensei Stephen Kelly</strong> of Kansai Karate Academy.
-            </p>
-            <p className="text-gray-600 mb-4">
-              Sensei Michael built Kansai Karate Gold Coast on a simple belief: karate should be accessible to everyone, from 3-year-olds taking their first steps on the mat to adults looking for a challenge that actually means something.
+              Kansai Karate Academy was established in 1993 in Queensland and is one of the leading martial arts organisations in the state, operating five studios across Brisbane and the Gold Coast. Kansai Karate Gold Coast at Upper Coomera is the local dojo for the Gold Coast region, part of a network built on the same values since day one: traditional technique, genuine instruction, and a family-friendly environment.
             </p>
             <p className="text-gray-600">
-              With around 188 active students across all age groups, the dojo has become a genuine community in Upper Coomera — not just a place to train, but a place families return to year after year.
+              With programs running from age 3 through to adults, the Gold Coast dojo has grown to around 188 active students — families from Upper Coomera, Coomera, Pimpama, Ormeau, Oxenford, Helensvale, and Hope Island who keep coming back year after year.
             </p>
+          </div>
+
+          {/* Head Instructor */}
+          <div>
+            <h2 className="text-2xl font-bold text-[#003087] mb-4">Your Instructors</h2>
+
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-800 mb-2">Sensei Michael Hunt — 5th Dan Black Belt</h3>
+              <p className="text-gray-600 mb-4">
+                Sensei Michael Hunt has been training in Shito-ryu Shukokai Karate for over 25 years and holds the rank of 5th Dan Black Belt. He has received teaching qualifications of <strong>Shidoin</strong> and <strong>Kenshi</strong> from Sensei Yamada Soke — World Chief Instructor for the Shito-ryu Shukokai Union — and trains regularly with <strong>Sensei Stephen Kelly</strong> (7th Dan Kyoshi) and senior Shukokai instructors from Japan.
+              </p>
+              <p className="text-gray-600 mb-4">
+                Sensei Michael taught at the Kansai Karate Honbu dojo before opening the Gold Coast dojos in 2013. He holds a <strong>Bronze Coaching Certification</strong> from the NCAS/Australian Sports Commission and the Australian Karate Federation, and is a qualified <strong>National Kata Judge</strong> and <strong>National Kumite Judge</strong> through the Queensland Karate Association (QKA) and Australian Karate Federation (AKF).
+              </p>
+              <p className="text-gray-600">
+                Sensei Michael built Kansai Karate Gold Coast on a simple belief: karate should be accessible to everyone, from 3-year-olds taking their first steps on the mat to adults looking for a challenge that actually means something.
+              </p>
+            </div>
+
+            <div className="mb-8">
+              <h3 className="text-xl font-bold text-gray-800 mb-2">Sensei Junko Oiwa — 3rd Dan Black Belt</h3>
+              <p className="text-gray-600 mb-4">
+                Sensei Junko began karate as a child in Japan, training under instructors who were students of Sensei Tani — the founder of Shukokai Karate. She holds the rank of 3rd Dan Black Belt and has received teaching qualifications of <strong>Jun-Shidoin</strong> and <strong>Kenshi</strong> from Ishitobi Kazuo Hanshi, Vice President of the Shito-ryu Shukokai Union.
+              </p>
+              <p className="text-gray-600">
+                Sensei Junko holds a Certificate Qualification in Early Childhood Learning and brings over 10 years of childcare industry experience to her teaching — making her particularly skilled with our younger age groups. She also holds Bronze Coaching Certification from the NCAS/ACS and AKF, actively competes in QKA tournament competition, and serves as Assistant Kata Coach for the Queensland Team.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-bold text-gray-800 mb-2">Sensei Lisa Howell — 3rd Dan Black Belt</h3>
+              <p className="text-gray-600">
+                Sensei Lisa has been training with Kansai Karate Gold Coast for over 10 years and holds a 3rd Dan Black Belt awarded by Kazuo Ishitobi Hanshi of the Shito-ryu Shukokai Karate Do Union. After years assisting classes through our leadership program, Lisa completed our Instructor Program and now takes a full instructor role within the dojo. She holds Bronze Coaching Certification from the NCAS/ACS and Karate Australia.
+              </p>
+            </div>
           </div>
 
           {/* The Style */}
           <div>
             <h2 className="text-2xl font-bold text-[#003087] mb-4">The Style: Shitoryu Shukokai</h2>
             <p className="text-gray-600 mb-4">
-              Kansai Karate teaches <strong>Shitoryu Shukokai</strong> — a traditional Japanese karate style known for its technical precision, powerful strikes, and emphasis on practical application.
+              Kansai Karate teaches <strong>Shitoryu Shukokai</strong> — a traditional Japanese karate style known for its technical precision, powerful strikes, and emphasis on practical application. The style traces directly to Sensei Tani, founder of Shukokai, and is maintained through a direct lineage to Japan.
             </p>
             <p className="text-gray-600">
-              Unlike many modern martial arts schools, we teach the complete art: kata (forms), kihon (basics), kumite (sparring), and the philosophy behind each. Students who train here are learning something real.
+              Students learn the complete art: kata (forms), kihon (basics), kumite (sparring), and the philosophy behind each. Unlike many modern martial arts schools, we teach something real — and students who train here know the difference.
             </p>
           </div>
 
@@ -86,7 +118,7 @@ export default function AboutPage() {
           <div>
             <h2 className="text-2xl font-bold text-[#003087] mb-4">Our Dojo</h2>
             <p className="text-gray-600 mb-4">
-              We are located at Unit 3/2 Sierra Place, Upper Coomera QLD 4209 — servicing Upper Coomera and the surrounding northern Gold Coast communities.
+              We are located at Unit 3/2 Sierra Place, Upper Coomera QLD 4209 — servicing Upper Coomera and the surrounding northern Gold Coast communities including Coomera, Pimpama, Ormeau, Oxenford, Helensvale, and Hope Island.
             </p>
             <Link
               href="/contact"
