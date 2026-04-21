@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -14,6 +15,7 @@ const personSchema = {
   "honorificPrefix": "Sensei",
   "jobTitle": "Head Instructor",
   "description": "5th Dan Shitoryu Shukokai karate instructor with over 25 years training and teaching experience. Head instructor at Kansai Karate Gold Coast in Upper Coomera QLD. Qualified National Kata Judge and National Kumite Judge.",
+  "image": "https://kansaikarategoldcoast.com.au/images/instructors/Michael.jpg",
   "worksFor": {
     "@type": "SportsActivityLocation",
     "name": "Kansai Karate Gold Coast",
@@ -53,7 +55,12 @@ export default function AboutPage() {
             <h2 className="text-2xl font-bold text-[#003087] mb-4">Your Instructors</h2>
 
             <div className="mb-8">
-              <h3 className="text-xl font-bold text-gray-800 mb-2">Sensei Michael Hunt — 5th Dan Black Belt</h3>
+              <div className="flex flex-col sm:flex-row gap-6 items-start mb-4">
+                <div className="relative w-32 h-40 rounded-lg overflow-hidden flex-shrink-0">
+                  <Image src="/images/instructors/Michael.jpg" alt="Sensei Michael Hunt — Head Instructor, Kansai Karate Gold Coast" fill style={{ objectFit: "cover", objectPosition: "center top" }} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">Sensei Michael Hunt — 5th Dan Black Belt</h3>
               <p className="text-gray-600 mb-4">
                 Sensei Michael Hunt has been training in Shito-ryu Shukokai Karate for over 25 years and holds the rank of 5th Dan Black Belt. He has received teaching qualifications of <strong>Shidoin</strong> and <strong>Kenshi</strong> from Sensei Yamada Soke — World Chief Instructor for the Shito-ryu Shukokai Union — and trains regularly with <strong>Sensei Stephen Kelly</strong> (7th Dan Kyoshi) and senior Shukokai instructors from Japan.
               </p>
@@ -63,23 +70,39 @@ export default function AboutPage() {
               <p className="text-gray-600">
                 Sensei Michael built Kansai Karate Gold Coast on a simple belief: karate should be accessible to everyone, from 3-year-olds taking their first steps on the mat to adults looking for a challenge that actually means something.
               </p>
+                </div>
+              </div>
             </div>
 
             <div className="mb-8">
-              <h3 className="text-xl font-bold text-gray-800 mb-2">Sensei Junko Oiwa — 3rd Dan Black Belt</h3>
+              <div className="flex flex-col sm:flex-row gap-6 items-start mb-4">
+                <div className="relative w-32 h-40 rounded-lg overflow-hidden flex-shrink-0">
+                  <Image src="/images/instructors/Junko29.jpg" alt="Sensei Junko Oiwa — Instructor, Kansai Karate Gold Coast" fill style={{ objectFit: "cover", objectPosition: "center top" }} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">Sensei Junko Oiwa — 3rd Dan Black Belt</h3>
               <p className="text-gray-600 mb-4">
                 Sensei Junko began karate as a child in Japan, training under instructors who were students of Sensei Tani — the founder of Shukokai Karate. She holds the rank of 3rd Dan Black Belt and has received teaching qualifications of <strong>Jun-Shidoin</strong> and <strong>Kenshi</strong> from Ishitobi Kazuo Hanshi, Vice President of the Shito-ryu Shukokai Union.
               </p>
               <p className="text-gray-600">
                 Sensei Junko holds a Certificate Qualification in Early Childhood Learning and brings over 10 years of childcare industry experience to her teaching — making her particularly skilled with our younger age groups. She also holds Bronze Coaching Certification from the NCAS/ACS and AKF, actively competes in QKA tournament competition, and serves as Assistant Kata Coach for the Queensland Team.
               </p>
+                </div>
+              </div>
             </div>
 
             <div>
-              <h3 className="text-xl font-bold text-gray-800 mb-2">Sensei Lisa Howell — 3rd Dan Black Belt</h3>
+              <div className="flex flex-col sm:flex-row gap-6 items-start mb-4">
+                <div className="relative w-32 h-40 rounded-lg overflow-hidden flex-shrink-0">
+                  <Image src="/images/instructors/Lisa20.jpg" alt="Sensei Lisa Howell — Instructor, Kansai Karate Gold Coast" fill style={{ objectFit: "cover", objectPosition: "center top" }} />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">Sensei Lisa Howell — 3rd Dan Black Belt</h3>
               <p className="text-gray-600">
                 Sensei Lisa has been training with Kansai Karate Gold Coast for over 10 years and holds a 3rd Dan Black Belt awarded by Kazuo Ishitobi Hanshi of the Shito-ryu Shukokai Karate Do Union. After years assisting classes through our leadership program, Lisa completed our Instructor Program and now takes a full instructor role within the dojo. She holds Bronze Coaching Certification from the NCAS/ACS and Karate Australia.
               </p>
+                </div>
+              </div>
             </div>
           </div>
 
