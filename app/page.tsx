@@ -160,14 +160,16 @@ export default function HomePage() {
           />
           {/* H1 */}
           <h1 className="text-2xl md:text-3xl lg:text-4xl text-white max-w-3xl mx-auto leading-snug font-semibold">
-            <span className="text-[#FFB800]">Kids</span> build Focus and Discipline, <span className="text-[#FFB800]">Teens</span> find classes designed just for
-            them, and <span className="text-[#FFB800]">Adults</span>{" "}have a workout that helps keep them fit &amp; safe
+            Karate Classes in Upper Coomera — <span className="text-[#FFB800]">Kids</span> build Focus &amp; Discipline, <span className="text-[#FFB800]">Teens</span> find classes designed just for them, and <span className="text-[#FFB800]">Adults</span>{" "}have a workout that keeps them fit &amp; safe
           </h1>
           <div className="mt-8 flex flex-col items-center gap-3">
             <BookTrialButton className="bg-[#FFB800] text-[#001040] font-bold text-lg px-10 py-4 rounded-lg hover:bg-[#E6A500] transition-colors uppercase tracking-widest shadow-lg">
               Book Your Free Trial
             </BookTrialButton>
-            <p className="text-white/70 text-sm">Upper Coomera · No experience needed · All ages welcome</p>
+            <p className="text-white/70 text-sm">No experience needed · All ages welcome</p>
+            <Link href="/timetable" className="text-white/60 text-sm hover:text-white/90 underline transition-colors">
+              View class timetable →
+            </Link>
           </div>
         </div>
       </section>

@@ -63,9 +63,21 @@ const moreInfo: MoreInfoContent = {
     "Juniors Karate is the character enriching, healthy life building, super fun program every parent wishes their child could have.",
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kansaikarategoldcoast.com.au" },
+    { "@type": "ListItem", "position": 2, "name": "Juniors Karate", "item": "https://kansaikarategoldcoast.com.au/programs/juniors" },
+    { "@type": "ListItem", "position": 3, "name": "Juniors Class Timetable" },
+  ],
+};
+
 export default function JuniorsTimetable() {
   return (
-    <TimetablePage
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <TimetablePage
       name="Juniors"
       slug="juniors"
       heroImg={`${OLD}/juniorsgoogle.jpg`}
@@ -99,5 +111,6 @@ export default function JuniorsTimetable() {
       bookingIframeUrl={BOOKING_URL}
       moreInfo={moreInfo}
     />
+    </>
   );
 }

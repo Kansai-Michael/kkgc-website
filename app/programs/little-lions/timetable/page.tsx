@@ -62,9 +62,21 @@ const moreInfo: MoreInfoContent = {
     "Little Lions is the character enriching, healthy life building, super fun program every parent wishes their child could have.",
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kansaikarategoldcoast.com.au" },
+    { "@type": "ListItem", "position": 2, "name": "Little Lions Karate", "item": "https://kansaikarategoldcoast.com.au/programs/little-lions" },
+    { "@type": "ListItem", "position": 3, "name": "Little Lions Class Timetable" },
+  ],
+};
+
 export default function LittleLionsTimetable() {
   return (
-    <TimetablePage
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <TimetablePage
       name="Little Lions"
       slug="little-lions"
       heroImg={`${OLD}/lll.jpg`}
@@ -84,5 +96,6 @@ export default function LittleLionsTimetable() {
       bookingIframeUrl={BOOKING_URL}
       moreInfo={moreInfo}
     />
+    </>
   );
 }

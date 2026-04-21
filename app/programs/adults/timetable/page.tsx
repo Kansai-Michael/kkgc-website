@@ -75,9 +75,21 @@ const moreInfo: MoreInfoContent = {
   closingSubtext: "But trial class spaces go fast — take advantage of our no-strings-attached offer today.",
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kansaikarategoldcoast.com.au" },
+    { "@type": "ListItem", "position": 2, "name": "Adult Karate", "item": "https://kansaikarategoldcoast.com.au/programs/adults" },
+    { "@type": "ListItem", "position": 3, "name": "Adult Karate Class Timetable" },
+  ],
+};
+
 export default function AdultsTimetable() {
   return (
-    <TimetablePage
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <TimetablePage
       name="Adult Karate"
       slug="adults"
       heroImg={`${OLD}/adultsgoogle4.jpg`}
@@ -111,5 +123,6 @@ export default function AdultsTimetable() {
       bookingIframeUrl={BOOKING_URL}
       moreInfo={moreInfo}
     />
+    </>
   );
 }

@@ -62,9 +62,21 @@ const moreInfo: MoreInfoContent = {
     "Teen Karate is the character enriching, healthy life building, super fun program every parent wishes their child could have.",
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kansaikarategoldcoast.com.au" },
+    { "@type": "ListItem", "position": 2, "name": "Teens Karate", "item": "https://kansaikarategoldcoast.com.au/programs/teens" },
+    { "@type": "ListItem", "position": 3, "name": "Teens Karate Class Timetable" },
+  ],
+};
+
 export default function TeensTimetable() {
   return (
-    <TimetablePage
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <TimetablePage
       name="Teens Karate"
       slug="teens"
       heroImg={`${OLD}/Teengoogle-1.jpg`}
@@ -98,5 +110,6 @@ export default function TeensTimetable() {
       bookingIframeUrl={BOOKING_URL}
       moreInfo={moreInfo}
     />
+    </>
   );
 }
