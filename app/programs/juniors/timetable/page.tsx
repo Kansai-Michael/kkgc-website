@@ -5,7 +5,7 @@ const OLD = "/images";
 const OLD_43 = "/images";
 const BOOKING_URL = "https://app.kihonsoft.au/book/1st-lesson-bookings";
 
-export const metadata = { title: "Juniors Class Timetable | Kansai Karate Gold Coast", alternates: { canonical: "/programs/juniors/timetable" } };
+export const metadata = { title: "Juniors Class Timetable | Kansai Karate Gold Coast", description: "Junior karate class times for ages 8–12 at Kansai Karate Gold Coast, Upper Coomera. Mon–Thu evenings & Sat mornings. Book a FREE trial class today.", alternates: { canonical: "/programs/juniors/timetable" } };
 
 const moreInfo: MoreInfoContent = {
   shineHeading: "Are you ready for your child to shine?",

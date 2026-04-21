@@ -4,7 +4,7 @@ import type { MoreInfoContent } from "@/components/TimetablePage";
 const OLD = "/images";
 const BOOKING_URL = "https://app.kihonsoft.au/book/1st-lesson-bookings";
 
-export const metadata = { title: "Cubs Class Timetable | Kansai Karate Gold Coast", alternates: { canonical: "/programs/cubs/timetable" } };
+export const metadata = { title: "Cubs Class Timetable | Kansai Karate Gold Coast", description: "Cubs class times for ages 3–4 at Kansai Karate Gold Coast, Upper Coomera. Mon, Wed & Sat sessions available. Book your child's FREE first lesson today.", alternates: { canonical: "/programs/cubs/timetable" } };
 
 const moreInfo: MoreInfoContent = {
   shineHeading: "Are you ready for your child to shine?",

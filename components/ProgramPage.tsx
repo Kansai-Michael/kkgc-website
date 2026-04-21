@@ -102,7 +102,7 @@ export default function ProgramPage({
                   {i % 2 === 0 ? (
                     <>
                       <div className="relative rounded-lg overflow-hidden aspect-[4/5]" style={{ backgroundColor: "#e5e7eb" }}>
-                        {secondaryImages[i] && <Image src={secondaryImages[i]} alt="" fill style={{ objectFit: "cover" }} />}
+                        {secondaryImages[i] && <Image src={secondaryImages[i]} alt="" fill sizes="(max-width: 768px) 100vw, 33vw" style={{ objectFit: "cover" }} />}
                       </div>
                       <div className="md:col-span-2">
                         <h3 className="text-2xl font-bold text-gray-900 mb-4">{b.title}</h3>
@@ -116,7 +116,7 @@ export default function ProgramPage({
                         <p className="text-white/80 leading-relaxed">{b.body}</p>
                       </div>
                       <div className="relative rounded-lg overflow-hidden aspect-[4/5]" style={{ backgroundColor: "#4A6DA0" }}>
-                        {secondaryImages[i] && <Image src={secondaryImages[i]} alt="" fill style={{ objectFit: "cover" }} />}
+                        {secondaryImages[i] && <Image src={secondaryImages[i]} alt="" fill sizes="(max-width: 768px) 100vw, 33vw" style={{ objectFit: "cover" }} />}
                       </div>
                     </>
                   )}

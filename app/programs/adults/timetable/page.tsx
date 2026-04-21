@@ -4,7 +4,7 @@ import type { MoreInfoContent } from "@/components/TimetablePage";
 const OLD = "/images";
 const BOOKING_URL = "https://app.kihonsoft.au/book/1st-lesson-bookings";
 
-export const metadata = { title: "Adult Karate Class Timetable | Kansai Karate Gold Coast", alternates: { canonical: "/programs/adults/timetable" } };
+export const metadata = { title: "Adult Karate Class Timetable | Kansai Karate Gold Coast", description: "Adult karate class times at Kansai Karate Gold Coast, Upper Coomera. Mon–Thu evenings & Sat mornings. All fitness levels welcome. Book a FREE trial today.", alternates: { canonical: "/programs/adults/timetable" } };
 
 const moreInfo: MoreInfoContent = {
   shineHeading: "This isn't your average \"workout\" class",
