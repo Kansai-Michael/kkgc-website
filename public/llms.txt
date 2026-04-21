@@ -1,3 +1,4 @@
+# License: RSL 1.0 — https://responsible-sharing-license.org/
 # Kansai Karate Gold Coast — AI-readable business summary
 # https://www.kansaikarategoldcoast.com.au
 

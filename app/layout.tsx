@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Oswald, Source_Sans_3 } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
@@ -17,6 +17,12 @@ const sourceSans = Source_Sans_3({
   variable: "--font-body",
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#5B7DB1",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kansaikarategoldcoast.com.au"),
@@ -40,7 +46,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Kansai Karate Gold Coast | Kids, Teens & Adult Karate in Upper Coomera",
     description: "Traditional Japanese karate for all ages in Upper Coomera, QLD. Cubs (3-4), Little Lions (5-7), Juniors (8-12), Teens & Adults. Book your free trial class today.",
     images: ["https://kansaikarategoldcoast.com.au/images/KKA-Logo-Trans-background.png"],
@@ -49,7 +55,7 @@ export const metadata: Metadata = {
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
-  "@type": "SportsActivityLocation",
+  "@type": ["SportsActivityLocation", "LocalBusiness"],
   "name": "Kansai Karate Gold Coast",
   "description": "Traditional Japanese karate for kids, teens and adults in Upper Coomera, Gold Coast QLD. Programs for all ages: Cubs (3-4), Little Lions (5-7), Juniors (8-12), Teens (13-18) and Adults.",
   "url": "https://kansaikarategoldcoast.com.au",
@@ -69,7 +75,7 @@ const localBusinessSchema = {
   },
   "openingHoursSpecification": [
     { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday"], "opens": "16:00", "closes": "20:00" },
-    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "11:30" }
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "11:45" }
   ],
   "priceRange": "$$",
   "image": "https://kansaikarategoldcoast.com.au/images/KKA-Logo-Trans-background.png",
@@ -105,7 +111,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
       </head>
-      {/* Google Analytics */}
+      {/* Google Analytics — G-4ETZ1LKSHH */}
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-4ETZ1LKSHH" strategy="afterInteractive" />
       <Script id="ga4-init" strategy="afterInteractive">{`
         window.dataLayer = window.dataLayer || [];

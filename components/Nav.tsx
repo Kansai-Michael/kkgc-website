@@ -73,7 +73,7 @@ export default function Nav() {
 
           <button
             onClick={() => openModal()}
-            className="bg-[#FFB800] text-white font-bold px-5 py-2 rounded-lg hover:bg-[#E6A500] transition-colors"
+            className="bg-[#FFB800] text-[#001040] font-bold px-5 py-2 rounded-lg hover:bg-[#E6A500] transition-colors"
           >
             Book Free Trial
           </button>
@@ -125,7 +125,7 @@ export default function Nav() {
           </button>
           <button
             onClick={() => { setMenuOpen(false); openModal(); }}
-            className="block bg-[#FFB800] text-white font-bold px-4 py-3 rounded-lg text-center mt-2 w-full"
+            className="block bg-[#FFB800] text-[#001040] font-bold px-4 py-3 rounded-lg text-center mt-2 w-full"
           >
             Book Free Trial
           </button>

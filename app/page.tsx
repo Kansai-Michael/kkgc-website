@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Calendar, Users, Star, Activity, Award, ClipboardList, HeartHandshake, Smile, BookOpen, Brain, Dumbbell } from "lucide-react";
+import BookTrialButton from "@/components/BookTrialButton";
 
 const OLD = "/images";
 const OLD_43 = "/images";
@@ -162,6 +163,12 @@ export default function HomePage() {
             <span className="text-[#FFB800]">Kids</span> build Focus and Discipline, <span className="text-[#FFB800]">Teens</span> find classes designed just for
             them, and <span className="text-[#FFB800]">Adults</span>{" "}have a workout that helps keep them fit &amp; safe
           </h1>
+          <div className="mt-8 flex flex-col items-center gap-3">
+            <BookTrialButton className="bg-[#FFB800] text-[#001040] font-bold text-lg px-10 py-4 rounded-lg hover:bg-[#E6A500] transition-colors uppercase tracking-widest shadow-lg">
+              Book Your Free Trial
+            </BookTrialButton>
+            <p className="text-white/70 text-sm">Upper Coomera · No experience needed · All ages welcome</p>
+          </div>
         </div>
       </section>
 
@@ -340,14 +347,11 @@ export default function HomePage() {
       <section className="py-20 px-4" style={{ background: "#5B7DB1" }}>
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">
-            Ready to be part of Kansai Karate? Select a Program and Get Started Today!
+            Ready to be part of Kansai Karate? Book Your Free Trial Today!
           </h2>
-          <Link
-            href="/#programs"
-            className="inline-block border-2 border-white text-white font-bold text-lg px-12 py-4 hover:bg-white hover:text-[#5B7DB1] transition-colors uppercase tracking-widest"
-          >
-            Select Your Program
-          </Link>
+          <BookTrialButton className="inline-block bg-[#FFB800] text-[#001040] font-bold text-lg px-12 py-4 rounded-lg hover:bg-[#E6A500] transition-colors uppercase tracking-widest shadow-lg">
+            Book Your Free Trial
+          </BookTrialButton>
         </div>
       </section>
     </>
