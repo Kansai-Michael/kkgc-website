@@ -79,8 +79,8 @@ export default function CubsPage() {
         { title: "Parent Friendly", body: "Convenient class times that fit around family schedules. Parents can watch from the viewing area." },
       ]}
       testimonial={{
-        text: "Great karate school — my son started at age 4 in Cubs and is now 6 and still loving it. Very good with the kids especially the little ones and makes learning karate fun for them. Highly recommended!",
-        author: "Amy C., Upper Coomera",
+        text: "Sensai Michael is brilliant with the kids — an excellent mix of firm and fun, and obviously skilled in the art of teaching karate. His encouragement of his sempai's to lead the warm up is also great for the younger kids. Our kids love attending class and have encouraged their friends to participate. I would highly recommend both the sport and this dojo to families.",
+        author: "Alison Gill — Google Review ⭐⭐⭐⭐⭐",
       }}
       faqs={[
         {

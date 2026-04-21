@@ -82,7 +82,6 @@ const localBusinessSchema = {
     "reviewCount": "39",
     "bestRating": "5"
   },
-  "priceRange": "$$",
   "image": "https://kansaikarategoldcoast.com.au/images/KKA-Logo-Trans-background.png",
   "email": "info@kansaikarategoldcoast.com.au",
   "sameAs": [

@@ -79,8 +79,8 @@ export default function JuniorsPage() {
         { title: "Tournament Squad", body: "Juniors who want to compete can join the Tournament Squad — additional training focused on competition performance." },
       ]}
       testimonial={{
-        text: "We have gone for a couple of lessons so far and my son really enjoys himself. It is a lovely environment for the children and I look forward to seeing my son grow in his confidence with this class.",
-        author: "Laka S., Upper Coomera",
+        text: "My son started learning karate here last year and he has nothing but positive things to say. All the instructors do an amazing job and appear very passionate about what they do. I love the word of the week — they teach the kids about it and give out badges to students who have demonstrated that quality. Highly recommend.",
+        author: "Paul Fenby — Google Review ⭐⭐⭐⭐⭐",
       }}
       faqs={[
         {

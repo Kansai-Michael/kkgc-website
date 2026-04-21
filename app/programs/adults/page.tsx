@@ -79,8 +79,8 @@ export default function AdultsPage() {
         { title: "Physical Skills", body: "It's proprioception, balance, agility and more — physical skills that will remain with and benefit you for the rest of your life." },
       ]}
       testimonial={{
-        text: "Fantastic dojo for the whole family! Wonderful atmosphere of support and friendly teachers. Highly recommended!",
-        author: "Liz L., Upper Coomera",
+        text: "My two young daughters have been going to the dojo for the last couple of years now — they love it! The whole team are amazing, very professional, I can't praise them enough for what they do. With the 5 star rating, honestly, they deserve more than that.",
+        author: "Robert Jones — Google Review ⭐⭐⭐⭐⭐",
       }}
       faqs={[
         {

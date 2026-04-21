@@ -29,6 +29,9 @@ export default function Nav() {
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a href="tel:0489265960" className="text-white/80 hover:text-[#FFB800] transition-colors text-sm">
+            📞 0489 265 960
+          </a>
           {/* Programs dropdown */}
           <div className="relative">
             <button

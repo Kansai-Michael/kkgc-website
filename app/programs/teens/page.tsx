@@ -79,8 +79,8 @@ export default function TeensPage() {
         { title: "Positive Community", body: "Training alongside peers who share the same goals creates genuine friendships built on mutual respect." },
       ]}
       testimonial={{
-        text: "My kids enjoy it thoroughly. Building confidence — and big compliments to the friendly staff.",
-        author: "Sherna S., Upper Coomera",
+        text: "Michael and the team are dedicated to giving the students confidence and skills to help them feel good about who they are and stay very fit at the same time. Our son has been a student for almost 6 years and we attribute his positive growth to his karate training.",
+        author: "Simon Taylor — Google Review ⭐⭐⭐⭐⭐",
       }}
       faqs={[
         {
