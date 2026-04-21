@@ -143,6 +143,18 @@ export default function AboutPage() {
             <p className="text-gray-600 mb-4">
               We are located at Unit 3/2 Sierra Place, Upper Coomera QLD 4209 — servicing Upper Coomera and the surrounding northern Gold Coast communities including Coomera, Pimpama, Ormeau, Oxenford, Helensvale, and Hope Island.
             </p>
+            <div className="rounded-lg overflow-hidden mb-6" style={{ aspectRatio: "16/9" }}>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4648.360565573689!2d153.30303471200855!3d-27.852538575999986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b9113f3d16b9701%3A0xc34a36812abcceaa!2sKansai%20Karate%20Gold%20Coast!5e1!3m2!1sen!2sau!4v1776814148359!5m2!1sen!2sau"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Kansai Karate Gold Coast location map"
+              />
+            </div>
             <Link
               href="/contact"
               className="inline-block bg-[#003087] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#001A52] transition-colors"
