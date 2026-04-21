@@ -167,9 +167,6 @@ export default function HomePage() {
               Book Your Free Trial
             </BookTrialButton>
             <p className="text-white/70 text-sm">No experience needed · All ages welcome</p>
-            <Link href="/timetable" className="text-white/60 text-sm hover:text-white/90 underline transition-colors">
-              View class timetable →
-            </Link>
           </div>
         </div>
       </section>
