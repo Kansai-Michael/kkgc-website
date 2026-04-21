@@ -18,17 +18,44 @@ const breadcrumb = {
   ]
 };
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Cubs Karate Program (Ages 3–4)",
+  "description": "Karate classes designed for children aged 3 to 4 years. Cubs builds listening skills, coordination, confidence, and social development through fun, structured movement in a safe environment.",
+  "url": "https://kansaikarategoldcoast.com.au/programs/cubs",
+  "provider": { "@type": "SportsActivityLocation", "name": "Kansai Karate Gold Coast", "url": "https://kansaikarategoldcoast.com.au" },
+  "areaServed": { "@type": "City", "name": "Upper Coomera" },
+  "audience": { "@type": "PeopleAudience", "suggestedMinAge": "3", "suggestedMaxAge": "4" },
+  "serviceType": "Karate Classes",
+  "offers": { "@type": "Offer", "description": "Free trial class available. No uniform or equipment required to start.", "url": "https://kansaikarategoldcoast.com.au/programs/cubs" }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What age can my child start Cubs?", "acceptedAnswer": { "@type": "Answer", "text": "Cubs is designed for children aged 3 to 4 years old. If your child has just turned 3 and you think they're ready, book a free trial and we'll let you know after the first class." } },
+    { "@type": "Question", "name": "Is karate safe for such young children?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. Cubs classes are specifically designed for 3–4 year olds — there is no contact sparring. Everything is age-appropriate movement, games, and basic techniques in a safe, padded environment with patient instructors." } },
+    { "@type": "Question", "name": "How long are Cubs classes?", "acceptedAnswer": { "@type": "Answer", "text": "Cubs classes run for 30 minutes — the ideal length for this age group's attention span. Short, structured, and high-energy so they leave happy every time." } },
+    { "@type": "Question", "name": "Do they need a uniform to start?", "acceptedAnswer": { "@type": "Answer", "text": "No. For your free trial class, comfortable clothing is perfectly fine. Once your child decides to join, we'll help you get set up with a gi (uniform)." } },
+    { "@type": "Question", "name": "Can parents watch?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — parents are welcome to watch from the viewing area. Many parents find it just as enjoyable as the kids do!" } }
+  ]
+};
+
 export default function CubsPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <ProgramPage
       name="Cubs"
       slug="cubs"
       heroImg={`${OLD}/cub3.jpg`}
-      headline="Cubs Classes at Kansai Karate set positive pathways for life!"
+      headline="Cubs Karate in Upper Coomera — Classes for Ages 3 & 4"
       subheadline="Our Cubs program for ages 3-4 teaches way more than physical skills! Your child will learn how to interact in a social setting, plus learn valuable life lessons."
-      introText=""
+      introText="Cubs at Kansai Karate Gold Coast is a 30-minute karate class designed specifically for children aged 3 and 4, held at our dojo in Upper Coomera QLD 4209. Led by Sensei Michael Hunt (4th Dan Shitoryu Shukokai), each class blends structured movement with games and basic karate technique — all at a pace that suits little ones. Cubs run Monday, Wednesday, Thursday and Saturday mornings, making it easy to fit around the family week. No experience or uniform is needed to start — just bring your child in comfortable clothes and book a free first class. Families from across the northern Gold Coast — Coomera, Pimpama, Ormeau, Oxenford — make the short drive to Upper Coomera for Cubs because there simply isn't a program like it closer to home."
       benefitsHeading="Cubs Classes Build Benefits for Life"
       benefits={[
         {

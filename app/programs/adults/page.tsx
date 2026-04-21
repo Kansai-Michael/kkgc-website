@@ -18,17 +18,44 @@ const breadcrumb = {
   ]
 };
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Adult Karate Classes",
+  "description": "Adult karate classes in Upper Coomera. Traditional Shitoryu Shukokai karate for beginners through to advanced students. Builds fitness, self-defence skills, and mental wellbeing.",
+  "url": "https://kansaikarategoldcoast.com.au/programs/adults",
+  "provider": { "@type": "SportsActivityLocation", "name": "Kansai Karate Gold Coast", "url": "https://kansaikarategoldcoast.com.au" },
+  "areaServed": { "@type": "City", "name": "Upper Coomera" },
+  "audience": { "@type": "PeopleAudience", "suggestedMinAge": "18" },
+  "serviceType": "Karate Classes",
+  "offers": { "@type": "Offer", "description": "Free trial class available. No uniform or equipment required to start.", "url": "https://kansaikarategoldcoast.com.au/programs/adults" }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Am I too old or unfit to start karate?", "acceptedAnswer": { "@type": "Answer", "text": "Not at all. Most adults in our program start as complete beginners with no martial arts background. Our classes are designed for real people with real bodies — you build fitness and technique progressively, at your own pace." } },
+    { "@type": "Question", "name": "What fitness level do I need?", "acceptedAnswer": { "@type": "Answer", "text": "None required to start. The classes build your fitness over time. Whether you're a runner or someone who hasn't exercised in years, you'll work at a level that challenges you without overwhelming you." } },
+    { "@type": "Question", "name": "Will I be training with teenagers or children?", "acceptedAnswer": { "@type": "Answer", "text": "No. Adults train in their own dedicated sessions. The pace, content, and atmosphere are tailored to adult learners — focused, respectful, and enjoyable." } },
+    { "@type": "Question", "name": "What style of karate do you teach?", "acceptedAnswer": { "@type": "Answer", "text": "We teach Shitoryu Shukokai — a traditional Japanese karate style known for technical precision, powerful striking, and practical self-defence application. You'll learn kata (forms), kihon (basics), and kumite (sparring)." } },
+    { "@type": "Question", "name": "Is there a free trial for adults?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Book a free trial class with no obligation. Come along in comfortable clothing — we'll show you how a class runs and you can decide from there with no pressure." } }
+  ]
+};
+
 export default function AdultsPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <ProgramPage
       name="Adult Karate"
       slug="adults"
       heroImg={`${OLD}/adultsgoogle4.jpg`}
       headline="See why Adult Karate Classes Are the Best Workout in Upper Coomera!"
       subheadline="Whether it's losing weight, building muscle, learning to defend yourself, or just having a blast, our Adult Martial Arts classes have exactly what you need."
-      introText=""
+      introText="Adult Karate at Kansai Karate Gold Coast is a traditional Shitoryu Shukokai class for students aged 18 and over, based at Upper Coomera QLD 4209. Classes run Monday to Thursday evenings and are taught by Sensei Michael Hunt — 4th Dan, with over 20 years of teaching experience. Whether you have never trained before or are returning to martial arts after a break, adult classes are structured to build your fitness and technique progressively, with no requirement to be fit or athletic before you start. Students work through kata (forms), kihon (basics), and kumite (sparring) in a focused, respectful class environment. Convenient for adults across the northern Gold Coast — Upper Coomera, Coomera, Pimpama, Oxenford, and Hope Island. Book your free first class online and arrive in comfortable clothing."
       benefitsHeading="Adult Karate Classes Build Benefits for Life"
       benefits={[
         {

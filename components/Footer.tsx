@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const BADGE_IMG = "/images/KKA-Logo-Trans-background.png";
 
@@ -16,8 +17,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-5 gap-8">
         {/* Brand */}
         <div>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={BADGE_IMG} alt="Kansai Karate Academy" className="w-20 mb-4" />
+          <Image src={BADGE_IMG} alt="Kansai Karate Academy" width={80} height={80} className="mb-4" />
           <h3 className="text-[#FFB800] font-bold text-lg mb-2">Kansai Karate Gold Coast</h3>
           <p className="text-white/60 text-sm leading-relaxed">
             The Shukokai Union of Upper Coomera teaches Shitoryu Shukokai karate for kids, teens and adults.

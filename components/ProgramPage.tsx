@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import BookTrialButton from "@/components/BookTrialButton";
 
 const BADGE_IMG = "/images/KKA-Logo-Trans-background.png";
@@ -37,6 +38,7 @@ export default function ProgramPage({
   heroImg,
   headline,
   subheadline,
+  introText,
   benefitsHeading,
   benefits,
   whyHeading,
@@ -80,6 +82,15 @@ export default function ProgramPage({
         </div>
       </section>
 
+      {/* Intro text */}
+      {introText && (
+        <section className="bg-white py-10 px-4">
+          <div className="max-w-3xl mx-auto">
+            <p className="text-gray-600 text-base leading-relaxed">{introText}</p>
+          </div>
+        </section>
+      )}
+
       {/* Benefits - alternating photo/text sections */}
       {benefits.length > 0 && (
         <>
@@ -120,10 +131,18 @@ export default function ProgramPage({
       <section className="bg-[#5B7DB1] text-white py-10 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-xl font-bold mb-4">Ready to get started with {name}?</h2>
-          <BookTrialButton
-            program={slug}
-            className="inline-block border-2 border-white text-white font-bold px-10 py-3 hover:bg-white hover:text-[#5B7DB1] transition-colors uppercase tracking-widest text-sm"
-          />
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <BookTrialButton
+              program={slug}
+              className="inline-block border-2 border-white text-white font-bold px-10 py-3 hover:bg-white hover:text-[#5B7DB1] transition-colors uppercase tracking-widest text-sm"
+            />
+            <Link
+              href={`/programs/${slug}/timetable`}
+              className="text-white/70 underline text-sm hover:text-white transition-colors"
+            >
+              View class timetable →
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -185,7 +204,7 @@ export default function ProgramPage({
           <p className="text-white/70 text-lg mb-8">{ctaText}</p>
           <BookTrialButton
             program={slug}
-            className="inline-block bg-[#FFB800] text-white font-bold text-lg px-10 py-4 rounded-lg hover:bg-[#E6A500] transition-colors uppercase tracking-widest"
+            className="inline-block bg-[#FFB800] text-[#001040] font-bold text-lg px-10 py-4 rounded-lg hover:bg-[#E6A500] transition-colors uppercase tracking-widest"
           />
           <p className="mt-4 text-white/40 text-sm">
             Kansai Karate · Upper Coomera, QLD 4209

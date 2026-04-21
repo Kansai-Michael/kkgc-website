@@ -94,6 +94,29 @@ const websiteSchema = {
   "url": "https://kansaikarategoldcoast.com.au"
 };
 
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Kansai Karate Gold Coast",
+  "url": "https://kansaikarategoldcoast.com.au",
+  "logo": "https://kansaikarategoldcoast.com.au/images/KKA-Logo-Trans-background.png",
+  "email": "info@kansaikarategoldcoast.com.au",
+  "telephone": "+61489265960",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Unit 3 / 2 Sierra Place",
+    "addressLocality": "Upper Coomera",
+    "addressRegion": "QLD",
+    "postalCode": "4209",
+    "addressCountry": "AU"
+  },
+  "sameAs": [
+    "https://www.facebook.com/KansaiKarateUpperCoomera",
+    "https://www.instagram.com/kansaikarateuppercoomera",
+    "https://www.youtube.com/@kansaikarategoldcoast"
+  ]
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -109,6 +132,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
       {/* Google Analytics — G-4ETZ1LKSHH */}

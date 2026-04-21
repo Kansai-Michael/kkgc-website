@@ -18,17 +18,44 @@ const breadcrumb = {
   ]
 };
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Little Lions Karate Program (Ages 5–7)",
+  "description": "Karate classes for 5, 6, and 7 year olds in Upper Coomera. Little Lions builds focus, self-confidence, and discipline through age-appropriate martial arts training.",
+  "url": "https://kansaikarategoldcoast.com.au/programs/little-lions",
+  "provider": { "@type": "SportsActivityLocation", "name": "Kansai Karate Gold Coast", "url": "https://kansaikarategoldcoast.com.au" },
+  "areaServed": { "@type": "City", "name": "Upper Coomera" },
+  "audience": { "@type": "PeopleAudience", "suggestedMinAge": "5", "suggestedMaxAge": "7" },
+  "serviceType": "Karate Classes",
+  "offers": { "@type": "Offer", "description": "Free trial class available. No uniform or equipment required to start.", "url": "https://kansaikarategoldcoast.com.au/programs/little-lions" }
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "My child is shy — will they cope in a group class?", "acceptedAnswer": { "@type": "Answer", "text": "Many of our Little Lions students start shy and blossom within the first few weeks. Our instructors are experienced with this age group and create an encouraging environment where every child feels included and safe." } },
+    { "@type": "Question", "name": "What will my child learn in Little Lions?", "acceptedAnswer": { "@type": "Answer", "text": "Focus, listening skills, coordination, self-confidence, and the foundations of Shitoryu Shukokai karate — including basic stances, blocks, and strikes — delivered through fun, structured activities." } },
+    { "@type": "Question", "name": "How often should they train?", "acceptedAnswer": { "@type": "Answer", "text": "We recommend twice a week for the best results. Once a week is a great starting point if you want to ease in, and many families find their kids quickly want to come more often." } },
+    { "@type": "Question", "name": "Can they earn belts?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! Little Lions can grade for their first coloured belt. Gradings happen every few months and are a huge confidence milestone for kids this age." } },
+    { "@type": "Question", "name": "Is there a free trial?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we offer a free trial class with no obligation. Book online and bring your child along. If they love it (they usually do), we'll get them started from there." } }
+  ]
+};
+
 export default function LittleLionsPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <ProgramPage
       name="Little Lions"
       slug="little-lions"
       heroImg={`${OLD}/lll.jpg`}
-      headline="Little Lions Classes at Kansai Karate set positive pathways for life!"
+      headline="Little Lions Karate in Upper Coomera — Classes for Ages 5–7"
       subheadline="There's nothing more satisfying than watching your 5-7 year old gain physical and social skills that you know will benefit them for life."
-      introText=""
+      introText="Little Lions at Kansai Karate Gold Coast is a karate class for children aged 5, 6 and 7, held at our dojo in Upper Coomera QLD 4209. Classes run Monday to Thursday evenings and Saturday mornings, and are taught by Sensei Michael Hunt — a 4th Dan Shitoryu Shukokai instructor with over 20 years of experience with this age group. Each 45-minute class builds focus, coordination, and self-confidence through structured technique, partner drills, and belt grading milestones. No prior experience is needed, and all new students are welcome to try their first class free. Families travel from Coomera, Pimpama, Ormeau, Oxenford, and Hope Island to train here — because at Kansai Karate, your child doesn't just learn karate. They learn to show up, work hard, and be proud of what they can do."
       benefitsHeading="Little Lions Classes Build Benefits for Life"
       benefits={[
         {
@@ -41,7 +68,7 @@ export default function LittleLionsPage() {
         },
         {
           title: "Structured Activity That Kids Actually Enjoy",
-          body: "Everything we do is intentionally structured based on our extensive experience. Kids at Kansai Karate actually like the structure, because it makes them feel safe and cared for.",
+          body: "Every class is thoughtfully designed around what works for 5–7 year olds. The structure gives children a sense of security and achievement — they know what to expect and feel proud when they nail a new technique.",
         },
       ]}
       whyHeading="Why Kids Love Little Lions Classes"

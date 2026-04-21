@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About Kansai Karate Gold Coast | Sensei Michael Hunt",
-  description: "Kansai Karate Gold Coast is led by Sensei Michael Hunt (4th Dan Shitoryu Shukokai). Traditional Japanese karate in Upper Coomera, affiliated with Karate Queensland and Karate Australia.",
+  description: "Led by Sensei Michael Hunt (4th Dan), Kansai Karate Gold Coast offers traditional Shitoryu Shukokai karate in Upper Coomera. Free trial available.",
   alternates: { canonical: "/about" },
 };
 
