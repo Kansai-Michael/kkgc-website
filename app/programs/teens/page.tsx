@@ -52,7 +52,7 @@ export default function TeensPage() {
       <ProgramPage
       name="Teens Karate"
       slug="teens"
-      heroImg={`${OLD}/Teengoogle-1.jpg`}
+      heroImg={`${OLD}/1-adult.jpg`}
       headline="Teen Karate Classes in Upper Coomera — Designed for Ages 13–18"
       subheadline="Martial Arts is the perfect activity for teenagers! It gives them an outlet for their unique energy through engagement, and cross motor skill activity, in a structured class designed just for them."
       introText="Teen Karate at Kansai Karate Gold Coast is a dedicated class for students aged 13 to 18, held at our dojo in Upper Coomera QLD 4209. Unlike programs that mix teens with younger children or adults, this class is built specifically for teenagers — the pace, content, and atmosphere are designed around their energy and maturity. Classes run Monday to Thursday evenings and are taught by Sensei Michael Hunt (5th Dan Shitoryu Shukokai). Teens learn kata, kihon, and sparring through structured training that builds fitness, focus, and genuine self-defence capability. Competition is available through QKA and AKF affiliations for those who want it, or students can train purely for the personal development and fitness benefits. Your teen's first class is free — book online and arrive in comfortable clothes."

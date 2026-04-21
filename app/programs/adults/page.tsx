@@ -52,7 +52,7 @@ export default function AdultsPage() {
       <ProgramPage
       name="Adult Karate"
       slug="adults"
-      heroImg={`${OLD}/adultsgoogle4.jpg`}
+      heroImg={`${OLD}/ad1.jpg`}
       headline="See why Adult Karate Classes Are the Best Workout in Upper Coomera!"
       subheadline="Whether it's losing weight, building muscle, learning to defend yourself, or just having a blast, our Adult Martial Arts classes have exactly what you need."
       introText="Adult Karate at Kansai Karate Gold Coast is a traditional Shitoryu Shukokai class for students aged 18 and over, based at Upper Coomera QLD 4209. Classes run Monday to Thursday evenings and are taught by Sensei Michael Hunt — 5th Dan, with over 25 years of teaching experience. Whether you have never trained before or are returning to martial arts after a break, adult classes are structured to build your fitness and technique progressively, with no requirement to be fit or athletic before you start. Students work through kata (forms), kihon (basics), and kumite (sparring) in a focused, respectful class environment. Convenient for adults across the northern Gold Coast — Upper Coomera, Coomera, Pimpama, Oxenford, and Hope Island. Book your free first class online and arrive in comfortable clothing."
@@ -107,8 +107,8 @@ export default function AdultsPage() {
       ctaHeading="This Could be the Best Thing you've ever done for yourself."
       ctaText="Adult Karate Classes Build Benefits for Life"
       secondaryImages={[
-        `${OLD}/Adults.jpg`,
-        `${OLD}/adultgoogle6.jpg`,
+        `${OLD}/ad1.jpg`,
+        `${OLD}/ad2.jpg`,
         `${OLD}/adultsgoogle2.jpg`,
       ]}
     />

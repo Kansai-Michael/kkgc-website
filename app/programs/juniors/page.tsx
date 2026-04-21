@@ -52,7 +52,7 @@ export default function JuniorsPage() {
       <ProgramPage
       name="Juniors"
       slug="juniors"
-      heroImg={`${OLD}/juniorsgoogle.jpg`}
+      heroImg={`${OLD}/Juniors.jpg`}
       headline="Junior Karate Classes in Upper Coomera — Ages 8–12 at Kansai Karate"
       subheadline="Martial Arts is one of the best possible activities for children. They'll learn to defend themselves physically, but more importantly they'll build the mental and emotional skill sets necessary to conquer challenges."
       introText="Juniors at Kansai Karate Gold Coast is a karate program for children aged 8 to 12, based at Upper Coomera QLD 4209. We run separate Beginner and Intermediate/Advanced classes, so your child trains at the right level from day one rather than being placed in a one-size-fits-all group. Classes cover kata (forms), kihon (basics), and kumite (sparring), taught by Sensei Michael Hunt — 5th Dan Shitoryu Shukokai. The program runs Monday to Thursday evenings and Saturday mornings, convenient for families in Upper Coomera, Coomera, Pimpama, and the wider northern Gold Coast. Junior students grade for belts every few months and can enter regional and state competitions through our QKA and AKF affiliations. Book a free trial class to get started — no uniform or experience needed."
@@ -107,9 +107,9 @@ export default function JuniorsPage() {
       ctaHeading="This could be the best thing you've ever done for your child."
       ctaText="Junior Classes Build Benefits for Life"
       secondaryImages={[
-        `${OLD}/juniorsgoogle.jpg`,
+        `${OLD}/j2.jpg`,
         `${OLD}/j3.jpg`,
-        `${OLD}/j4.jpg`,
+        `${OLD}/j5.jpg`,
       ]}
     />
     </>

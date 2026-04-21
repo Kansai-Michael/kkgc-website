@@ -107,8 +107,8 @@ export default function CubsPage() {
       ctaHeading="This could be the best thing you've ever done for your child."
       ctaText="Cubs Classes Build Benefits for Life"
       secondaryImages={[
-        `${OLD}/cub3.jpg`,
-        `${OLD}/cub4.jpg`,
+        `${OLD}/cub1.jpg`,
+        `${OLD}/cub2.jpg`,
         `${OLD}/Cubs-1.jpg`,
       ]}
     />
