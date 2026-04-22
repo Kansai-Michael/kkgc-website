@@ -62,7 +62,7 @@ export default function AboutPage() {
                 <div>
                   <h3 className="text-xl font-bold text-gray-800 mb-2">Sensei Michael Hunt — 5th Dan Black Belt</h3>
               <p className="text-gray-600 mb-4">
-                Sensei Michael Hunt has been training in Shito-ryu Shukokai Karate for over 25 years and holds the rank of 5th Dan Black Belt. He has received teaching qualifications of <strong>Shidoin</strong> and <strong>Kenshi</strong> from Sensei Yamada Soke — World Chief Instructor for the Shito-ryu Shukokai Union — and trains regularly with <strong>Sensei Stephen Kelly</strong> (7th Dan Kyoshi) and senior Shukokai instructors from Japan.
+                Sensei Michael Hunt has been training in Shito-ryu Shukokai Karate for over 25 years and holds the rank of 5th Dan Black Belt. He has received teaching qualifications of <strong>Jun-Shihan</strong> and <strong>Renshi</strong> from Sensei Yamada Soke — World Chief Instructor for the Shito-ryu Shukokai Union — and trains regularly with <strong>Sensei Stephen Kelly</strong> (7th Dan Kyoshi) and senior Shukokai instructors from Japan.
               </p>
               <p className="text-gray-600 mb-4">
                 Sensei Michael taught at the Kansai Karate Honbu dojo before opening the Gold Coast dojos in 2013. He holds a <strong>Bronze Coaching Certification</strong> from the NCAS/Australian Sports Commission and the Australian Karate Federation, and is a qualified <strong>National Kata Judge</strong> and <strong>National Kumite Judge</strong> through the Queensland Karate Association (QKA) and Australian Karate Federation (AKF).
@@ -80,9 +80,9 @@ export default function AboutPage() {
                   <Image src="/images/instructors/Junko29.jpg" alt="Sensei Junko Oiwa — Instructor, Kansai Karate Gold Coast" fill style={{ objectFit: "cover", objectPosition: "center top" }} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">Sensei Junko Oiwa — 3rd Dan Black Belt</h3>
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">Sensei Junko Oiwa — 4th Dan Black Belt</h3>
               <p className="text-gray-600 mb-4">
-                Sensei Junko began karate as a child in Japan, training under instructors who were students of Sensei Tani — the founder of Shukokai Karate. She holds the rank of 3rd Dan Black Belt and has received teaching qualifications of <strong>Jun-Shidoin</strong> and <strong>Kenshi</strong> from Ishitobi Kazuo Hanshi, Vice President of the Shito-ryu Shukokai Union.
+                Sensei Junko began karate as a child in Japan, training under instructors who were students of Sensei Tani — the founder of Shukokai Karate. She holds the rank of 4th Dan Black Belt and has received teaching qualifications of <strong>Jun-Shidoin</strong> and <strong>Kenshi</strong> from Ishitobi Kazuo Hanshi, Vice President of the Shito-ryu Shukokai Union.
               </p>
               <p className="text-gray-600">
                 Sensei Junko holds a Certificate Qualification in Early Childhood Learning and brings over 10 years of childcare industry experience to her teaching — making her particularly skilled with our younger age groups. She also holds Bronze Coaching Certification from the NCAS/ACS and AKF, actively competes in QKA tournament competition, and serves as Assistant Kata Coach for the Queensland Team.
