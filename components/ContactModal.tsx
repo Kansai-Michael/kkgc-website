@@ -83,7 +83,10 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
         throw new Error("Submission failed");
       }
 
-      const destination = selected ? programs[selected]?.timetableUrl : "/timetable";
+      const baseDest = selected ? programs[selected]?.timetableUrl : "/timetable";
+      const destination = email
+        ? `${baseDest}?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`
+        : baseDest;
       closeModal();
       router.push(destination ?? "/timetable");
     } catch {

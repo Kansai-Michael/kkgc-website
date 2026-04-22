@@ -15,6 +15,20 @@ const nextConfig: NextConfig = {
     ];
   },
   async headers() {
+    const cspBase = [
+      "default-src 'self'",
+      "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net",
+      "style-src 'self' 'unsafe-inline'",
+      "img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com https://www.facebook.com https://www.gstatic.com",
+      "frame-src https://app.kihonsoft.au https://maps.google.com https://www.google.com",
+      "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://region1.google-analytics.com https://www.facebook.com https://connect.facebook.net",
+      "font-src 'self' data:",
+      "media-src 'self'",
+      "object-src 'none'",
+      "base-uri 'self'",
+      "form-action 'self'",
+    ];
+
     return [
       {
         source: "/(.*)",
@@ -23,50 +37,19 @@ const nextConfig: NextConfig = {
           { key: "X-Frame-Options", value: "SAMEORIGIN" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=()" },
-          {
-            key: "Strict-Transport-Security",
-            value: "max-age=63072000; includeSubDomains; preload",
-          },
-          {
-            key: "Content-Security-Policy",
-            value: [
-              "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net",
-              "style-src 'self' 'unsafe-inline'",
-              "img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com https://www.facebook.com https://www.gstatic.com",
-              "frame-src https://app.kihonsoft.au https://maps.google.com https://www.google.com",
-              "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://region1.google-analytics.com https://www.facebook.com https://connect.facebook.net",
-              "font-src 'self' data:",
-              "media-src 'self'",
-              "object-src 'none'",
-              "base-uri 'self'",
-              "form-action 'self'",
-            ].join("; "),
-          },
+          { key: "Strict-Transport-Security", value: "max-age=63072000; includeSubDomains; preload" },
+          { key: "Content-Security-Policy", value: cspBase.join("; ") },
         ],
       },
       {
-        // Must come after /(.*) so it overrides — thank-you must be embeddable by Kihon
-        // so the post-booking redirect works inside their calendar iframe
-        source: "/thank-you",
+        // Must come after /(.*) — CSP frame-ancestors overrides X-Frame-Options per spec,
+        // allowing Kihon to redirect their calendar iframe to our thank-you page.
+        // Matches /thank-you and /thank-you/ (Kihon uses trailing slash).
+        source: "/thank-you{/}?",
         headers: [
-          { key: "X-Frame-Options", value: "ALLOWALL" },
           {
             key: "Content-Security-Policy",
-            value: [
-              "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net",
-              "style-src 'self' 'unsafe-inline'",
-              "img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com https://www.facebook.com https://www.gstatic.com",
-              "frame-src https://app.kihonsoft.au https://maps.google.com https://www.google.com",
-              "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://region1.google-analytics.com https://www.facebook.com https://connect.facebook.net",
-              "font-src 'self' data:",
-              "media-src 'self'",
-              "object-src 'none'",
-              "base-uri 'self'",
-              "form-action 'self'",
-              "frame-ancestors 'self' https://app.kihonsoft.au",
-            ].join("; "),
+            value: [...cspBase, "frame-ancestors 'self' https://app.kihonsoft.au"].join("; "),
           },
         ],
       },
