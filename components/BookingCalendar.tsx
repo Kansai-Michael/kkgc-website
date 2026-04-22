@@ -1,12 +1,22 @@
 "use client";
 
-import { useRef, useEffect, Suspense } from "react";
+import { useRef, useEffect, useMemo, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 
 function BookingCalendarInner({ url, title }: { url: string; title: string }) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const searchParams = useSearchParams();
 
-  // Pre-fill disabled until Kihon confirms exact param format
-  const iframeSrc = url;
+  const iframeSrc = useMemo(() => {
+    const email = searchParams.get("email");
+    const name = searchParams.get("name");
+    const phone = searchParams.get("phone");
+    if (!email) return url;
+    const params = new URLSearchParams({ email });
+    if (name) params.set("name", name);
+    if (phone) params.set("phone", phone);
+    return `${url}?${params.toString()}`;
+  }, [url, searchParams]);
 
   useEffect(() => {
     const handler = (e: MessageEvent) => {
