@@ -1,9 +1,9 @@
 "use client";
 
-import { useRef, useEffect, useMemo } from "react";
+import { useRef, useEffect, useMemo, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
-export default function BookingCalendar({ url, title }: { url: string; title: string }) {
+function BookingCalendarInner({ url, title }: { url: string; title: string }) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const searchParams = useSearchParams();
 
@@ -38,5 +38,13 @@ export default function BookingCalendar({ url, title }: { url: string; title: st
         title={title}
       />
     </div>
+  );
+}
+
+export default function BookingCalendar(props: { url: string; title: string }) {
+  return (
+    <Suspense fallback={<div className="rounded-lg overflow-hidden border border-gray-200 shadow-sm" style={{ minHeight: "650px" }} />}>
+      <BookingCalendarInner {...props} />
+    </Suspense>
   );
 }
