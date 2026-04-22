@@ -10,13 +10,11 @@ export default function BookingCalendar({ url, title }: { url: string; title: st
   const iframeSrc = useMemo(() => {
     const email = searchParams.get("email");
     const name = searchParams.get("name");
+    const phone = searchParams.get("phone");
     if (!email) return url;
     const params = new URLSearchParams({ email });
-    if (name) {
-      const [first, ...rest] = name.trim().split(" ");
-      params.set("first_name", first);
-      if (rest.length) params.set("last_name", rest.join(" "));
-    }
+    if (name) params.set("name", name);
+    if (phone) params.set("phone", phone);
     return `${url}?${params.toString()}`;
   }, [url, searchParams]);
 

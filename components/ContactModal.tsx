@@ -84,9 +84,11 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
       }
 
       const baseDest = selected ? programs[selected]?.timetableUrl : "/timetable";
-      const destination = email
-        ? `${baseDest}?email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`
-        : baseDest;
+      const qp = new URLSearchParams();
+      if (email) qp.set("email", email);
+      if (name) qp.set("name", name);
+      if (phone) qp.set("phone", phone);
+      const destination = qp.toString() ? `${baseDest}?${qp.toString()}` : baseDest;
       closeModal();
       router.push(destination ?? "/timetable");
     } catch {
