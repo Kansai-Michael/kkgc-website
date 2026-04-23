@@ -142,13 +142,14 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
-      {/* Google Analytics — G-4ETZ1LKSHH */}
+      {/* Google Analytics + Google Ads */}
       <Script src="https://www.googletagmanager.com/gtag/js?id=G-4ETZ1LKSHH" strategy="afterInteractive" />
-      <Script id="ga4-init" strategy="afterInteractive">{`
+      <Script id="gtag-init" strategy="afterInteractive">{`
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'G-4ETZ1LKSHH');
+        gtag('config', 'AW-880936617');
       `}</Script>
 
       {/* Meta Pixel */}
