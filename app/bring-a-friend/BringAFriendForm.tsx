@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const BOOKING_URL = "https://app.kihonsoft.au/book/1st-lesson-bookings";
 
-export default function BringAFriendForm() {
+export default function BringAFriendForm({ dark = false }: { dark?: boolean }) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [phone, setPhone] = useState("");
@@ -46,38 +46,41 @@ export default function BringAFriendForm() {
     }
   }
 
+  const labelClass = `block text-sm font-medium mb-1 ${dark ? "text-gray-400" : "text-gray-700"}`;
+  const inputClass = `w-full rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:ring-2 ${
+    dark
+      ? "bg-[#242a3a] border border-[rgba(255,255,255,0.1)] text-white placeholder-gray-600 focus:ring-[#2E62C4] focus:border-[#2E62C4]"
+      : "border border-gray-300 text-gray-800 focus:ring-[var(--kkgc-blue)]"
+  }`;
+
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid grid-cols-2 gap-4">
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Participant&apos;s First Name
-          </label>
+          <label className={labelClass}>Participant&apos;s First Name</label>
           <input
             type="text"
             value={firstName}
             onChange={(e) => setFirstName(e.target.value)}
             placeholder="First Name"
-            className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[var(--kkgc-blue)]"
+            className={inputClass}
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Participant&apos;s Last Name
-          </label>
+          <label className={labelClass}>Participant&apos;s Last Name</label>
           <input
             type="text"
             value={lastName}
             onChange={(e) => setLastName(e.target.value)}
             placeholder="Last Name"
-            className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[var(--kkgc-blue)]"
+            className={inputClass}
           />
         </div>
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
-          Contact Phone <span className="text-red-500">*</span>
+        <label className={labelClass}>
+          Contact Phone <span className="text-red-400">*</span>
         </label>
         <input
           type="tel"
@@ -85,13 +88,13 @@ export default function BringAFriendForm() {
           onChange={(e) => setPhone(e.target.value)}
           required
           placeholder="Phone"
-          className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[var(--kkgc-blue)]"
+          className={inputClass}
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
-          Contact Email <span className="text-red-500">*</span>
+        <label className={labelClass}>
+          Contact Email <span className="text-red-400">*</span>
         </label>
         <input
           type="email"
@@ -99,33 +102,32 @@ export default function BringAFriendForm() {
           onChange={(e) => setEmail(e.target.value)}
           required
           placeholder="Email"
-          className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[var(--kkgc-blue)]"
+          className={inputClass}
         />
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-gray-700 mb-1">
-          Who told you about Kansai Karate?
-        </label>
+        <label className={labelClass}>Who told you about Kansai Karate?</label>
         <input
           type="text"
           value={referredBy}
           onChange={(e) => setReferredBy(e.target.value)}
           placeholder="Student Name"
-          className="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-gray-800 focus:outline-none focus:ring-2 focus:ring-[var(--kkgc-blue)]"
+          className={inputClass}
         />
       </div>
 
       {error && (
-        <p className="text-red-600 text-sm text-center">{error}</p>
+        <p className="text-red-400 text-sm text-center">{error}</p>
       )}
 
       <button
         type="submit"
         disabled={submitting}
-        className="w-full bg-[var(--kkgc-blue)] hover:bg-[var(--kkgc-blue-dark)] text-white font-bold py-3.5 rounded-lg transition-colors disabled:opacity-60 disabled:cursor-not-allowed mt-2"
+        className="w-full text-white font-bold py-4 rounded-lg transition-colors disabled:opacity-60 disabled:cursor-not-allowed mt-2"
+        style={{ background: "#1F4EA1", letterSpacing: "0.06em", fontSize: "0.95rem" }}
       >
-        {submitting ? "Submitting…" : "Click to Book Your Free First Lesson"}
+        {submitting ? "Submitting…" : "Claim Your Free Lesson →"}
       </button>
     </form>
   );
