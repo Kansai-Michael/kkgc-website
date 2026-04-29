@@ -83,6 +83,10 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
         throw new Error("Submission failed");
       }
 
+      if (typeof window !== "undefined" && typeof (window as Window & { fbq?: Function }).fbq === "function") {
+        (window as Window & { fbq?: Function }).fbq("track", "Lead", { content_name: selected || "general" });
+      }
+
       const baseDest = selected ? programs[selected]?.timetableUrl : "/timetable";
       const qp = new URLSearchParams();
       if (email) qp.set("email", email);
