@@ -1,5 +1,6 @@
 import Link from "next/link";
 import IframeEscape from "@/components/IframeEscape";
+import MetaPixelEvent from "@/components/MetaPixelEvent";
 
 const OLD_43 = "/images";
 const HERO_IMG = `${OLD_43}/kansai-homeheader.webp`;
@@ -14,6 +15,7 @@ export default function ThankYouPage() {
   return (
     <>
       <IframeEscape />
+      <MetaPixelEvent event="CompleteRegistration" />
     <section
       className="relative flex items-center justify-center text-white"
       style={{
