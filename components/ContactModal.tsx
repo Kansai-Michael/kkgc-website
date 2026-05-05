@@ -83,8 +83,10 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
         throw new Error("Submission failed");
       }
 
-      if (typeof window !== "undefined" && typeof (window as Window & { fbq?: Function }).fbq === "function") {
-        (window as Window & { fbq?: Function }).fbq("track", "Lead", { content_name: selected || "general" });
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const win = window as any;
+      if (typeof win !== "undefined" && typeof win.fbq === "function") {
+        win.fbq("track", "Lead", { content_name: selected || "general" });
       }
 
       const baseDest = selected ? programs[selected]?.timetableUrl : "/timetable";
