@@ -15,6 +15,7 @@ export default function ThankYouPage() {
   return (
     <>
       <IframeEscape />
+      <MetaPixelEvent event="Lead" />
       <MetaPixelEvent event="CompleteRegistration" />
     <section
       className="relative flex items-center justify-center text-white"
