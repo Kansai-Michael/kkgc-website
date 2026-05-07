@@ -12,7 +12,7 @@ export default function PrivacyPage() {
       <section className="bg-[#003087] text-white py-16 px-4">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Privacy Policy</h1>
-          <p className="text-xl text-white/80">Last updated: April 2026</p>
+          <p className="text-xl text-white/80">Last updated: May 2026</p>
         </div>
       </section>
 
@@ -68,7 +68,7 @@ export default function PrivacyPage() {
               <li>Manage student enrolments and class administration</li>
               <li>Contact you about your enrolment, schedule changes, or school news</li>
               <li>Ensure student safety during training (including access to relevant medical information by instructors)</li>
-              <li>Meet our legal obligations, including Working with Children compliance</li>
+              <li>Meet our legal obligations, including Working with Children compliance under Queensland law</li>
             </ul>
             <p className="mt-3">
               We will not sell, rent, or share your personal information with third parties for marketing purposes.
@@ -91,9 +91,22 @@ export default function PrivacyPage() {
                 competition registrations, where applicable.
               </li>
               <li>
-                <strong>Our website hosting provider (Vercel Inc., USA)</strong> — website enquiry data submitted
+                <strong>Vercel Inc. (USA)</strong> — our website hosting provider. Website enquiry data submitted
                 via our contact form passes through Vercel&rsquo;s infrastructure. Vercel operates under standard
                 contractual data protection clauses.
+              </li>
+              <li>
+                <strong>Mailgun Technologies, Inc. (USA)</strong> — inbound emails sent to our enquiry address
+                are routed through Mailgun&rsquo;s email infrastructure before delivery. Mailgun operates under
+                standard data processing agreements.
+              </li>
+              <li>
+                <strong>Google LLC (USA)</strong> — we use Google Analytics 4 and Google Ads to measure website
+                traffic and advertising performance. See Section 7 for details.
+              </li>
+              <li>
+                <strong>Meta Platforms, Inc. (USA)</strong> — we use the Meta Pixel to measure the effectiveness
+                of our Facebook and Instagram advertising. See Section 7 for details.
               </li>
             </ul>
             <p className="mt-3">
@@ -118,12 +131,56 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-[#003087] mb-3">7. Cookies and Website Analytics</h2>
-            <p>
-              Our website may use cookies or similar technologies to support website functionality. We may also
-              use anonymised analytics tools to understand how visitors use our site. These tools do not collect
-              personally identifiable information. You can disable cookies in your browser settings, though this
-              may affect some website features.
+            <h2 className="text-xl font-bold text-[#003087] mb-3">7. Cookies, Analytics, and Advertising Tracking</h2>
+            <p>Our website uses the following tracking technologies:</p>
+            <ul className="list-disc pl-6 mt-3 space-y-3">
+              <li>
+                <strong>Google Analytics 4 (GA4)</strong> — collects data about how visitors use our site
+                (pages visited, session duration, device type). This data is used in aggregate to improve
+                our website. GA4 is operated by Google LLC (USA). You can opt out using the{" "}
+                <a
+                  href="https://tools.google.com/dlpage/gaoptout"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#003087] hover:underline font-medium"
+                >
+                  Google Analytics Opt-out Browser Add-on
+                </a>
+                .
+              </li>
+              <li>
+                <strong>Meta Pixel</strong> — our website includes Meta&rsquo;s tracking pixel, which collects
+                data about your visit to help us measure the effectiveness of our advertising on Facebook and
+                Instagram. If you are logged into Facebook, Meta may associate this data with your Facebook
+                profile. You can manage your ad preferences at{" "}
+                <a
+                  href="https://www.facebook.com/ads/preferences"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#003087] hover:underline font-medium"
+                >
+                  Facebook Ad Preferences
+                </a>
+                .
+              </li>
+              <li>
+                <strong>Google Ads</strong> — we use Google Ads conversion tracking to measure enquiries that
+                result from our advertising. This uses cookies placed by Google. You can manage your Google
+                ad settings at{" "}
+                <a
+                  href="https://adssettings.google.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#003087] hover:underline font-medium"
+                >
+                  adssettings.google.com
+                </a>
+                .
+              </li>
+            </ul>
+            <p className="mt-3">
+              You can disable cookies in your browser settings. Note that disabling all cookies may affect
+              the functionality of some website features.
             </p>
           </div>
 

@@ -12,7 +12,7 @@ export default function TermsPage() {
       <section className="bg-[#003087] text-white py-16 px-4">
         <div className="max-w-3xl mx-auto">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Terms of Use</h1>
-          <p className="text-xl text-white/80">Last updated: April 2026</p>
+          <p className="text-xl text-white/80">Last updated: May 2026</p>
         </div>
       </section>
 
