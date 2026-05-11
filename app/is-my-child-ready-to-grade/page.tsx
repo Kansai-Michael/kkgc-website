@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -106,22 +105,6 @@ export default function IsMyChildReadyToGradePage() {
             <p className="font-semibold text-gray-800">
               Please talk with us and help you and your child achieve your goals.
             </p>
-          </div>
-
-          {/* CTA */}
-          <div className="flex flex-wrap gap-4 pt-2">
-            <Link
-              href="/contact"
-              className="inline-block bg-[#003087] text-white font-semibold px-6 py-3 rounded-lg hover:bg-[#001A52] transition-colors"
-            >
-              Talk to Sensei
-            </Link>
-            <Link
-              href="/timetable"
-              className="inline-block bg-white text-[#003087] font-semibold px-6 py-3 rounded-lg border-2 border-[#003087] hover:bg-[#003087] hover:text-white transition-colors"
-            >
-              View Timetable
-            </Link>
           </div>
 
         </div>
