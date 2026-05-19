@@ -88,6 +88,9 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
       if (typeof win !== "undefined" && typeof win.fbq === "function") {
         win.fbq("track", "Lead", { content_name: selected || "general" });
       }
+      if (typeof win !== "undefined" && typeof win.gtag === "function") {
+        win.gtag("event", "conversion", { send_to: "AW-880936617/gnR-CN3lm50YEKmNiKQD" });
+      }
 
       const baseDest = selected ? programs[selected]?.timetableUrl : "/timetable";
       const qp = new URLSearchParams();
