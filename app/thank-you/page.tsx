@@ -1,6 +1,7 @@
 import Link from "next/link";
 import IframeEscape from "@/components/IframeEscape";
 import MetaPixelEvent from "@/components/MetaPixelEvent";
+import GAConversionEvent from "@/components/GAConversionEvent";
 
 const OLD_43 = "/images";
 const HERO_IMG = `${OLD_43}/kansai-homeheader.webp`;
@@ -14,6 +15,7 @@ export const metadata = {
 export default function ThankYouPage() {
   return (
     <>
+      <GAConversionEvent event="generate_lead" />
       <IframeEscape />
       <MetaPixelEvent event="Lead" />
       <MetaPixelEvent event="CompleteRegistration" />
