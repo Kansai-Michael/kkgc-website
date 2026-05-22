@@ -7,11 +7,12 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      {
-        source: "/programs/teens-adults",
-        destination: "/programs/teens",
-        permanent: true,
-      },
+      { source: "/programs/teens-adults", destination: "/programs/teens", permanent: true },
+      { source: "/class-livestream", destination: "/", permanent: true },
+      { source: "/tag/gold-coast", destination: "/", permanent: true },
+      { source: "/tag/:slug", destination: "/", permanent: true },
+      { source: "/dojo-rules", destination: "/about", permanent: true },
+      { source: "/dojo-rules/:path*", destination: "/about", permanent: true },
     ];
   },
   async headers() {
