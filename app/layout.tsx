@@ -5,6 +5,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import ClientLayout from "@/components/ClientLayout";
+import MetaPixelTracker from "@/components/MetaPixelTracker";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -176,6 +177,7 @@ export default function RootLayout({
           />
         </noscript>
         <ClientLayout>
+          <MetaPixelTracker />
           <Nav />
           <main className="flex-1">{children}</main>
           <Footer />

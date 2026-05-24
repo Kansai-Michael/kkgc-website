@@ -87,6 +87,7 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
       const win = window as any;
       if (typeof win !== "undefined" && typeof win.fbq === "function") {
         win.fbq("track", "Lead", { content_name: selected || "general" });
+        win.fbq("track", "CompleteRegistration", { content_name: selected || "general" });
       }
       if (typeof win !== "undefined" && typeof win.gtag === "function") {
         win.gtag("event", "conversion", { send_to: "AW-880936617/gnR-CN3lm50YEKmNiKQD" });
