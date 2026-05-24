@@ -13,6 +13,14 @@ const nextConfig: NextConfig = {
       { source: "/tag/:slug", destination: "/", permanent: true },
       { source: "/dojo-rules", destination: "/about", permanent: true },
       { source: "/dojo-rules/:path*", destination: "/about", permanent: true },
+      { source: "/bullybuster", destination: "/", permanent: true },
+      { source: "/the-orange-belt-conundrum", destination: "/", permanent: true },
+      { source: "/6894-2", destination: "/", permanent: true },
+      { source: "/how-to-wrestle-a-crocodile", destination: "/", permanent: true },
+      { source: "/karate-classes", destination: "/programs", permanent: true },
+      { source: "/dojo-timetable", destination: "/timetable", permanent: true },
+      { source: "/class-schedule", destination: "/timetable", permanent: true },
+      { source: "/classes", destination: "/programs", permanent: true },
     ];
   },
   async headers() {
