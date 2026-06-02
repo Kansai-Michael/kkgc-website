@@ -55,7 +55,7 @@ const moreInfo: MoreInfoContent = {
     },
     {
       q: "How many classes do we attend?",
-      a: "That depends on your schedule and program, but many kids in Little Lions are successful with as little as once a week attendance. If they love classes, we likely have a program that will allow them to attend more!",
+      a: "We recommend a minimum of two classes per week for Little Lions. Two sessions gives kids the consistency they need to progress and build habits. Most families find their kids quickly want to come more often once they settle in.",
     },
   ],
   closingStatement:

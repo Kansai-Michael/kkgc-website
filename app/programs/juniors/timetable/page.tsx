@@ -56,7 +56,7 @@ const moreInfo: MoreInfoContent = {
     },
     {
       q: "How many classes do we attend?",
-      a: "That depends on your schedule and program, but many kids in Juniors Karate are successful with as little as once a week attendance. If they love classes, we likely have a program that will allow them to attend more!",
+      a: "We recommend a minimum of two classes per week for Juniors. Two sessions gives kids the consistency to build real technique and see genuine progress. Many students train three times a week once they get into it.",
     },
   ],
   closingStatement:

@@ -37,7 +37,7 @@ const faqSchema = {
   "mainEntity": [
     { "@type": "Question", "name": "My child is shy — will they cope in a group class?", "acceptedAnswer": { "@type": "Answer", "text": "Many of our Little Lions students start shy and blossom within the first few weeks. Our instructors are experienced with this age group and create an encouraging environment where every child feels included and safe." } },
     { "@type": "Question", "name": "What will my child learn in Little Lions?", "acceptedAnswer": { "@type": "Answer", "text": "Focus, listening skills, coordination, self-confidence, and the foundations of Shitoryu Shukokai karate — including basic stances, blocks, and strikes — delivered through fun, structured activities." } },
-    { "@type": "Question", "name": "How often should they train?", "acceptedAnswer": { "@type": "Answer", "text": "We recommend twice a week for the best results. Once a week is a great starting point if you want to ease in, and many families find their kids quickly want to come more often." } },
+    { "@type": "Question", "name": "How often should they train?", "acceptedAnswer": { "@type": "Answer", "text": "We recommend a minimum of two classes per week — that's what gives kids consistency and the best results. Most families find their kids quickly want to add a third session once they get going." } },
     { "@type": "Question", "name": "Can they earn belts?", "acceptedAnswer": { "@type": "Answer", "text": "Yes! Little Lions can grade for their first coloured belt. Gradings happen every few months and are a huge confidence milestone for kids this age." } },
     { "@type": "Question", "name": "Is there a free trial?", "acceptedAnswer": { "@type": "Answer", "text": "Yes — we offer a free trial class with no obligation. Book online and bring your child along. If they love it (they usually do), we'll get them started from there." } }
   ]
@@ -93,7 +93,7 @@ export default function LittleLionsPage() {
         },
         {
           q: "How often should they train?",
-          a: "We recommend twice a week for the best results. Once a week is a great starting point if you want to ease in, and many families find their kids quickly want to come more often.",
+          a: "We recommend a minimum of two classes per week — that's what gives kids consistency and the best results. Most families find their kids quickly want to add a third session once they get going.",
         },
         {
           q: "Can they earn belts?",

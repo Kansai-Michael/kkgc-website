@@ -55,7 +55,7 @@ const moreInfo: MoreInfoContent = {
     },
     {
       q: "How many classes do we attend?",
-      a: "That depends on your schedule and program, but many kids in Cubs are successful with as little as once a week attendance. If they love classes, we likely have a program that will allow them to attend more!",
+      a: "We recommend a minimum of two classes per week for Cubs. Two sessions gives little ones the repetition they need to build new habits and get comfortable in the dojo. Most families find their kids are quickly asking to come more often.",
     },
   ],
   closingStatement:
