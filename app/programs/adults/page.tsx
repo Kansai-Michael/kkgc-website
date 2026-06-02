@@ -54,13 +54,13 @@ export default function AdultsPage() {
       slug="adults"
       heroImg={`${OLD}/ad1.jpg`}
       headline="See why Adult Karate Classes Are the Best Workout in Upper Coomera!"
-      subheadline="Whether it's losing weight, building muscle, learning to defend yourself, or just having a blast, our Adult Martial Arts classes have exactly what you need."
+      subheadline="Adult Karate at Upper Coomera is a genuine full-body workout with real martial arts skills — designed for the average person, all fitness levels, no prior experience required."
       introText="Adult Karate at Kansai Karate Gold Coast is a traditional Shitoryu Shukokai class for students aged 18 and over, based at Upper Coomera QLD 4209. Classes run Monday to Thursday evenings and are taught by Sensei Michael Hunt — 5th Dan, with over 25 years of teaching experience. Whether you have never trained before or are returning to martial arts after a break, adult classes are structured to build your fitness and technique progressively, with no requirement to be fit or athletic before you start. Students work through kata (forms), kihon (basics), and kumite (sparring) in a focused, respectful class environment. Convenient for adults across the northern Gold Coast — Upper Coomera, Coomera, Pimpama, Oxenford, and Hope Island. Book your free first class online and arrive in comfortable clothing."
       benefitsHeading="Adult Karate Classes Build Benefits for Life"
       benefits={[
         {
           title: "Adult Karate Classes at Kansai Karate Build Benefits for Life",
-          body: "You'll love the high energy class instruction, your body will love the awesome workout, and your spirit will love the camaraderie and positive atmosphere. Whether you're a complete beginner or returning to martial arts, you'll fit right in.",
+          body: "Karate is one of the few activities where you genuinely build skill while getting fit. You'll see measurable improvement from your very first class — in technique, in fitness, and in confidence.",
         },
         {
           title: "More Than Just a Workout",

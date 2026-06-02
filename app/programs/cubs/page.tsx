@@ -54,13 +54,13 @@ export default function CubsPage() {
       slug="cubs"
       heroImg={`${OLD}/cub3.jpg`}
       headline="Cubs Karate in Upper Coomera — Classes for Ages 3 & 4"
-      subheadline="Our Cubs program for ages 3-4 teaches way more than physical skills! Your child will learn how to interact in a social setting, plus learn valuable life lessons."
+      subheadline="Cubs classes for 3–4 year olds build movement, listening skills and basic coordination in a fun, structured environment — with Sensei Michael and a team who genuinely love working with this age group."
       introText="Cubs at Kansai Karate Gold Coast is a 30-minute karate class designed specifically for children aged 3 and 4, held at our dojo in Upper Coomera QLD 4209. Led by Sensei Michael Hunt (5th Dan Shitoryu Shukokai), each class blends structured movement with games and basic karate technique — all at a pace that suits little ones. Cubs run Monday, Wednesday, Thursday and Saturday mornings, making it easy to fit around the family week. No experience or uniform is needed to start — just bring your child in comfortable clothes and book a free first class. Families from across the northern Gold Coast — Coomera, Pimpama, Ormeau, Oxenford — make the short drive to Upper Coomera for Cubs because there simply isn't a program like it closer to home."
       benefitsHeading="Cubs Classes Build Benefits for Life"
       benefits={[
         {
           title: "Listening & Social Skills",
-          body: "From listening skills to taking turns, our program for ages 3-4 teaches way more than physical skills! Your child will learn how to interact in a social setting, plus learn valuable life lessons that will help them as they grow.",
+          body: "At 3 and 4, kids are developing the movement foundations they'll carry through life. Cubs classes build listening skills, turn-taking, spatial awareness and basic coordination — all through games and karate activities they love.",
         },
         {
           title: "Confidence & Coordination",

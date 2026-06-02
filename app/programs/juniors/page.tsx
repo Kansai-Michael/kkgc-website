@@ -54,13 +54,13 @@ export default function JuniorsPage() {
       slug="juniors"
       heroImg={`${OLD}/Juniors.jpg`}
       headline="Junior Karate Classes in Upper Coomera — Ages 8–12 at Kansai Karate"
-      subheadline="Martial Arts is one of the best possible activities for children. They'll learn to defend themselves physically, but more importantly they'll build the mental and emotional skill sets necessary to conquer challenges."
+      subheadline="Juniors Karate at Upper Coomera gives 8–12 year olds real skills, genuine fitness and the kind of self-discipline that shows up everywhere — at school, at home, and in sport."
       introText="Juniors at Kansai Karate Gold Coast is a karate program for children aged 8 to 12, based at Upper Coomera QLD 4209. We run separate Beginner and Intermediate/Advanced classes, so your child trains at the right level from day one rather than being placed in a one-size-fits-all group. Classes cover kata (forms), kihon (basics), and kumite (sparring), taught by Sensei Michael Hunt — 5th Dan Shitoryu Shukokai. The program runs Monday to Thursday evenings and Saturday mornings, convenient for families in Upper Coomera, Coomera, Pimpama, and the wider northern Gold Coast. Junior students grade for belts every few months and can enter regional and state competitions through our QKA and AKF affiliations. Book a free trial class to get started — no uniform or experience needed."
       benefitsHeading="Junior Classes Build Benefits for Life"
       benefits={[
         {
           title: "Mental & Emotional Growth",
-          body: "They'll build the mental and emotional skill sets necessary to conquer challenges like high school, university, and becoming a healthy, balanced adult. Martial Arts is one of the best possible activities for children.",
+          body: "Juniors Karate builds the mental and emotional skills that carry your child through school, sport and life — focus, determination, resilience, and the ability to work hard toward a goal.",
         },
         {
           title: "Real Technique & Physical Development",

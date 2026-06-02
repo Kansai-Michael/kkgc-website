@@ -19,7 +19,7 @@ const programs = [
     href: "/programs/cubs",
     img: `${OLD}/cub3.jpg`,
     description:
-      "From listening skills to taking turns, our program for ages 3-4 teach way more than physical skills! Your child will learn how to interact in a social setting, plus learn valuable life lessons that will help them as they grow.",
+      "Karate for tiny humans. Cubs classes for 3–4 year olds mix movement, listening skills and coordination into the most fun 45 minutes of their week. Sensei Michael has a gift with this age group — parents are always amazed at what their little ones pick up.",
   },
   {
     name: "Little Lions",
@@ -27,7 +27,7 @@ const programs = [
     href: "/programs/little-lions",
     img: `${OLD}/lll.jpg`,
     description:
-      "There's nothing more satisfying than watching your 5-7 year old gain physical and social skills that you know will benefit them for life. Your little one will learn focus, self-confidence and discipline, while getting a full body work out.",
+      "Little Lions is where lifelong habits begin. Your 5–7 year old will build real focus, coordination and confidence through traditional Shitoryu karate — in a class that's as purposeful as it is fun. Tuesday and Thursday afternoons at Upper Coomera.",
   },
   {
     name: "Juniors",
@@ -35,7 +35,7 @@ const programs = [
     href: "/programs/juniors",
     img: `${OLD}/juniorsgoogle.jpg`,
     description:
-      "Martial Arts is one of the best possible activities for children. They'll learn to defend themselves physically, but more importantly they'll build the mental and emotional skill sets necessary to conquer challenges like high school, university, and becoming a healthy, balanced adult.",
+      "Karate is one of the best things your child can do with a Monday night. Juniors classes build genuine fitness, focus and self-discipline in a traditional training environment. Skills that follow your child into school, sport and life.",
   },
   {
     name: "Teen Karate",
@@ -43,7 +43,7 @@ const programs = [
     href: "/programs/teens",
     img: `${OLD}/Teengoogle-1.jpg`,
     description:
-      "Martial Arts is the perfect activity for teenagers! It gives them an outlet for their unique energy through engagement, and cross motor skill activity, but at Kansai Karate, they'll do it in a structured class designed and taught just for them.",
+      "Teen Karate at Kansai Karate is built specifically for teenagers — not lumped in with little kids. They'll train with peers their own age, in a structured class that builds real fitness, genuine confidence and practical self-defence skills.",
   },
   {
     name: "Adult Karate",
@@ -51,7 +51,7 @@ const programs = [
     href: "/programs/adults",
     img: `${OLD}/adultsgoogle4.jpg`,
     description:
-      "Whether it's losing weight, building muscle, learning to defend yourself, or just having a blast, our Adult Martial Arts classes have exactly what you need. You'll love the high energy class instruction, your body will love the awesome workout, and your spirit will love the camaraderie and positive atmosphere.",
+      "Whether you're after fitness, stress relief, genuine self-defence skills or just something actually challenging — Adult Karate at Upper Coomera delivers. Traditional Shitoryu Shukokai, all fitness levels welcome. No experience needed.",
   },
 ];
 
