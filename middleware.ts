@@ -9,7 +9,7 @@ export function middleware(request: NextRequest) {
   if (BOT_UA.test(ua)) return NextResponse.next()
 
   // Vercel injects x-vercel-ip-country on every request in production
-  const country = request.geo?.country ?? request.headers.get('x-vercel-ip-country')
+  const country = request.headers.get('x-vercel-ip-country')
 
   // No country header = localhost or Vercel preview — allow through
   if (!country) return NextResponse.next()
