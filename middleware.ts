@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-const BOT_UA = /googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot|ahrefsbot|semrushbot|petalbot/i
+const BOT_UA = /google|bingbot|slurp|duckduckbot|baiduspider|yandexbot|ahrefsbot|semrushbot|petalbot/i
 
 export function middleware(request: NextRequest) {
   // Always allow search engine crawlers through
