@@ -151,10 +151,12 @@ export default function InteractiveTimetable() {
 
   const currentProgram = PROGRAMS.find((p) => p.id === programId) ?? null;
 
-  // Active highlight set: a chosen rank narrows to one group; otherwise the whole program.
+  // Active highlight set. Programs with belt levels (Juniors/Teens/Adults) require a
+  // rank choice before anything highlights. Little Lions has no ranks, so it highlights
+  // as soon as it's picked.
   const activeGroups: Group[] | null = rank
     ? [rank]
-    : currentProgram
+    : currentProgram && currentProgram.ranks.length === 0
     ? currentProgram.groups
     : null;
 
@@ -191,8 +193,8 @@ export default function InteractiveTimetable() {
 
       {/* Instructions */}
       <p className="text-center text-gray-600 text-sm mb-5">
-        Pick your program to highlight the classes you can attend — then choose a belt level to narrow it
-        down. Tap <span className="font-semibold">Show all classes</span> to see the full timetable again.
+        Pick your program, then select your belt level to highlight the classes you can attend. Tap{" "}
+        <span className="font-semibold">Show all classes</span> to see the full timetable again.
       </p>
 
       {/* Program buttons */}
@@ -228,9 +230,11 @@ export default function InteractiveTimetable() {
 
       {/* Belt-rank options (expand when a program with ranks is selected) */}
       {currentProgram && currentProgram.ranks.length > 0 && (
-        <div className="mb-8 rounded-lg bg-gray-50 border border-gray-200 p-3">
-          <p className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">
-            {currentProgram.label} — choose a belt level (optional)
+        <div className={`mb-8 rounded-lg p-3 border ${rank ? "bg-gray-50 border-gray-200" : "bg-[#FFF7E0] border-[#FFB800]/60"}`}>
+          <p className="text-xs font-bold uppercase tracking-wider text-[#003087] mb-2">
+            {rank
+              ? `${currentProgram.label} — belt level`
+              : `${currentProgram.label} — select your belt level to continue`}
           </p>
           <div className="flex flex-wrap gap-2">
             {currentProgram.ranks.map((r) => {
