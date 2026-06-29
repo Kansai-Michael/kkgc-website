@@ -6,7 +6,96 @@ export const metadata: Metadata = {
   alternates: { canonical: "/timetable" },
 };
 
-const BOOKING_URL = "https://app.kihonsoft.au/book/1st-lesson-bookings";
+const HEADER_BG = "#003087";
+const LIGHT_COL = "#c5d9f0";
+
+interface Cell {
+  label: string;
+  grade?: string;
+}
+
+interface Row {
+  wkTime: string;
+  satTime: string;
+  mon?: Cell;
+  tue?: Cell;
+  wed?: Cell;
+  thu?: Cell;
+  sat?: Cell;
+}
+
+const ROWS: Row[] = [
+  {
+    wkTime: "4:15pm",
+    satTime: "8:00am",
+    mon: { label: "Cubs", grade: "Ages 3–4" },
+    tue: { label: "Little Lions", grade: "Ages 5–7" },
+    wed: { label: "Cubs", grade: "Ages 3–4" },
+    thu: { label: "Little Lions", grade: "Ages 5–7" },
+    sat: { label: "Cubs", grade: "Ages 3–4" },
+  },
+  {
+    wkTime: "5:00pm",
+    satTime: "8:45am",
+    mon: { label: "Little Lions", grade: "Ages 5–7" },
+    tue: { label: "Juniors", grade: "Beginner" },
+    wed: { label: "Little Lions", grade: "Ages 5–7" },
+    thu: { label: "Juniors", grade: "Beginner" },
+    sat: { label: "Little Lions", grade: "Ages 5–7" },
+  },
+  {
+    wkTime: "5:45pm",
+    satTime: "9:30am",
+    mon: { label: "Juniors", grade: "Beginner" },
+    tue: { label: "Juniors", grade: "Int – Adv" },
+    wed: { label: "Juniors", grade: "Beginner" },
+    thu: { label: "Juniors", grade: "Int – Adv" },
+    sat: { label: "Juniors", grade: "All Levels" },
+  },
+  {
+    wkTime: "6:30pm",
+    satTime: "10:15am",
+    mon: { label: "Juniors", grade: "Int – Adv" },
+    tue: { label: "Teens", grade: "Ages 13–18" },
+    wed: { label: "Juniors", grade: "Int – Adv" },
+    thu: { label: "Teens & Adults" },
+    sat: { label: "Combined", grade: "Little Lions, Juniors, Teens & Adults" },
+  },
+  {
+    wkTime: "7:15pm",
+    satTime: "11:00am",
+    mon: { label: "Teens & Adults" },
+    tue: { label: "Adults", grade: "Ages 18+" },
+    wed: { label: "Teens & Adults" },
+    thu: undefined,
+    sat: { label: "Teens & Adults" },
+  },
+];
+
+const DAY_KEYS: { label: string; key: "mon" | "tue" | "wed" | "thu" }[] = [
+  { label: "MONDAY", key: "mon" },
+  { label: "TUESDAY", key: "tue" },
+  { label: "WEDNESDAY", key: "wed" },
+  { label: "THURSDAY", key: "thu" },
+];
+
+function ClassCell({ cell, light }: { cell?: Cell; light?: boolean }) {
+  return (
+    <td
+      className="p-2 text-center align-middle border-x border-gray-100 leading-tight text-gray-800"
+      style={{ backgroundColor: light ? LIGHT_COL : "white" }}
+    >
+      {cell ? (
+        <>
+          <div className="font-bold text-[13px]">{cell.label}</div>
+          {cell.grade && <div className="mt-0.5 text-[11px] text-gray-500">({cell.grade})</div>}
+        </>
+      ) : (
+        ""
+      )}
+    </td>
+  );
+}
 
 export default function TimetablePage() {
   return (
@@ -22,75 +111,48 @@ export default function TimetablePage() {
 
       <section className="py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          {/* Static timetable — update with real times */}
-          <div className="mb-12">
-            <h2 className="text-2xl font-bold text-[#003087] mb-6">Weekly Schedule</h2>
-            <div className="overflow-x-auto">
-              <table className="w-full border-collapse text-sm">
-                <thead>
-                  <tr className="bg-[#003087] text-white">
-                    <th className="p-3 text-left">Day</th>
-                    <th className="p-3 text-left">Time</th>
-                    <th className="p-3 text-left">Program</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    { day: "Monday", time: "4:15 – 4:45 PM", program: "Cubs (Ages 3–4)" },
-                    { day: "Monday", time: "5:00 – 5:45 PM", program: "Little Lions (Ages 5–7)" },
-                    { day: "Monday", time: "5:45 – 6:30 PM", program: "Juniors Beginner (Ages 8–12)" },
-                    { day: "Monday", time: "6:30 – 7:15 PM", program: "Juniors Intermediate/Advanced (Ages 8–12)" },
-                    { day: "Monday", time: "7:15 – 8:00 PM", program: "Teens (13–18) & Adults (18+)" },
-                    { day: "Tuesday", time: "4:15 – 5:00 PM", program: "Little Lions (Ages 5–7)" },
-                    { day: "Tuesday", time: "5:00 – 5:45 PM", program: "Juniors Beginner (Ages 8–12)" },
-                    { day: "Tuesday", time: "5:45 – 6:30 PM", program: "Juniors Intermediate/Advanced (Ages 8–12)" },
-                    { day: "Tuesday", time: "6:30 – 7:15 PM", program: "Teens (Ages 13–18)" },
-                    { day: "Tuesday", time: "7:15 – 8:00 PM", program: "Adults (Ages 18+)" },
-                    { day: "Wednesday", time: "4:15 – 4:45 PM", program: "Cubs (Ages 3–4)" },
-                    { day: "Wednesday", time: "5:00 – 5:45 PM", program: "Little Lions (Ages 5–7)" },
-                    { day: "Wednesday", time: "5:45 – 6:30 PM", program: "Juniors Beginner (Ages 8–12)" },
-                    { day: "Wednesday", time: "6:30 – 7:15 PM", program: "Juniors Intermediate/Advanced (Ages 8–12)" },
-                    { day: "Wednesday", time: "7:15 – 8:00 PM", program: "Teens (13–18) & Adults (18+)" },
-                    { day: "Thursday", time: "4:15 – 5:00 PM", program: "Little Lions (Ages 5–7)" },
-                    { day: "Thursday", time: "5:00 – 5:45 PM", program: "Juniors Beginner (Ages 8–12)" },
-                    { day: "Thursday", time: "5:45 – 6:30 PM", program: "Juniors Intermediate/Advanced (Ages 8–12)" },
-                    { day: "Thursday", time: "6:30 – 7:15 PM", program: "Teens (13–18) & Adults (18+)" },
-                    { day: "Saturday", time: "8:00 – 8:30 AM", program: "Cubs (Ages 3–4)" },
-                    { day: "Saturday", time: "8:45 – 9:30 AM", program: "Little Lions (Ages 5–7)" },
-                    { day: "Saturday", time: "9:30 – 10:15 AM", program: "Juniors All Levels (Ages 8–12)" },
-                    { day: "Saturday", time: "10:15 – 11:00 AM", program: "Combined Class — Little Lions, Juniors, Teens & Adults" },
-                    { day: "Saturday", time: "11:00 – 11:45 AM", program: "Teens (13–18) & Adults (18+)" },
-                  ].map((row, i) => (
-                    <tr key={i} className={i % 2 === 0 ? "bg-gray-50" : "bg-white"}>
-                      <td className="p-3 font-medium text-[#003087]">{row.day}</td>
-                      <td className="p-3 text-gray-600">{row.time}</td>
-                      <td className="p-3 text-gray-700">{row.program}</td>
-                    </tr>
+          <h2 className="text-2xl font-bold text-[#003087] mb-6">Weekly Schedule</h2>
+          <div className="overflow-x-auto rounded-lg shadow-lg">
+            <table className="w-full border-collapse text-xs">
+              <thead>
+                <tr style={{ backgroundColor: HEADER_BG }}>
+                  <th className="p-3 text-center text-white font-bold tracking-wider uppercase" style={{ minWidth: "70px" }}>
+                    Time
+                  </th>
+                  {DAY_KEYS.map((d) => (
+                    <th
+                      key={d.key}
+                      className="p-3 text-center text-white font-bold tracking-wider uppercase"
+                      style={{ minWidth: "84px" }}
+                    >
+                      {d.label}
+                    </th>
                   ))}
-                </tbody>
-              </table>
-            </div>
-            <p className="mt-4 text-sm text-gray-500">
-              * Timetable subject to change. Check with Sensei for holiday schedules.
-            </p>
-          </div>
-
-          {/* Kihon booking embed */}
-          <div>
-            <h2 className="text-2xl font-bold text-[#003087] mb-2">Book Your First Class</h2>
-            <p className="text-gray-500 text-sm mb-6">
-              Select your program, choose a day and time that suits you, then fill in your details to complete your booking.
-            </p>
-            <div className="rounded-xl overflow-hidden border border-gray-200">
-              <iframe
-                src={BOOKING_URL}
-                width="100%"
-                height="700"
-                frameBorder="0"
-                title="Book your first class at Kansai Karate Gold Coast"
-                style={{ display: "block" }}
-              />
-            </div>
+                  <th className="p-3 text-center text-white font-bold tracking-wider uppercase" style={{ minWidth: "70px" }}>
+                    Time
+                  </th>
+                  <th className="p-3 text-center text-white font-bold tracking-wider uppercase" style={{ minWidth: "84px" }}>
+                    SATURDAY
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {ROWS.map((row, i) => (
+                  <tr key={i} className="border-t border-gray-200">
+                    <td className="p-3 text-center text-white font-bold" style={{ backgroundColor: HEADER_BG }}>
+                      {row.wkTime}
+                    </td>
+                    {DAY_KEYS.map((d) => (
+                      <ClassCell key={d.key} cell={row[d.key]} light={d.key === "tue" || d.key === "thu"} />
+                    ))}
+                    <td className="p-3 text-center text-white font-bold" style={{ backgroundColor: HEADER_BG }}>
+                      {row.satTime}
+                    </td>
+                    <ClassCell cell={row.sat} light />
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </section>
