@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/programs/teens/timetable`, lastModified: "2026-04-22" },
     { url: `${BASE}/programs/adults/timetable`, lastModified: "2026-04-22" },
     { url: `${BASE}/timetable`, lastModified: "2026-04-22" },
+    { url: `${BASE}/new-timetable`, lastModified: "2026-06-29" },
     { url: `${BASE}/about`, lastModified: "2026-04-22" },
     { url: `${BASE}/contact`, lastModified: "2026-04-22" },
     { url: `${BASE}/privacy`, lastModified: "2026-04-19" },

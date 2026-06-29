@@ -63,6 +63,10 @@ export default function Nav() {
             )}
           </div>
 
+          <Link href="/new-timetable" className="hover:text-[#FFB800] transition-colors">
+            Timetable
+          </Link>
+
           <Link href="/about" className="hover:text-[#FFB800] transition-colors">
             About
           </Link>
@@ -113,6 +117,13 @@ export default function Nav() {
             </Link>
           ))}
           <hr className="border-blue-700" />
+          <Link
+            href="/new-timetable"
+            onClick={() => setMenuOpen(false)}
+            className="block py-1 hover:text-[#FFB800]"
+          >
+            Timetable
+          </Link>
           <Link
             href="/about"
             onClick={() => setMenuOpen(false)}
