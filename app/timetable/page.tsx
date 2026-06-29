@@ -67,7 +67,7 @@ const ROWS: Row[] = [
     mon: { label: "Teens & Adults" },
     tue: { label: "Adults", grade: "Ages 18+" },
     wed: { label: "Teens & Adults" },
-    thu: undefined,
+    thu: { label: "Black Belt Only" },
     sat: { label: "Teens & Adults" },
   },
 ];

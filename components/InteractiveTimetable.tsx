@@ -91,35 +91,54 @@ const ROWS: Row[] = [
   },
 ];
 
-/* ── Grouped buttons ── */
-interface ButtonDef { label: string; group: Group }
-interface ButtonRow { program: string; buttons: ButtonDef[] }
+/* ── Programs → belt ranks ── */
+type ProgramId = "LL" | "JR" | "TN" | "AD";
 
-const STANDALONE: ButtonDef = { label: "Little Lions", group: "LL" };
-const BUTTON_ROWS: ButtonRow[] = [
+interface RankDef { label: string; group: Group; belts: string }
+interface ProgramDef {
+  id: ProgramId;
+  label: string;
+  age: string;
+  groups: Group[]; // every group in this program (program-level highlight)
+  ranks: RankDef[]; // empty for Little Lions
+}
+
+const BEG_INT_BELTS = "White, Red, Yellow, Orange, Green, Blue";
+
+const PROGRAMS: ProgramDef[] = [
+  { id: "LL", label: "Little Lions", age: "Ages 5–7", groups: ["LL"], ranks: [] },
   {
-    program: "Juniors",
-    buttons: [
-      { label: "Beginner", group: "JrBeg" },
-      { label: "Intermediate", group: "JrInt" },
-      { label: "Advanced", group: "JrAdv" },
-      { label: "Black Belt", group: "JrBB" },
+    id: "JR",
+    label: "Juniors",
+    age: "Ages 8–12",
+    groups: ALL_JR,
+    ranks: [
+      { label: "Beginner", group: "JrBeg", belts: "White, Red, Yellow" },
+      { label: "Intermediate", group: "JrInt", belts: "Orange, Green, Blue" },
+      { label: "Advanced", group: "JrAdv", belts: "Purple, Brown" },
+      { label: "Black Belt", group: "JrBB", belts: "Black" },
     ],
   },
   {
-    program: "Teens",
-    buttons: [
-      { label: "Beg – Int", group: "TnBI" },
-      { label: "Advanced", group: "TnAdv" },
-      { label: "Black Belt", group: "TnBB" },
+    id: "TN",
+    label: "Teens",
+    age: "Ages 13–18",
+    groups: ALL_TN,
+    ranks: [
+      { label: "Beg – Int", group: "TnBI", belts: BEG_INT_BELTS },
+      { label: "Advanced", group: "TnAdv", belts: "Purple, Brown" },
+      { label: "Black Belt", group: "TnBB", belts: "Black" },
     ],
   },
   {
-    program: "Adults",
-    buttons: [
-      { label: "Beg – Int", group: "AdBI" },
-      { label: "Advanced", group: "AdAdv" },
-      { label: "Black Belt", group: "AdBB" },
+    id: "AD",
+    label: "Adults",
+    age: "Ages 18+",
+    groups: ALL_AD,
+    ranks: [
+      { label: "Beg – Int", group: "AdBI", belts: BEG_INT_BELTS },
+      { label: "Advanced", group: "AdAdv", belts: "Purple, Brown" },
+      { label: "Black Belt", group: "AdBB", belts: "Black" },
     ],
   },
 ];
@@ -127,72 +146,120 @@ const BUTTON_ROWS: ButtonRow[] = [
 type CellStatus = "neutral" | "on" | "off";
 
 export default function InteractiveTimetable() {
-  const [selected, setSelected] = useState<Group | null>(null);
+  const [programId, setProgramId] = useState<ProgramId | null>(null);
+  const [rank, setRank] = useState<Group | null>(null);
+
+  const currentProgram = PROGRAMS.find((p) => p.id === programId) ?? null;
+
+  // Active highlight set: a chosen rank narrows to one group; otherwise the whole program.
+  const activeGroups: Group[] | null = rank
+    ? [rank]
+    : currentProgram
+    ? currentProgram.groups
+    : null;
 
   const statusFor = (cell: Cell): CellStatus => {
-    if (!selected) return "neutral";
-    return cell.eligible.includes(selected) ? "on" : "off";
+    if (!activeGroups) return "neutral";
+    return cell.eligible.some((g) => activeGroups.includes(g)) ? "on" : "off";
   };
 
-  const isActive = (g: Group) => selected === g;
+  const selectProgram = (id: ProgramId) => {
+    if (programId === id) {
+      setProgramId(null); // toggle off + collapse
+      setRank(null);
+    } else {
+      setProgramId(id);
+      setRank(null);
+    }
+  };
 
-  const btnClass = (active: boolean) =>
-    `px-3 py-1.5 rounded-md text-sm font-semibold border transition-colors ${
-      active
-        ? "text-[#001040] border-transparent shadow"
-        : "bg-white text-[#003087] border-gray-300 hover:border-[#FFB800] hover:bg-[#FFF7E0]"
-    }`;
+  const selectRank = (g: Group) => setRank((prev) => (prev === g ? null : g));
+
+  const reset = () => {
+    setProgramId(null);
+    setRank(null);
+  };
 
   return (
     <div className="max-w-5xl mx-auto">
+      {/* Cubs note */}
+      <div className="mb-5 rounded-lg border border-[#FFB800]/50 bg-[#FFF7E0] px-4 py-3 text-sm text-[#003087]">
+        <span className="font-bold">Cubs (ages 3–4):</span> our littlest students now train on their own
+        floor upstairs. A separate Cubs timetable and booking system is{" "}
+        <span className="font-semibold">coming soon</span>.
+      </div>
+
       {/* Instructions */}
       <p className="text-center text-gray-600 text-sm mb-5">
-        Pick your program below to highlight the classes you can attend. The classes that
-        don&apos;t apply will fade out. Tap <span className="font-semibold">Show all classes</span> to
-        see the full timetable again.
+        Pick your program to highlight the classes you can attend — then choose a belt level to narrow it
+        down. Tap <span className="font-semibold">Show all classes</span> to see the full timetable again.
       </p>
 
-      {/* Buttons */}
-      <div className="mb-8 space-y-3">
-        {/* Little Lions + reset */}
-        <div className="flex flex-wrap items-center gap-2">
-          <button
-            type="button"
-            onClick={() => setSelected(isActive("LL") ? null : "LL")}
-            className={btnClass(isActive("LL"))}
-            style={isActive("LL") ? { backgroundColor: ACCENT } : undefined}
-          >
-            {STANDALONE.label}
-          </button>
-          <button
-            type="button"
-            onClick={() => setSelected(null)}
-            className="px-3 py-1.5 rounded-md text-sm font-semibold border border-gray-300 text-gray-600 bg-gray-50 hover:bg-gray-100 transition-colors ml-auto"
-          >
-            Show all classes
-          </button>
-        </div>
-
-        {/* Program rows */}
-        {BUTTON_ROWS.map((row) => (
-          <div key={row.program} className="flex flex-wrap items-center gap-2">
-            <span className="text-xs font-bold uppercase tracking-wider text-gray-400 w-20 shrink-0">
-              {row.program}
-            </span>
-            {row.buttons.map((b) => (
-              <button
-                key={b.group}
-                type="button"
-                onClick={() => setSelected(isActive(b.group) ? null : b.group)}
-                className={btnClass(isActive(b.group))}
-                style={isActive(b.group) ? { backgroundColor: ACCENT } : undefined}
-              >
-                {b.label}
-              </button>
-            ))}
-          </div>
-        ))}
+      {/* Program buttons */}
+      <div className="flex flex-wrap items-stretch gap-2 mb-3">
+        {PROGRAMS.map((p) => {
+          const active = programId === p.id;
+          return (
+            <button
+              key={p.id}
+              type="button"
+              onClick={() => selectProgram(p.id)}
+              aria-expanded={active && p.ranks.length > 0}
+              className={`flex flex-col items-center justify-center px-4 py-2 rounded-md border text-center transition-colors ${
+                active
+                  ? "text-[#001040] border-transparent shadow"
+                  : "bg-white text-[#003087] border-gray-300 hover:border-[#FFB800] hover:bg-[#FFF7E0]"
+              }`}
+              style={active ? { backgroundColor: ACCENT } : undefined}
+            >
+              <span className="font-bold text-sm leading-tight">{p.label}</span>
+              <span className="text-[11px] opacity-70 leading-tight">{p.age}</span>
+            </button>
+          );
+        })}
+        <button
+          type="button"
+          onClick={reset}
+          className="ml-auto self-center px-3 py-1.5 rounded-md text-sm font-semibold border border-gray-300 text-gray-600 bg-gray-50 hover:bg-gray-100 transition-colors"
+        >
+          Show all classes
+        </button>
       </div>
+
+      {/* Belt-rank options (expand when a program with ranks is selected) */}
+      {currentProgram && currentProgram.ranks.length > 0 && (
+        <div className="mb-8 rounded-lg bg-gray-50 border border-gray-200 p-3">
+          <p className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-2">
+            {currentProgram.label} — choose a belt level (optional)
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {currentProgram.ranks.map((r) => {
+              const active = rank === r.group;
+              return (
+                <button
+                  key={r.group}
+                  type="button"
+                  onClick={() => selectRank(r.group)}
+                  className={`flex flex-col items-start px-3 py-2 rounded-md border text-left max-w-[200px] transition-colors ${
+                    active
+                      ? "text-[#001040] border-transparent shadow"
+                      : "bg-white text-[#003087] border-gray-300 hover:border-[#FFB800] hover:bg-[#FFF7E0]"
+                  }`}
+                  style={active ? { backgroundColor: ACCENT } : undefined}
+                >
+                  <span className="font-bold text-sm leading-tight">{r.label}</span>
+                  <span className={`text-[11px] leading-snug mt-0.5 ${active ? "text-[#001040]/70" : "text-gray-500"}`}>
+                    {r.belts}
+                  </span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
+
+      {/* Spacer when no ranks expanded */}
+      {!(currentProgram && currentProgram.ranks.length > 0) && <div className="mb-8" />}
 
       {/* Timetable */}
       <div className="overflow-x-auto rounded-lg shadow-lg mb-8">
@@ -279,10 +346,6 @@ export default function InteractiveTimetable() {
       {/* Notes */}
       <div className="rounded-lg border border-gray-200 bg-gray-50 p-5 text-sm text-gray-700">
         <h3 className="font-bold text-[#003087] mb-3 uppercase tracking-wide text-xs">Notes</h3>
-        <p className="mb-3 text-gray-600">
-          Our Cubs (ages 3–4) now train on their own floor upstairs, with a separate timetable and
-          booking system — <span className="font-semibold">coming soon</span>.
-        </p>
         <ul className="space-y-2">
           <li><span className="font-semibold text-[#003087]">All Grades:</span> all belts in that program (e.g. all Little Lion belts).</li>
           <li><span className="font-semibold text-[#003087]">Beg – Int:</span> Beginner &amp; Intermediate belts — White, Red, Yellow, Orange, Green &amp; Blue (including black stripes).</li>
@@ -292,7 +355,7 @@ export default function InteractiveTimetable() {
         </ul>
       </div>
 
-      <p className="text-center text-xs text-gray-400 mt-4" style={{ color: BODY_BLUE }}>
+      <p className="text-center text-xs mt-4" style={{ color: BODY_BLUE }}>
         Timetable subject to change. Check with Sensei for holiday schedules.
       </p>
     </div>
