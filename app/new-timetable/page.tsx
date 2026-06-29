@@ -4,11 +4,9 @@ import InteractiveTimetable from "@/components/InteractiveTimetable";
 export const metadata: Metadata = {
   title: "New Class Timetable | Kansai Karate Gold Coast",
   description:
-    "Our new Kansai Karate Gold Coast timetable starts Monday 13 July 2026. Pick your program to see exactly which classes you can attend, then book your spot.",
+    "Our new Kansai Karate Gold Coast timetable starts Monday 13 July 2026. Pick your program and belt level to see exactly which classes you can attend.",
   alternates: { canonical: "/new-timetable" },
 };
-
-const BOOKING_URL = "https://app.kihonsoft.au/book/1st-lesson-bookings";
 
 const breadcrumbSchema = {
   "@context": "https://schema.org",
@@ -41,32 +39,6 @@ export default function NewTimetablePage() {
       {/* Interactive timetable */}
       <section className="py-14 px-4 bg-white">
         <InteractiveTimetable />
-      </section>
-
-      {/* Booking */}
-      <section className="py-14 px-4 bg-gray-50 border-t border-gray-200">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-[#003087] mb-2 text-center">Book Your Free Trial Class</h2>
-          <p className="text-gray-500 text-sm mb-8 text-center">
-            Select your program, choose a day and time that suits your family, then fill in your details to complete your booking.
-          </p>
-          <div className="rounded-xl overflow-hidden border border-gray-200 bg-white">
-            <iframe
-              src={BOOKING_URL}
-              width="100%"
-              height="700"
-              frameBorder="0"
-              title="Book your first class at Kansai Karate Gold Coast"
-              style={{ display: "block" }}
-            />
-          </div>
-          <p className="text-gray-500 text-sm text-center mt-4">
-            Not sure about booking online? Call us on{" "}
-            <a href="tel:0489265960" className="text-[#003087] font-semibold underline hover:text-[#5B7DB1] transition-colors">
-              0489 265 960
-            </a>
-          </p>
-        </div>
       </section>
     </>
   );
