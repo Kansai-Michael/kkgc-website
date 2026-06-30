@@ -101,7 +101,7 @@ export default function TimetablePage({
 
           {/* Timetable */}
           <h2 className="text-xl font-bold text-white mb-4 uppercase tracking-wide text-center">
-            Current Class Schedule
+            Class Schedule — Scroll Down to Book Your First Lesson
           </h2>
 
           {programGroups ? (
