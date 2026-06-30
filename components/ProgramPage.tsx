@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import BookTrialButton from "@/components/BookTrialButton";
 
 const BADGE_IMG = "/images/KKA-Logo-Trans-background.png";
@@ -136,12 +135,6 @@ export default function ProgramPage({
               program={slug}
               className="inline-block border-2 border-white text-white font-bold px-10 py-3 hover:bg-white hover:text-[#5B7DB1] transition-colors uppercase tracking-widest text-sm"
             />
-            <Link
-              href={`/programs/${slug}/timetable`}
-              className="text-white/70 underline text-sm hover:text-white transition-colors"
-            >
-              View class timetable →
-            </Link>
           </div>
         </div>
       </section>
