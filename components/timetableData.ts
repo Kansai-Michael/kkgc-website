@@ -18,7 +18,6 @@ export const ALL_TN_AD: Group[] = [...ALL_TN, ...ALL_AD];
 export const COMBINED: Group[] = [...ALL_JR, ...ALL_TN, ...ALL_AD];
 export const EVERYONE: Group[] = ["LL", ...COMBINED];
 export const ADV_CLASS: Group[] = ["JrAdv", "JrBB", ...ALL_TN_AD];
-export const BLACK_BELT: Group[] = ["JrBB", "TnBB", "AdBB"];
 
 export interface Cell {
   label: string;
@@ -81,7 +80,8 @@ export const ROWS: Row[] = [
     mon: { label: "Teens & Adults", grade: "All Grades", eligible: ALL_TN_AD },
     tue: { label: "Adults", grade: "All Grades", eligible: ALL_AD },
     wed: { label: "Teens & Adults", grade: "All Grades", eligible: ALL_TN_AD },
-    thu: { label: "Black Belt Only", eligible: BLACK_BELT },
+    // Existing advanced students only — never highlighted as a bookable class.
+    thu: { label: "Black Belt Only", eligible: [] },
     sat: { label: "Teens & Adults", grade: "All Grades", eligible: ALL_TN_AD },
   },
 ];
