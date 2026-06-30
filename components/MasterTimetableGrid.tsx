@@ -85,7 +85,7 @@ export default function MasterTimetableGrid({ activeGroups }: MasterTimetableGri
                       cls = `${base} font-semibold text-[#003087]`;
                       style = { backgroundColor: "#FFF7E0", boxShadow: `inset 0 0 0 2px ${ACCENT}` };
                     } else if (status === "off") {
-                      cls = `${base} text-gray-300 bg-gray-50 opacity-60`;
+                      cls = `${base} text-gray-500 bg-gray-100`;
                     }
                     return (
                       <td key={c.key} className={cls} style={style}>
