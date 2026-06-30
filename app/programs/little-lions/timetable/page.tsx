@@ -82,17 +82,7 @@ export default function LittleLionsTimetable() {
       heroImg={`${OLD}/lll.jpg`}
       headline="Unleash your child's inner superhero at Little Lions!"
       subheadline="Little Lions is for ages 5–7. Book a FREE First Lesson and watch your child's confidence grow."
-      scheduleRows={[
-        {
-          label: "LITTLE LIONS",
-          sublabel: "5 - 7 YEARS",
-          mon: "5:00 - 5:45pm",
-          tue: "4:15 - 5:00pm",
-          wed: "5:00 - 5:45pm",
-          thu: "4:15 - 5:00pm",
-          sat: "8:45 - 9:30am",
-        },
-      ]}
+      highlightProgram="LL"
       bookingIframeUrl={BOOKING_URL}
       moreInfo={moreInfo}
     />

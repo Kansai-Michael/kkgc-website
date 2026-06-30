@@ -1,5 +1,7 @@
 import BookTrialButton from "@/components/BookTrialButton";
 import BookingCalendar from "@/components/BookingCalendar";
+import MasterTimetableGrid from "@/components/MasterTimetableGrid";
+import { PROGRAMS, type ProgramId } from "@/components/timetableData";
 import { Swords } from "lucide-react";
 
 const OLD = "/images";
@@ -52,7 +54,11 @@ interface TimetablePageProps {
   heroImg: string;
   headline: string;
   subheadline: string;
-  scheduleRows: ScheduleRow[];
+  /** Legacy compact grid. Used by pages without highlightProgram (e.g. Cubs). */
+  scheduleRows?: ScheduleRow[];
+  /** When set, render the shared master timetable highlighted to this program
+      instead of scheduleRows. */
+  highlightProgram?: ProgramId;
   bookingIframeUrl: string;
   moreInfo?: MoreInfoContent;
 }
@@ -64,9 +70,13 @@ export default function TimetablePage({
   headline,
   subheadline,
   scheduleRows,
+  highlightProgram,
   bookingIframeUrl,
   moreInfo,
 }: TimetablePageProps) {
+  const programGroups = highlightProgram
+    ? PROGRAMS.find((p) => p.id === highlightProgram)?.groups ?? null
+    : null;
   return (
     <>
       {/* Hero + Timetable + Booking — full bleed background */}
@@ -93,55 +103,71 @@ export default function TimetablePage({
           <h2 className="text-xl font-bold text-white mb-4 uppercase tracking-wide text-center">
             Current Class Schedule
           </h2>
-          <div className="overflow-x-auto rounded-lg shadow-lg mb-10">
-            <table className="w-full border-collapse text-xs">
-              <thead>
-                <tr style={{ backgroundColor: TABLE_HEADER_BG }}>
-                  <th className="p-3 text-center" style={{ minWidth: "90px" }}>
-                    <Swords className="w-5 h-5 text-white mx-auto" />
-                  </th>
-                  {DAYS.map((d) => (
-                    <th
-                      key={d.key}
-                      className="p-3 text-center text-white font-bold tracking-wider uppercase"
-                      style={{ minWidth: "80px" }}
-                    >
-                      {d.label}
+
+          {programGroups ? (
+            /* New master timetable, highlighted to this program */
+            <div className="mb-10">
+              <div className="mb-5 rounded-lg border border-[#FFB800]/60 bg-[#FFF7E0] px-4 py-3 text-sm text-center text-[#003087]">
+                <span className="font-bold">New timetable</span> — starts{" "}
+                <span className="font-semibold">Monday 13 July 2026</span>. Your program&apos;s classes are
+                highlighted below.
+              </div>
+              <div className="rounded-lg bg-white p-4 sm:p-6">
+                <MasterTimetableGrid activeGroups={programGroups} />
+              </div>
+            </div>
+          ) : (
+            /* Legacy compact grid (e.g. Cubs) */
+            <div className="overflow-x-auto rounded-lg shadow-lg mb-10">
+              <table className="w-full border-collapse text-xs">
+                <thead>
+                  <tr style={{ backgroundColor: TABLE_HEADER_BG }}>
+                    <th className="p-3 text-center" style={{ minWidth: "90px" }}>
+                      <Swords className="w-5 h-5 text-white mx-auto" />
                     </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {scheduleRows.map((row, i) => (
-                  <tr key={i} className="border-t border-gray-200">
-                    <td
-                      className="p-3 text-center text-white font-bold leading-tight"
-                      style={{ backgroundColor: TABLE_HEADER_BG }}
-                    >
-                      <div className="text-xs">{row.label}</div>
-                      {row.sublabel && (
-                        <div className="font-normal text-white/80 mt-0.5 whitespace-pre-line text-xs">
-                          {row.sublabel}
-                        </div>
-                      )}
-                    </td>
-                    {DAYS.map((d) => {
-                      const value = row[d.key];
-                      return (
-                        <td
-                          key={d.key}
-                          className="p-3 text-center text-gray-700"
-                          style={{ backgroundColor: d.light ? LIGHT_COL_BG : "white" }}
-                        >
-                          {value || ""}
-                        </td>
-                      );
-                    })}
+                    {DAYS.map((d) => (
+                      <th
+                        key={d.key}
+                        className="p-3 text-center text-white font-bold tracking-wider uppercase"
+                        style={{ minWidth: "80px" }}
+                      >
+                        {d.label}
+                      </th>
+                    ))}
                   </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+                </thead>
+                <tbody>
+                  {(scheduleRows ?? []).map((row, i) => (
+                    <tr key={i} className="border-t border-gray-200">
+                      <td
+                        className="p-3 text-center text-white font-bold leading-tight"
+                        style={{ backgroundColor: TABLE_HEADER_BG }}
+                      >
+                        <div className="text-xs">{row.label}</div>
+                        {row.sublabel && (
+                          <div className="font-normal text-white/80 mt-0.5 whitespace-pre-line text-xs">
+                            {row.sublabel}
+                          </div>
+                        )}
+                      </td>
+                      {DAYS.map((d) => {
+                        const value = row[d.key];
+                        return (
+                          <td
+                            key={d.key}
+                            className="p-3 text-center text-gray-700"
+                            style={{ backgroundColor: d.light ? LIGHT_COL_BG : "white" }}
+                          >
+                            {value || ""}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
 
           {/* Booking */}
           <h2 className="text-2xl font-bold text-white mb-4">

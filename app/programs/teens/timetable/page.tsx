@@ -82,31 +82,7 @@ export default function TeensTimetable() {
       heroImg={`${OLD}/Teengoogle-1.jpg`}
       headline="Build fitness, focus, and real self-defence skills!"
       subheadline="Teens Karate is for ages 13–18. Book a FREE First Lesson and discover what you're capable of."
-      scheduleRows={[
-        {
-          label: "TEENS",
-          sublabel: "13 - 18 YEARS",
-          mon: "7:15 - 8:00pm",
-          tue: "6:30 - 7:15pm",
-          wed: "7:15 - 8:00pm",
-          thu: "6:30 - 7:15pm",
-          sat: "11:00 - 11:45am",
-        },
-        {
-          label: "ADULTS",
-          sublabel: "18 YEARS +",
-          mon: "7:15 - 8:00pm",
-          tue: "7:15 - 8:00pm",
-          wed: "7:15 - 8:00pm",
-          thu: "6:30 - 7:15pm",
-          sat: "11:00 - 11:45am",
-        },
-        {
-          label: "Combined Class",
-          sublabel: "Little Lions,\nJuniors,\nTeens & Adults",
-          sat: "10:15 - 11:00am",
-        },
-      ]}
+      highlightProgram="TN"
       bookingIframeUrl={BOOKING_URL}
       moreInfo={moreInfo}
     />

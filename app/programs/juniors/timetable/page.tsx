@@ -83,31 +83,7 @@ export default function JuniorsTimetable() {
       heroImg={`${OLD}/juniorsgoogle.jpg`}
       headline="Take your child's skills to the next level with Juniors!"
       subheadline="Juniors is for ages 8–12. Book a FREE First Lesson and see real growth in confidence and discipline."
-      scheduleRows={[
-        {
-          label: "JUNIORS",
-          sublabel: "8 - 12 YEARS\n(Beginners)",
-          mon: "5:45 - 6:30pm",
-          tue: "5:00 - 5:45pm",
-          wed: "5:45 - 6:30pm",
-          thu: "5:00 - 5:45pm",
-          sat: "9:30 - 10:15am",
-        },
-        {
-          label: "JUNIORS",
-          sublabel: "8 - 12 YEARS\n(Int - Adv)",
-          mon: "6:30 - 7:15pm",
-          tue: "5:45 - 6:30pm",
-          wed: "6:30 - 7:15pm",
-          thu: "5:45 - 6:30pm",
-          sat: "9:30 - 10:15am",
-        },
-        {
-          label: "Combined Class",
-          sublabel: "Little Lions,\nJuniors,\nTeens & Adults",
-          sat: "10:15 - 11:00am",
-        },
-      ]}
+      highlightProgram="JR"
       bookingIframeUrl={BOOKING_URL}
       moreInfo={moreInfo}
     />

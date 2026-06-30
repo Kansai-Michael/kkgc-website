@@ -95,31 +95,7 @@ export default function AdultsTimetable() {
       heroImg={`${OLD}/adultsgoogle4.jpg`}
       headline="The best workout in Upper Coomera — for real people."
       subheadline="Book a FREE First Lesson and find out why our adults keep coming back."
-      scheduleRows={[
-        {
-          label: "TEENS",
-          sublabel: "13 - 18 YEARS",
-          mon: "7:15 - 8:00pm",
-          tue: "6:30 - 7:15pm",
-          wed: "7:15 - 8:00pm",
-          thu: "6:30 - 7:15pm",
-          sat: "11:00 - 11:45am",
-        },
-        {
-          label: "ADULTS",
-          sublabel: "18 YEARS +",
-          mon: "7:15 - 8:00pm",
-          tue: "7:15 - 8:00pm",
-          wed: "7:15 - 8:00pm",
-          thu: "6:30 - 7:15pm",
-          sat: "11:00 - 11:45am",
-        },
-        {
-          label: "Combined Class",
-          sublabel: "Little Lions,\nJuniors,\nTeens & Adults",
-          sat: "10:15 - 11:00am",
-        },
-      ]}
+      highlightProgram="AD"
       bookingIframeUrl={BOOKING_URL}
       moreInfo={moreInfo}
     />
