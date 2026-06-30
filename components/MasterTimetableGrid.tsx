@@ -4,7 +4,6 @@ import { ROWS, type Cell, type Group } from "@/components/timetableData";
 /* ── Brand tokens (match the rest of the site) ── */
 const HEADER_BG = "#003087";
 const ACCENT = "#FFB800";
-const BODY_BLUE = "#5B7DB1";
 
 type CellStatus = "neutral" | "on" | "off";
 
@@ -117,9 +116,6 @@ export default function MasterTimetableGrid({ activeGroups }: MasterTimetableGri
         </ul>
       </div>
 
-      <p className="text-center text-xs mt-4" style={{ color: BODY_BLUE }}>
-        Timetable subject to change. Check with Sensei for holiday schedules.
-      </p>
     </>
   );
 }
