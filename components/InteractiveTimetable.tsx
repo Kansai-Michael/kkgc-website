@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import CubsTimetableGrid from "@/components/CubsTimetableGrid";
 import MasterTimetableGrid from "@/components/MasterTimetableGrid";
 import { PROGRAMS, type Group, type ProgramId } from "@/components/timetableData";
 
@@ -40,16 +40,21 @@ export default function InteractiveTimetable() {
     setRank(null);
   };
 
+  const scrollToUpstairs = (e: React.MouseEvent) => {
+    e.preventDefault();
+    document.getElementById("upstairs-dojo")?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="max-w-5xl mx-auto">
       {/* Cubs note */}
       <div className="mb-5 rounded-lg border border-[#FFB800]/50 bg-[#FFF7E0] px-4 py-3 text-sm text-[#003087]">
         <span className="font-bold">Cubs (ages 3–4):</span> our littlest students train on their own
         floor upstairs, with their own schedule. See the{" "}
-        <Link href="/programs/cubs/timetable" className="font-semibold underline hover:text-[#B8860B]">
-          Cubs class timetable
-        </Link>
-        .
+        <a href="#upstairs-dojo" onClick={scrollToUpstairs} className="font-semibold underline hover:text-[#B8860B]">
+          Upstairs Dojo
+        </a>{" "}
+        timetable below.
       </div>
 
       {/* Instructions */}
@@ -60,6 +65,14 @@ export default function InteractiveTimetable() {
 
       {/* Program buttons */}
       <div className="flex flex-wrap items-stretch gap-2 mb-3">
+        <button
+          type="button"
+          onClick={scrollToUpstairs}
+          className="flex flex-col items-center justify-center px-4 py-2 rounded-md border text-center transition-colors bg-white text-[#003087] border-gray-300 hover:border-[#FFB800] hover:bg-[#FFF7E0]"
+        >
+          <span className="font-bold text-sm leading-tight">Cubs</span>
+          <span className="text-[11px] opacity-70 leading-tight">Ages 3–4</span>
+        </button>
         {PROGRAMS.map((p) => {
           const active = programId === p.id;
           return (
@@ -126,8 +139,16 @@ export default function InteractiveTimetable() {
       {/* Spacer when no ranks expanded */}
       {!(currentProgram && currentProgram.ranks.length > 0) && <div className="mb-8" />}
 
-      {/* Timetable + notes */}
+      {/* Main dojo timetable + notes */}
+      <h2 className="text-xl font-bold text-[#003087] mb-4 uppercase tracking-wide">Main Dojo Floor</h2>
       <MasterTimetableGrid activeGroups={activeGroups} />
+
+      {/* Upstairs dojo — Cubs timetable */}
+      <div id="upstairs-dojo" className="mt-12 scroll-mt-24">
+        <h2 className="text-xl font-bold text-[#003087] mb-1 uppercase tracking-wide">Upstairs Dojo</h2>
+        <p className="text-gray-600 text-sm mb-4">Cubs (ages 3–4) · from Monday 13 July 2026</p>
+        <CubsTimetableGrid theme="light" />
+      </div>
     </div>
   );
 }
