@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import CubsTimetableGrid from "@/components/CubsTimetableGrid";
 
 export const metadata: Metadata = {
   title: "Class Timetable | Kansai Karate Gold Coast",
@@ -28,11 +29,8 @@ const ROWS: Row[] = [
   {
     wkTime: "4:15pm",
     satTime: "8:00am",
-    mon: { label: "Cubs", grade: "Ages 3–4" },
     tue: { label: "Little Lions", grade: "Ages 5–7" },
-    wed: { label: "Cubs", grade: "Ages 3–4" },
     thu: { label: "Little Lions", grade: "Ages 5–7" },
-    sat: { label: "Cubs", grade: "Ages 3–4" },
   },
   {
     wkTime: "5:00pm",
@@ -154,6 +152,14 @@ export default function TimetablePage() {
               </tbody>
             </table>
           </div>
+        </div>
+      </section>
+
+      <section className="pb-16 px-4 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-2xl font-bold text-[#003087] mb-1">Cubs Class Timetable</h2>
+          <p className="text-gray-500 text-sm mb-6">Ages 3–4 · from Monday 13 July 2026</p>
+          <CubsTimetableGrid theme="light" />
         </div>
       </section>
     </>

@@ -1,5 +1,6 @@
 import BookTrialButton from "@/components/BookTrialButton";
 import BookingCalendar from "@/components/BookingCalendar";
+import CubsTimetableGrid from "@/components/CubsTimetableGrid";
 import MasterTimetableGrid from "@/components/MasterTimetableGrid";
 import { PROGRAMS, type ProgramId } from "@/components/timetableData";
 import { Swords } from "lucide-react";
@@ -59,6 +60,8 @@ interface TimetablePageProps {
   /** When set, render the shared master timetable highlighted to this program
       instead of scheduleRows. */
   highlightProgram?: ProgramId;
+  /** When true, render the dedicated Cubs days-as-columns grid (Cubs booking page). */
+  cubsGrid?: boolean;
   bookingIframeUrl: string;
   moreInfo?: MoreInfoContent;
 }
@@ -71,6 +74,7 @@ export default function TimetablePage({
   subheadline,
   scheduleRows,
   highlightProgram,
+  cubsGrid,
   bookingIframeUrl,
   moreInfo,
 }: TimetablePageProps) {
@@ -104,7 +108,18 @@ export default function TimetablePage({
             Class Schedule — Scroll Down to Book Your First Lesson
           </h2>
 
-          {programGroups ? (
+          {cubsGrid ? (
+            /* Dedicated Cubs days-as-columns grid */
+            <div className="mb-10">
+              <div className="mb-5 rounded-lg border border-[#FFB800]/60 bg-[#FFF7E0] px-4 py-3 text-sm text-center text-[#003087]">
+                <span className="font-bold">New timetable</span> — starts{" "}
+                <span className="font-semibold">Monday 13 July 2026</span>.
+              </div>
+              <div className="rounded-lg bg-white p-4 sm:p-6">
+                <CubsTimetableGrid theme="light" />
+              </div>
+            </div>
+          ) : programGroups ? (
             /* New master timetable, highlighted to this program */
             <div className="mb-10">
               <div className="mb-5 rounded-lg border border-[#FFB800]/60 bg-[#FFF7E0] px-4 py-3 text-sm text-center text-[#003087]">

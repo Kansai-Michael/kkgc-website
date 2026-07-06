@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import MasterTimetableGrid from "@/components/MasterTimetableGrid";
 import { PROGRAMS, type Group, type ProgramId } from "@/components/timetableData";
 
@@ -43,9 +44,12 @@ export default function InteractiveTimetable() {
     <div className="max-w-5xl mx-auto">
       {/* Cubs note */}
       <div className="mb-5 rounded-lg border border-[#FFB800]/50 bg-[#FFF7E0] px-4 py-3 text-sm text-[#003087]">
-        <span className="font-bold">Cubs (ages 3–4):</span> our littlest students now train on their own
-        floor upstairs. A separate Cubs timetable and booking system is{" "}
-        <span className="font-semibold">coming soon</span>.
+        <span className="font-bold">Cubs (ages 3–4):</span> our littlest students train on their own
+        floor upstairs, with their own schedule. See the{" "}
+        <Link href="/programs/cubs/timetable" className="font-semibold underline hover:text-[#B8860B]">
+          Cubs class timetable
+        </Link>
+        .
       </div>
 
       {/* Instructions */}

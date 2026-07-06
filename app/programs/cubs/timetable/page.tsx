@@ -82,15 +82,7 @@ export default function CubsTimetable() {
       heroImg={`${OLD}/cub3.jpg`}
       headline="Unleash your child's inner superhero at Cubs!"
       subheadline="Cubs is for ages 3–4. Book a FREE First Lesson and see your little one shine."
-      scheduleRows={[
-        {
-          label: "CUBS",
-          sublabel: "3 - 4 YEARS",
-          mon: "4:15 - 4:45pm",
-          wed: "4:15 - 4:45pm",
-          sat: "8:00 - 8:30am",
-        },
-      ]}
+      cubsGrid
       bookingIframeUrl={BOOKING_URL}
       moreInfo={moreInfo}
     />
