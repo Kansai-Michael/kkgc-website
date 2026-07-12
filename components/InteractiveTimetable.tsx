@@ -146,7 +146,7 @@ export default function InteractiveTimetable() {
       {/* Upstairs dojo — Cubs timetable */}
       <div id="upstairs-dojo" className="mt-12 scroll-mt-24">
         <h2 className="text-xl font-bold text-[#003087] mb-1 uppercase tracking-wide">Upstairs Dojo</h2>
-        <p className="text-gray-600 text-sm mb-4">Cubs (ages 3–4) · from Monday 13 July 2026</p>
+        <p className="text-gray-600 text-sm mb-4">Cubs (ages 3–4)</p>
         <CubsTimetableGrid theme="light" />
       </div>
     </div>

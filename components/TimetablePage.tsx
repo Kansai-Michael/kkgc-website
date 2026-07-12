@@ -111,21 +111,15 @@ export default function TimetablePage({
           {cubsGrid ? (
             /* Dedicated Cubs days-as-columns grid */
             <div className="mb-10">
-              <div className="mb-5 rounded-lg border border-[#FFB800]/60 bg-[#FFF7E0] px-4 py-3 text-sm text-center text-[#003087]">
-                <span className="font-bold">New timetable</span> — starts{" "}
-                <span className="font-semibold">Monday 13 July 2026</span>.
-              </div>
               <div className="rounded-lg bg-white p-4 sm:p-6">
                 <CubsTimetableGrid theme="light" />
               </div>
             </div>
           ) : programGroups ? (
-            /* New master timetable, highlighted to this program */
+            /* Master timetable, highlighted to this program */
             <div className="mb-10">
               <div className="mb-5 rounded-lg border border-[#FFB800]/60 bg-[#FFF7E0] px-4 py-3 text-sm text-center text-[#003087]">
-                <span className="font-bold">New timetable</span> — starts{" "}
-                <span className="font-semibold">Monday 13 July 2026</span>. Your program&apos;s classes are
-                highlighted below.
+                Your program&apos;s classes are highlighted below.
               </div>
               <div className="rounded-lg bg-white p-4 sm:p-6">
                 <MasterTimetableGrid activeGroups={programGroups} />

@@ -1,7 +1,6 @@
 /* ── Shared timetable data (single source of truth) ──
-   Used by InteractiveTimetable (the /new-timetable filter UI) and
-   MasterTimetableGrid (the read-only grid rendered on program pages).
-   New timetable — starts Monday 13 July 2026. */
+   Used by InteractiveTimetable (the /timetable filter UI) and
+   MasterTimetableGrid (the read-only grid rendered on program pages). */
 
 /* ── Belt-level group ids ── */
 export type Group =

@@ -1,7 +1,7 @@
 const TABLE_HEADER_BG = "#003087";
 const LIGHT_COL_BG = "#c5d9f0";
 
-// Cubs schedule from Monday 13 July 2026. Single source of truth — update here.
+// Cubs schedule. Single source of truth — update here.
 const CUBS_SCHEDULE = {
   monday: ["4:10 – 4:40pm", "4:40 – 5:10pm"],
   wednesday: ["4:10 – 4:40pm", "4:40 – 5:10pm"],

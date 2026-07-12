@@ -20,6 +20,7 @@ const nextConfig: NextConfig = {
       { source: "/karate-classes", destination: "/programs", permanent: true },
       { source: "/dojo-timetable", destination: "/timetable", permanent: true },
       { source: "/class-schedule", destination: "/timetable", permanent: true },
+      { source: "/new-timetable", destination: "/timetable", permanent: true },
       { source: "/classes", destination: "/programs", permanent: true },
     ];
   },
