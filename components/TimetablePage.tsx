@@ -64,6 +64,8 @@ interface TimetablePageProps {
   cubsGrid?: boolean;
   bookingIframeUrl: string;
   moreInfo?: MoreInfoContent;
+  /** When set, renders a waiting-list call-to-action above the booking calendar (Cubs only). */
+  waitlist?: { heading: string; body: string; buttonLabel: string; url: string };
 }
 
 export default function TimetablePage({
@@ -77,6 +79,7 @@ export default function TimetablePage({
   cubsGrid,
   bookingIframeUrl,
   moreInfo,
+  waitlist,
 }: TimetablePageProps) {
   const programGroups = highlightProgram
     ? PROGRAMS.find((p) => p.id === highlightProgram)?.groups ?? null
@@ -190,6 +193,23 @@ export default function TimetablePage({
               <li>Fill in your details to complete the booking</li>
             </ol>
           </div>
+
+          {/* Waiting list CTA (Cubs only) */}
+          {waitlist && (
+            <div className="rounded-lg p-5 mb-5 bg-white/10 border border-white/20 text-center">
+              <h3 className="text-white font-bold text-xl mb-2">{waitlist.heading}</h3>
+              <p className="text-white/90 text-sm mb-4 leading-relaxed">{waitlist.body}</p>
+              <a
+                href={waitlist.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block bg-[#FFB800] text-white font-bold px-8 py-3 rounded-lg hover:bg-[#E6A500] transition-colors uppercase tracking-widest"
+              >
+                {waitlist.buttonLabel}
+              </a>
+            </div>
+          )}
+
           <BookingCalendar
             url={bookingIframeUrl}
             title={`Book a free trial class — ${name}`}

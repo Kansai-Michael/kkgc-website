@@ -3,6 +3,7 @@ import type { MoreInfoContent } from "@/components/TimetablePage";
 
 const OLD = "/images";
 const BOOKING_URL = "https://app.kihonsoft.au/book/1st-lesson-bookings";
+const WAITLIST_URL = "https://app.kihonsoft.au/f/2k5h9knj";
 
 export const metadata = { title: "Cubs Class Timetable | Kansai Karate Gold Coast", description: "Cubs class times for ages 3–4 at Kansai Karate Gold Coast, Upper Coomera. Mon, Wed & Sat sessions available. Book your child's FREE first lesson today.", alternates: { canonical: "/programs/cubs/timetable" } };
 
@@ -84,6 +85,16 @@ export default function CubsTimetable() {
       subheadline="Cubs is for ages 3–4. Book a FREE First Lesson and see your little one shine."
       cubsGrid
       bookingIframeUrl={BOOKING_URL}
+      waitlist={{
+        heading: "Can't find a spot that suits you?",
+        body:
+          "Our Cubs classes are very popular, and we deliberately keep numbers small so every child gets " +
+          "the attention they deserve from our experienced instructors. If none of the current times suit " +
+          "you, join our waiting list and we'll be in touch the moment a space opens up. We're also adding " +
+          "extra Cubs classes soon — including new Tuesday and Thursday afternoon sessions.",
+        buttonLabel: "Add me to the wait list",
+        url: WAITLIST_URL,
+      }}
       moreInfo={moreInfo}
     />
     </>

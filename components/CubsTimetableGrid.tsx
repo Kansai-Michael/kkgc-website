@@ -4,13 +4,17 @@ const LIGHT_COL_BG = "#c5d9f0";
 // Cubs schedule. Single source of truth — update here.
 const CUBS_SCHEDULE = {
   monday: ["4:10 – 4:40pm", "4:40 – 5:10pm"],
+  tuesday: ["Coming Soon", "Coming Soon"],
   wednesday: ["4:10 – 4:40pm", "4:40 – 5:10pm"],
+  thursday: ["Coming Soon", "Coming Soon"],
   saturday: ["8:00 – 8:30am", "8:30 – 9:00am", "9:00 – 9:30am", "9:30 – 10:00am", "10:00 – 10:30am"],
 };
 
 const COLUMNS: { label: string; key: keyof typeof CUBS_SCHEDULE; light: boolean }[] = [
   { label: "MONDAY", key: "monday", light: false },
-  { label: "WEDNESDAY", key: "wednesday", light: true },
+  { label: "TUESDAY", key: "tuesday", light: true },
+  { label: "WEDNESDAY", key: "wednesday", light: false },
+  { label: "THURSDAY", key: "thursday", light: true },
   { label: "SATURDAY", key: "saturday", light: false },
 ];
 
@@ -50,10 +54,13 @@ export default function CubsTimetableGrid({ theme = "light" }: CubsTimetableGrid
               <tr key={rowIndex} className="border-t border-gray-200">
                 {COLUMNS.map((col) => {
                   const value = CUBS_SCHEDULE[col.key][rowIndex];
+                  const isComingSoon = value === "Coming Soon";
                   return (
                     <td
                       key={col.key}
-                      className="p-3 text-center text-gray-700 font-semibold"
+                      className={`p-3 text-center ${
+                        isComingSoon ? "text-gray-400 italic font-normal" : "text-gray-700 font-semibold"
+                      }`}
                       style={{ backgroundColor: col.light ? LIGHT_COL_BG : "white" }}
                     >
                       {value || ""}
@@ -71,7 +78,8 @@ export default function CubsTimetableGrid({ theme = "light" }: CubsTimetableGrid
         <a href="tel:0489265960" className={noteLink}>
           0489 265 960
         </a>{" "}
-        for more information.
+        for more information. New Tuesday &amp; Thursday afternoon classes are coming soon — join the
+        waiting list below to be first to know.
       </p>
     </div>
   );
