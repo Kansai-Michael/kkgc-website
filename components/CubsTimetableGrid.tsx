@@ -59,7 +59,7 @@ export default function CubsTimetableGrid({ theme = "light" }: CubsTimetableGrid
                     <td
                       key={col.key}
                       className={`p-3 text-center ${
-                        isComingSoon ? "text-gray-400 italic font-normal" : "text-gray-700 font-semibold"
+                        isComingSoon ? "text-black italic font-normal" : "text-gray-700 font-semibold"
                       }`}
                       style={{ backgroundColor: col.light ? LIGHT_COL_BG : "white" }}
                     >
