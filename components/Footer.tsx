@@ -102,6 +102,7 @@ export default function Footer() {
       <div className="border-t border-white/10 px-4 py-4 max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-white/40">
         <p>© {new Date().getFullYear()} Kansai Karate Gold Coast. All rights reserved.</p>
         <div className="flex gap-4">
+          <Link href="/dojo-rules" className="hover:text-white/70">Dojo Rules</Link>
           <Link href="/privacy" className="hover:text-white/70">Privacy Policy</Link>
           <Link href="/terms" className="hover:text-white/70">Terms of Use</Link>
         </div>

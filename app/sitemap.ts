@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/timetable`, lastModified: "2026-07-13" },
     { url: `${BASE}/about`, lastModified: "2026-04-22" },
     { url: `${BASE}/contact`, lastModified: "2026-04-22" },
+    { url: `${BASE}/dojo-rules`, lastModified: "2026-07-15" },
     { url: `${BASE}/privacy`, lastModified: "2026-04-19" },
     { url: `${BASE}/terms`, lastModified: "2026-04-19" },
   ];
