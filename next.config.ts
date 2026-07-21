@@ -11,8 +11,6 @@ const nextConfig: NextConfig = {
       { source: "/class-livestream", destination: "/", permanent: true },
       { source: "/tag/gold-coast", destination: "/", permanent: true },
       { source: "/tag/:slug", destination: "/", permanent: true },
-      { source: "/dojo-rules", destination: "/about", permanent: true },
-      { source: "/dojo-rules/:path*", destination: "/about", permanent: true },
       { source: "/bullybuster", destination: "/", permanent: true },
       { source: "/the-orange-belt-conundrum", destination: "/", permanent: true },
       { source: "/6894-2", destination: "/", permanent: true },
