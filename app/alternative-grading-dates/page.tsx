@@ -22,41 +22,40 @@ const gradingData: ProgramSection[] = [
   {
     program: "Cubs",
     sessions: [
-      { date: "Tuesday 9th June", time: "4:30pm", dojo: "Springfield Dojo", grades: "All Grades" },
-      { date: "Saturday 13th June", time: "8:15am", dojo: "Sumner Park Dojo", grades: "All Grades" },
-      { date: "Saturday 20th June", time: "8:00am", dojo: "Willawong Dojo", grades: "All Grades" },
+      { date: "Tuesday 1st September", time: "4:30pm", dojo: "Springfield Dojo", grades: "All Grades" },
+      { date: "Saturday 5th September", time: "8:15am", dojo: "Sumner Park Dojo", grades: "All Grades" },
+      { date: "Saturday 5th September", time: "8:00am", dojo: "Willawong Dojo", grades: "All Grades" },
     ],
   },
   {
     program: "Little Lions",
     sessions: [
-      { date: "Monday 8th June", time: "4:30pm", dojo: "Springfield Dojo", grades: "White – LL Red+2" },
-      { date: "Monday 8th June", time: "5:15pm", dojo: "Springfield Dojo", grades: "LL Yellow – LL Purple" },
-      { date: "Saturday 13th June", time: "9:00am", dojo: "Sumner Park Dojo", grades: "White Belts – LL Yellow+2" },
-      { date: "Saturday 13th June", time: "9:45am", dojo: "Sumner Park Dojo", grades: "LL Orange – LL Purple" },
-      { date: "Wednesday 17th June", time: "5:00pm", dojo: "Moggill Dojo", grades: "All Grades" },
-      { date: "Saturday 20th June", time: "8:45am", dojo: "Willawong Dojo", grades: "White – LL Red+2" },
-      { date: "Saturday 20th June", time: "9:30am", dojo: "Willawong Dojo", grades: "LL Yellow – LL Purple +2" },
+      { date: "Monday 31st August", time: "4:30pm", dojo: "Springfield Dojo", grades: "White – LL Red+2" },
+      { date: "Monday 31st August", time: "5:15pm", dojo: "Springfield Dojo", grades: "LL Yellow – LL Purple" },
+      { date: "Saturday 5th September", time: "9:00am", dojo: "Sumner Park Dojo", grades: "White Belts – LL Yellow+2" },
+      { date: "Saturday 5th September", time: "9:45am", dojo: "Sumner Park Dojo", grades: "LL Orange – LL Purple" },
+      { date: "Wednesday 9th September", time: "5:00pm", dojo: "Moggill Dojo", grades: "All Grades" },
+      { date: "Saturday 5th September", time: "8:45am", dojo: "Willawong Dojo", grades: "White – LL Red+2" },
+      { date: "Saturday 5th September", time: "9:30am", dojo: "Willawong Dojo", grades: "LL Yellow – LL Purple +2" },
     ],
   },
   {
     program: "Juniors",
     sessions: [
-      { date: "Tuesday 9th June", time: "5:15pm", dojo: "Springfield Dojo", grades: "White – Red" },
-      { date: "Monday 8th June", time: "6:00pm", dojo: "Springfield Dojo", grades: "Red/Black – Yellow/Black" },
-      { date: "Friday 12th June", time: "5:30pm", dojo: "Sumner Park Dojo", grades: "Orange/Black – Blue/Black" },
-      { date: "Saturday 13th June", time: "10:30am", dojo: "Sumner Park Dojo", grades: "White – Red/Black" },
-      { date: "Saturday 13th June", time: "11:15am", dojo: "Sumner Park Dojo", grades: "Yellow – Orange/Black" },
-      { date: "Wednesday 17th June", time: "5:45pm", dojo: "Moggill Dojo", grades: "White – Yellow/Black" },
-      { date: "Wednesday 17th June", time: "6:30pm", dojo: "Moggill Dojo", grades: "Orange – Blue/Black" },
-      { date: "Saturday 20th June", time: "10:15am", dojo: "Willawong Dojo", grades: "White – Red/Black" },
-      { date: "Saturday 20th June", time: "11:00am", dojo: "Willawong Dojo", grades: "Yellow – Green/Black" },
+      { date: "Tuesday 1st September", time: "5:15pm", dojo: "Springfield Dojo", grades: "White – Yellow/Black" },
+      { date: "Thursday 3rd September", time: "5:30pm", dojo: "Sumner Park Dojo", grades: "Orange/Black – Blue/Black" },
+      { date: "Saturday 5th September", time: "10:30am", dojo: "Sumner Park Dojo", grades: "White – Red/Black" },
+      { date: "Saturday 5th September", time: "11:15am", dojo: "Sumner Park Dojo", grades: "Yellow – Orange/Black" },
+      { date: "Wednesday 9th September", time: "5:45pm", dojo: "Moggill Dojo", grades: "White – Yellow/Black" },
+      { date: "Wednesday 9th September", time: "6:30pm", dojo: "Moggill Dojo", grades: "Orange – Blue/Black" },
+      { date: "Saturday 5th September", time: "10:15am", dojo: "Willawong Dojo", grades: "White – Red/Black" },
+      { date: "Saturday 5th September", time: "11:00am", dojo: "Willawong Dojo", grades: "Yellow – Green/Black" },
     ],
   },
   {
     program: "Teens & Adults",
     sessions: [
-      { date: "Thursday 11th June", time: "6:00pm", dojo: "Sumner Park Dojo", grades: "White – Blue" },
+      { date: "Thursday 3rd September", time: "6:00pm", dojo: "Sumner Park Dojo", grades: "White – Blue" },
     ],
   },
 ];
@@ -85,7 +84,7 @@ export default function AlternativeGradingDatesPage() {
 
           {/* Period heading */}
           <div className="bg-[#5B7DB1]/10 border border-[#5B7DB1]/30 rounded-lg px-6 py-4">
-            <p className="text-[#003087] font-semibold text-lg">Grading Alternative Dates — June 2026</p>
+            <p className="text-[#003087] font-semibold text-lg">Grading Alternative Dates — August/September 2026</p>
             <p className="text-gray-600 text-sm mt-1">
               This page is updated each quarter. If you have questions about which grading session is right for your child, contact Sensei Michael before attending.
             </p>
