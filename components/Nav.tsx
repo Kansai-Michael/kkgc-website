@@ -6,8 +6,8 @@ import { useContactModal } from "@/components/ContactModal";
 
 const programs = [
   { name: "Cubs (Ages 3–4)", href: "/programs/cubs" },
-  { name: "Little Lions (Ages 5–7)", href: "/programs/little-lions" },
-  { name: "Juniors (Ages 8–12)", href: "/programs/juniors" },
+  { name: "Little Lions (Ages 5–6)", href: "/programs/little-lions" },
+  { name: "Juniors (Ages 7–12)", href: "/programs/juniors" },
   { name: "Teens (Ages 13–18)", href: "/programs/teens" },
   { name: "Adults (Ages 18+)", href: "/programs/adults" },
 ];

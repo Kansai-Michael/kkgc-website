@@ -23,15 +23,15 @@ const programs = [
   },
   {
     name: "Little Lions",
-    age: "Ages 5-7",
+    age: "Ages 5-6",
     href: "/programs/little-lions",
     img: `${OLD}/lll.jpg`,
     description:
-      "Little Lions is where lifelong habits begin. Your 5–7 year old will build real focus, coordination and confidence through traditional Shitoryu karate — in a class that's as purposeful as it is fun. Tuesday and Thursday afternoons at Upper Coomera.",
+      "Little Lions is where lifelong habits begin. Your 5–6 year old will build real focus, coordination and confidence through traditional Shitoryu karate — in a class that's as purposeful as it is fun. Tuesday and Thursday afternoons at Upper Coomera.",
   },
   {
     name: "Juniors",
-    age: "Ages 8-12",
+    age: "Ages 7-12",
     href: "/programs/juniors",
     img: `${OLD}/juniorsgoogle.jpg`,
     description:

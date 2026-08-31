@@ -4,8 +4,8 @@ import type { Metadata } from "next";
 const OLD = "/images";
 
 export const metadata: Metadata = {
-  title: "Juniors Program (Ages 8–12) | Kansai Karate Gold Coast",
-  description: "Karate classes for 8–12 year olds in Upper Coomera. Juniors builds discipline, resilience, and technical karate skills in a structured, encouraging environment.",
+  title: "Juniors Program (Ages 7–12) | Kansai Karate Gold Coast",
+  description: "Karate classes for 7–12 year olds in Upper Coomera. Juniors builds discipline, resilience, and technical karate skills in a structured, encouraging environment.",
   alternates: { canonical: "/programs/juniors" },
 };
 
@@ -14,15 +14,15 @@ const breadcrumb = {
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kansaikarategoldcoast.com.au" },
-    { "@type": "ListItem", "position": 2, "name": "Juniors Karate (Ages 8–12)", "item": "https://kansaikarategoldcoast.com.au/programs/juniors" }
+    { "@type": "ListItem", "position": 2, "name": "Juniors Karate (Ages 7–12)", "item": "https://kansaikarategoldcoast.com.au/programs/juniors" }
   ]
 };
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Juniors Karate Program (Ages 8–12)",
-  "description": "Karate classes for children aged 8 to 12 in Upper Coomera. Separate beginner and intermediate/advanced classes. Develops discipline, resilience, technique, and real karate skills.",
+  "name": "Juniors Karate Program (Ages 7–12)",
+  "description": "Karate classes for children aged 7 to 12 in Upper Coomera. Separate beginner and intermediate/advanced classes. Develops discipline, resilience, technique, and real karate skills.",
   "url": "https://kansaikarategoldcoast.com.au/programs/juniors",
   "provider": { "@type": "SportsActivityLocation", "name": "Kansai Karate Gold Coast", "url": "https://kansaikarategoldcoast.com.au" },
   "areaServed": { "@type": "City", "name": "Upper Coomera" },
@@ -53,9 +53,9 @@ export default function JuniorsPage() {
       name="Juniors"
       slug="juniors"
       heroImg={`${OLD}/Juniors.jpg`}
-      headline="Junior Karate Classes in Upper Coomera — Ages 8–12 at Kansai Karate"
-      subheadline="Juniors Karate at Upper Coomera gives 8–12 year olds real skills, genuine fitness and the kind of self-discipline that shows up everywhere — at school, at home, and in sport."
-      introText="Juniors at Kansai Karate Gold Coast is a karate program for children aged 8 to 12, based at Upper Coomera QLD 4209. We run separate Beginner and Intermediate/Advanced classes, so your child trains at the right level from day one rather than being placed in a one-size-fits-all group. Classes cover kata (forms), kihon (basics), and kumite (sparring), taught by Sensei Michael Hunt — 5th Dan Shitoryu Shukokai. The program runs Monday to Thursday evenings and Saturday mornings, convenient for families in Upper Coomera, Coomera, Pimpama, and the wider northern Gold Coast. Junior students grade for belts every few months and can enter regional and state competitions through our QKA and AKF affiliations. Book a free trial class to get started — no uniform or experience needed."
+      headline="Junior Karate Classes in Upper Coomera — Ages 7–12 at Kansai Karate"
+      subheadline="Juniors Karate at Upper Coomera gives 7–12 year olds real skills, genuine fitness and the kind of self-discipline that shows up everywhere — at school, at home, and in sport."
+      introText="Juniors at Kansai Karate Gold Coast is a karate program for children aged 7 to 12, based at Upper Coomera QLD 4209. We run separate Beginner and Intermediate/Advanced classes, so your child trains at the right level from day one rather than being placed in a one-size-fits-all group. Classes cover kata (forms), kihon (basics), and kumite (sparring), taught by Sensei Michael Hunt — 5th Dan Shitoryu Shukokai. The program runs Monday to Thursday evenings and Saturday mornings, convenient for families in Upper Coomera, Coomera, Pimpama, and the wider northern Gold Coast. Junior students grade for belts every few months and can enter regional and state competitions through our QKA and AKF affiliations. Book a free trial class to get started — no uniform or experience needed."
       benefitsHeading="Junior Classes Build Benefits for Life"
       benefits={[
         {

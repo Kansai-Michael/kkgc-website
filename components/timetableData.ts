@@ -101,11 +101,11 @@ export interface ProgramDef {
 const BEG_INT_BELTS = "White, Red, Yellow, Orange, Green, Blue";
 
 export const PROGRAMS: ProgramDef[] = [
-  { id: "LL", label: "Little Lions", age: "Ages 5–7", groups: ["LL"], ranks: [] },
+  { id: "LL", label: "Little Lions", age: "Ages 5–6", groups: ["LL"], ranks: [] },
   {
     id: "JR",
     label: "Juniors",
-    age: "Ages 8–12",
+    age: "Ages 7–12",
     groups: ALL_JR,
     ranks: [
       { label: "Beginner", group: "JrBeg", belts: "White, Red, Yellow" },

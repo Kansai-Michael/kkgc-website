@@ -4,8 +4,8 @@ import type { Metadata } from "next";
 const OLD = "/images";
 
 export const metadata: Metadata = {
-  title: "Little Lions Program (Ages 5–7) | Kansai Karate Gold Coast",
-  description: "Karate classes for 5, 6, and 7 year olds in Upper Coomera. Little Lions builds focus, respect, and real karate foundations in a fun, structured environment.",
+  title: "Little Lions Program (Ages 5–6) | Kansai Karate Gold Coast",
+  description: "Karate classes for 5 and 6 year olds in Upper Coomera. Little Lions builds focus, respect, and real karate foundations in a fun, structured environment.",
   alternates: { canonical: "/programs/little-lions" },
 };
 
@@ -14,15 +14,15 @@ const breadcrumb = {
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kansaikarategoldcoast.com.au" },
-    { "@type": "ListItem", "position": 2, "name": "Little Lions Karate (Ages 5–7)", "item": "https://kansaikarategoldcoast.com.au/programs/little-lions" }
+    { "@type": "ListItem", "position": 2, "name": "Little Lions Karate (Ages 5–6)", "item": "https://kansaikarategoldcoast.com.au/programs/little-lions" }
   ]
 };
 
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Little Lions Karate Program (Ages 5–7)",
-  "description": "Karate classes for 5, 6, and 7 year olds in Upper Coomera. Little Lions builds focus, self-confidence, and discipline through age-appropriate martial arts training.",
+  "name": "Little Lions Karate Program (Ages 5–6)",
+  "description": "Karate classes for 5 and 6 year olds in Upper Coomera. Little Lions builds focus, self-confidence, and discipline through age-appropriate martial arts training.",
   "url": "https://kansaikarategoldcoast.com.au/programs/little-lions",
   "provider": { "@type": "SportsActivityLocation", "name": "Kansai Karate Gold Coast", "url": "https://kansaikarategoldcoast.com.au" },
   "areaServed": { "@type": "City", "name": "Upper Coomera" },
@@ -53,8 +53,8 @@ export default function LittleLionsPage() {
       name="Little Lions"
       slug="little-lions"
       heroImg={`${OLD}/ll3.jpg`}
-      headline="Little Lions Karate in Upper Coomera — Classes for Ages 5–7"
-      subheadline="Little Lions is where lifelong habits begin. Your 5–7 year old will build real focus, coordination and confidence through traditional Shitoryu karate — in a structured, caring environment."
+      headline="Little Lions Karate in Upper Coomera — Classes for Ages 5–6"
+      subheadline="Little Lions is where lifelong habits begin. Your 5–6 year old will build real focus, coordination and confidence through traditional Shitoryu karate — in a structured, caring environment."
       introText="Little Lions at Kansai Karate Gold Coast is a karate class for children aged 5, 6 and 7, held at our dojo in Upper Coomera QLD 4209. Classes run Monday to Thursday evenings and Saturday mornings, and are taught by Sensei Michael Hunt — a 5th Dan Shitoryu Shukokai instructor with over 20 years of experience with this age group. Each 45-minute class builds focus, coordination, and self-confidence through structured technique, partner drills, and belt grading milestones. No prior experience is needed, and all new students are welcome to try their first class free. Families travel from Coomera, Pimpama, Ormeau, Oxenford, and Hope Island to train here — because at Kansai Karate, your child doesn't just learn karate. They learn to show up, work hard, and be proud of what they can do."
       benefitsHeading="Little Lions Classes Build Benefits for Life"
       benefits={[
@@ -68,7 +68,7 @@ export default function LittleLionsPage() {
         },
         {
           title: "Structured Activity That Kids Actually Enjoy",
-          body: "Every class is thoughtfully designed around what works for 5–7 year olds. The structure gives children a sense of security and achievement — they know what to expect and feel proud when they nail a new technique.",
+          body: "Every class is thoughtfully designed around what works for 5–6 year olds. The structure gives children a sense of security and achievement — they know what to expect and feel proud when they nail a new technique.",
         },
       ]}
       whyHeading="Why Kids Love Little Lions Classes"

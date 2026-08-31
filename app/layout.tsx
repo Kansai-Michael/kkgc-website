@@ -28,14 +28,14 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://kansaikarategoldcoast.com.au"),
   title: "Kansai Karate Gold Coast | Kids, Teens & Adult Karate in Upper Coomera",
-  description: "Traditional Japanese karate for all ages in Upper Coomera, QLD. Cubs (3-4), Little Lions (5-7), Juniors (8-12), Teens & Adults. Book your free trial class today.",
+  description: "Traditional Japanese karate for all ages in Upper Coomera, QLD. Cubs (3-4), Little Lions (5-6), Juniors (7-12), Teens & Adults. Book your free trial class today.",
   openGraph: {
     type: "website",
     siteName: "Kansai Karate Gold Coast",
     locale: "en_AU",
     url: "https://kansaikarategoldcoast.com.au",
     title: "Kansai Karate Gold Coast | Kids, Teens & Adult Karate in Upper Coomera",
-    description: "Traditional Japanese karate for all ages in Upper Coomera, QLD. Cubs (3-4), Little Lions (5-7), Juniors (8-12), Teens & Adults. Book your free trial class today.",
+    description: "Traditional Japanese karate for all ages in Upper Coomera, QLD. Cubs (3-4), Little Lions (5-6), Juniors (7-12), Teens & Adults. Book your free trial class today.",
     images: [
       {
         url: "https://kansaikarategoldcoast.com.au/images/og-social.jpg",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Kansai Karate Gold Coast | Kids, Teens & Adult Karate in Upper Coomera",
-    description: "Traditional Japanese karate for all ages in Upper Coomera, QLD. Cubs (3-4), Little Lions (5-7), Juniors (8-12), Teens & Adults. Book your free trial class today.",
+    description: "Traditional Japanese karate for all ages in Upper Coomera, QLD. Cubs (3-4), Little Lions (5-6), Juniors (7-12), Teens & Adults. Book your free trial class today.",
     images: ["https://kansaikarategoldcoast.com.au/images/og-social.jpg"],
   },
 };
@@ -57,7 +57,7 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": ["SportsActivityLocation", "LocalBusiness"],
   "name": "Kansai Karate Gold Coast",
-  "description": "Traditional Japanese karate for kids, teens and adults in Upper Coomera, Gold Coast QLD. Programs for all ages: Cubs (3-4), Little Lions (5-7), Juniors (8-12), Teens (13-18) and Adults.",
+  "description": "Traditional Japanese karate for kids, teens and adults in Upper Coomera, Gold Coast QLD. Programs for all ages: Cubs (3-4), Little Lions (5-6), Juniors (7-12), Teens (13-18) and Adults.",
   "url": "https://kansaikarategoldcoast.com.au",
   "telephone": "+61489265960",
   "address": {

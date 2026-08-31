@@ -10,11 +10,11 @@ const programForms: Record<string, { label: string; iframe: string }> = {
     iframe: "https://app.kihonsoft.au/f/fx2husne",
   },
   "little-lions": {
-    label: "Little Lions (Ages 5–7)",
+    label: "Little Lions (Ages 5–6)",
     iframe: "https://app.kihonsoft.au/f/69eqhhr8",
   },
   juniors: {
-    label: "Juniors (Ages 8–12)",
+    label: "Juniors (Ages 7–12)",
     iframe: "https://app.kihonsoft.au/f/jytbwwjt",
   },
   teens: {

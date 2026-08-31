@@ -15,13 +15,13 @@ const sections = [
   },
   {
     title: "Little Lions",
-    ages: "Ages 5–7",
-    body: "For our 5–7 year olds, the first grading is participation, enthusiasm, and demonstrating the techniques practised in class, including punches, kicks, and cuts. The children may not remember everything, and getting hands and legs perfectly correct is not required. Instructors will provide feedback during the class. Practising at home beforehand is not required, but if students are interested we would encourage it — it helps build their sense of achievement.",
+    ages: "Ages 5–6",
+    body: "For our 5–6 year olds, the first grading is participation, enthusiasm, and demonstrating the techniques practised in class, including punches, kicks, and cuts. The children may not remember everything, and getting hands and legs perfectly correct is not required. Instructors will provide feedback during the class. Practising at home beforehand is not required, but if students are interested we would encourage it — it helps build their sense of achievement.",
   },
   {
     title: "Juniors",
-    ages: "Ages 8–12",
-    body: "For our 8–12 year olds, the first grading is participation, enthusiasm, and demonstrating the techniques practised in class, including pad work and kata. Much like the Little Lions, students may not remember everything — but being confident to have a go and a familiarity with all of the content is important. Karate is not like a lot of other physical activities, and kids being uncoordinated at first is not uncommon. Part of their karate journey is learning new movements and developing body awareness — that takes time. Just ask any parent who has started karate after watching their kids for years. It looks easy until you do it yourself.",
+    ages: "Ages 7–12",
+    body: "For our 7–12 year olds, the first grading is participation, enthusiasm, and demonstrating the techniques practised in class, including pad work and kata. Much like the Little Lions, students may not remember everything — but being confident to have a go and a familiarity with all of the content is important. Karate is not like a lot of other physical activities, and kids being uncoordinated at first is not uncommon. Part of their karate journey is learning new movements and developing body awareness — that takes time. Just ask any parent who has started karate after watching their kids for years. It looks easy until you do it yourself.",
   },
   {
     title: "Teens & Adults",
@@ -74,7 +74,7 @@ export default function IsMyChildReadyToGradePage() {
               For our students, their first grading from White Belt is a recognition of starting their karate journey. We don't expect karate mastery or fully coordinated kids after a few lessons. The biggest goal is getting involved, building a sense of achievement, and developing confidence. Karate can be a lifelong journey of continual development and improvement — but first, we have to start.
             </p>
             <p>
-              We run gradings at regular 3-month intervals and allow students to grade with a certain number of classes attended, with the expectation of regular training for the full length of time between gradings after their first. Our expectations are different for each group: Cubs (3–4 years), Little Lions (5–7 years), Juniors (8–12 years), and Teens & Adults (13+ years).
+              We run gradings at regular 3-month intervals and allow students to grade with a certain number of classes attended, with the expectation of regular training for the full length of time between gradings after their first. Our expectations are different for each group: Cubs (3–4 years), Little Lions (5–6 years), Juniors (7–12 years), and Teens & Adults (13+ years).
             </p>
             <p className="font-semibold text-gray-800">
               In all cases, what we look for most is a student who is enthusiastic to learn, shows a willingness to accept help and correct themselves when given feedback, and has a determination to never give up.

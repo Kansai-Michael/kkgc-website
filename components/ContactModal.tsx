@@ -9,11 +9,11 @@ const programs: Record<string, { label: string; timetableUrl: string }> = {
     timetableUrl: "/programs/cubs/timetable",
   },
   "little-lions": {
-    label: "Little Lions (Ages 5–7)",
+    label: "Little Lions (Ages 5–6)",
     timetableUrl: "/programs/little-lions/timetable",
   },
   juniors: {
-    label: "Juniors (Ages 8–12)",
+    label: "Juniors (Ages 7–12)",
     timetableUrl: "/programs/juniors/timetable",
   },
   teens: {

@@ -50,8 +50,8 @@ export default function Footer() {
           <h4 className="font-semibold mb-3 text-white/90">Programs</h4>
           <ul className="space-y-2 text-sm text-white/60">
             <li><Link href="/programs/cubs" className="hover:text-[#FFB800] transition-colors">Cubs (Ages 3–4)</Link></li>
-            <li><Link href="/programs/little-lions" className="hover:text-[#FFB800] transition-colors">Little Lions (Ages 5–7)</Link></li>
-            <li><Link href="/programs/juniors" className="hover:text-[#FFB800] transition-colors">Juniors (Ages 8–12)</Link></li>
+            <li><Link href="/programs/little-lions" className="hover:text-[#FFB800] transition-colors">Little Lions (Ages 5–6)</Link></li>
+            <li><Link href="/programs/juniors" className="hover:text-[#FFB800] transition-colors">Juniors (Ages 7–12)</Link></li>
             <li><Link href="/programs/teens" className="hover:text-[#FFB800] transition-colors">Teens Karate (13+)</Link></li>
             <li><Link href="/programs/adults" className="hover:text-[#FFB800] transition-colors">Adult Karate</Link></li>
           </ul>
