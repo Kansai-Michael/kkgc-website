@@ -7,6 +7,23 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // Mailgun's old click-tracking host. Until Aug 2026 every link in our outbound
+      // email was rewritten to http://email.kansaikarategoldcoast.com.au/c/<blob>. That
+      // host is served by Mailgun with a mailgun.org certificate, while this site sends
+      // HSTS with includeSubDomains + preload — so browsers force-upgrade the link to
+      // https, hit a certificate name mismatch, and show families a full-page warning
+      // that we may be impersonating ourselves. Tracking is off now, but the rewritten
+      // links are permanent in every email already delivered, so the subdomain is
+      // pointed at this project (valid certificate) and parked on /link-expired. The
+      // real destination is inside that opaque blob and cannot be recovered.
+      // Must stay first so it wins over the path rules below.
+      // DO NOT re-point the DNS back at mailgun.org — that re-arms the warning.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "email.kansaikarategoldcoast.com.au" }],
+        destination: "https://kansaikarategoldcoast.com.au/link-expired",
+        permanent: false, // 302 — a stopgap, not a mapping browsers should cache forever
+      },
       { source: "/programs/teens-adults", destination: "/programs/teens", permanent: true },
       { source: "/class-livestream", destination: "/", permanent: true },
       { source: "/tag/gold-coast", destination: "/", permanent: true },
