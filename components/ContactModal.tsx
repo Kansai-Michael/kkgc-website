@@ -3,6 +3,8 @@
 import { createContext, useContext, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 
+import { getAttribution } from "@/lib/attribution";
+
 const programs: Record<string, { label: string; timetableUrl: string }> = {
   cubs: {
     label: "Cubs (Ages 3–4)",
@@ -76,7 +78,15 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, phone, program: selected || "general" }),
+        body: JSON.stringify({
+          name,
+          email,
+          phone,
+          program: selected || "general",
+          // Where this visitor came from, so the lead can be credited to the
+          // ad that produced it. Null for anyone we have no record for.
+          attribution: getAttribution(),
+        }),
       });
 
       if (!res.ok) {
@@ -91,6 +101,11 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
       }
       if (typeof win !== "undefined" && typeof win.gtag === "function") {
         win.gtag("event", "conversion", { send_to: "AW-880936617/gnR-CN3lm50YEKmNiKQD" });
+        // GA4 needs telling separately — the line above reports to Google Ads
+        // only. Without this, Analytics counts a lead solely when someone
+        // completes a Kihon calendar booking and lands on /thank-you, which
+        // misses everyone who enquires through this form.
+        win.gtag("event", "generate_lead", { program: selected || "general" });
       }
 
       const baseDest = selected ? programs[selected]?.timetableUrl : "/timetable";

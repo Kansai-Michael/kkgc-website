@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
+import { sanitizeAttribution } from "@/lib/leadAttribution";
+
 const KIHON_API_URL = "https://app.kihonsoft.au/api/leads/inbound";
 const KIHON_API_KEY = process.env.KIHON_API_KEY || "";
 
@@ -15,7 +17,7 @@ const SOURCE_MAP: Record<string, string> = {
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
-  const { name, email, phone, program } = body;
+  const { name, email, phone, program, attribution } = body;
 
   if (!name || !email || !phone || !program) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
@@ -24,6 +26,7 @@ export async function POST(req: NextRequest) {
   const [first_name, ...rest] = (name as string).trim().split(" ");
   const last_name = rest.join(" ");
   const source = SOURCE_MAP[program] ?? "website-general";
+  const cleanAttribution = sanitizeAttribution(attribution);
 
   try {
     const res = await fetch(KIHON_API_URL, {
@@ -32,7 +35,14 @@ export async function POST(req: NextRequest) {
         "Content-Type": "application/json",
         "X-API-Key": KIHON_API_KEY,
       },
-      body: JSON.stringify({ email, phone, first_name, last_name, source }),
+      body: JSON.stringify({
+        email,
+        phone,
+        first_name,
+        last_name,
+        source,
+        ...(cleanAttribution ? { attribution: cleanAttribution } : {}),
+      }),
     });
 
     if (!res.ok) {
