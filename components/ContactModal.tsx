@@ -4,6 +4,7 @@ import { createContext, useContext, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 
 import { getAttribution } from "@/lib/attribution";
+import { fireAdsConversion } from "@/lib/adsConversion";
 
 const programs: Record<string, { label: string; timetableUrl: string }> = {
   cubs: {
@@ -99,9 +100,13 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
         win.fbq("track", "Lead", { content_name: selected || "general" });
         win.fbq("track", "CompleteRegistration", { content_name: selected || "general" });
       }
+      // Google Ads "Register Clicks" conversion. Deduped per session so someone
+      // who submits here and then completes a Kihon booking on /thank-you is
+      // reported once, not twice.
+      fireAdsConversion();
+
       if (typeof win !== "undefined" && typeof win.gtag === "function") {
-        win.gtag("event", "conversion", { send_to: "AW-880936617/gnR-CN3lm50YEKmNiKQD" });
-        // GA4 needs telling separately — the line above reports to Google Ads
+        // GA4 needs telling separately — fireAdsConversion reports to Google Ads
         // only. Without this, Analytics counts a lead solely when someone
         // completes a Kihon calendar booking and lands on /thank-you, which
         // misses everyone who enquires through this form.
