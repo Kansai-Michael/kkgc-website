@@ -40,13 +40,30 @@ const nextConfig: NextConfig = {
     ];
   },
   async headers() {
+    // Google Ads conversion beacons. These four origins were missing until
+    // 2026-09-09, so EVERY conversion ping was blocked by our own CSP before it
+    // left the browser — the tag fired, the dataLayer showed the event, and
+    // Google received nothing. That is why Google Ads reported zero conversions
+    // and kept the "Register Clicks" tag unverified.
+    //
+    // A conversion is sent as several parallel pings: an image pixel and a
+    // fetch, to both googleadservices.com and googleads.g.doubleclick.net, plus
+    // a regional google.com / google.com.au collect. All of them need to be
+    // allowed in BOTH img-src and connect-src or the conversion is lost.
+    const googleAds = [
+      "https://www.googleadservices.com",
+      "https://googleads.g.doubleclick.net",
+      "https://www.google.com",
+      "https://www.google.com.au",
+    ].join(" ");
+
     const cspBase = [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net",
+      `script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net ${googleAds}`,
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com https://www.facebook.com https://www.gstatic.com",
+      `img-src 'self' data: blob: https://www.google-analytics.com https://www.googletagmanager.com https://www.facebook.com https://www.gstatic.com ${googleAds}`,
       "frame-src https://app.kihonsoft.au https://maps.google.com https://www.google.com",
-      "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://region1.google-analytics.com https://www.facebook.com https://connect.facebook.net",
+      `connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://stats.g.doubleclick.net https://region1.google-analytics.com https://www.facebook.com https://connect.facebook.net ${googleAds}`,
       "font-src 'self' data:",
       "media-src 'self'",
       "object-src 'none'",
