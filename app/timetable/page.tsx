@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import InteractiveTimetable from "@/components/InteractiveTimetable";
+import TrialCTA from "@/components/TrialCTA";
 
 export const metadata: Metadata = {
   title: "Class Timetable | Kansai Karate Gold Coast",
@@ -37,6 +38,11 @@ export default function TimetablePage() {
       <section className="py-14 px-4 bg-white">
         <InteractiveTimetable />
       </section>
+
+      <TrialCTA
+        heading="Found a class that fits? Your first lesson is free."
+        subtext="Book your first lesson online in a minute — or give us a call and we'll help you pick the right class."
+      />
     </>
   );
 }

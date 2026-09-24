@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import ClientLayout from "@/components/ClientLayout";
 import AttributionTracker from "@/components/AttributionTracker";
 import MetaPixelTracker from "@/components/MetaPixelTracker";
+import PhoneClickTracker from "@/components/PhoneClickTracker";
 
 const oswald = Oswald({
   subsets: ["latin"],
@@ -180,6 +181,7 @@ export default function RootLayout({
         <ClientLayout>
           <AttributionTracker />
           <MetaPixelTracker />
+          <PhoneClickTracker />
           <Nav />
           <main className="flex-1">{children}</main>
           <Footer />

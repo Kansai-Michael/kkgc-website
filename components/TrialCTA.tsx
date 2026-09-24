@@ -18,7 +18,7 @@ export default function TrialCTA({
         <p className="text-white/80 text-lg mb-8">{subtext}</p>
         <BookTrialButton
           program={program}
-          className="inline-block bg-[#FFB800] text-white font-bold text-lg px-10 py-4 rounded-lg hover:bg-[#E6A500] transition-colors shadow-lg"
+          className="inline-block bg-[#FFB800] text-[#001040] font-bold text-lg px-10 py-4 rounded-lg hover:bg-[#E6A500] transition-colors shadow-lg"
         >
           Book Your Free Trial Class
         </BookTrialButton>
