@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 
 import { getAttribution } from "@/lib/attribution";
 import { fireAdsConversion } from "@/lib/adsConversion";
+import { PREFILL_KEY } from "@/lib/bookingPrefill";
 
 const programs: Record<string, { label: string; timetableUrl: string }> = {
   cubs: {
@@ -113,14 +114,16 @@ export function ContactModalProvider({ children }: { children: React.ReactNode }
         win.gtag("event", "generate_lead", { program: selected || "general" });
       }
 
-      const baseDest = selected ? programs[selected]?.timetableUrl : "/timetable";
-      const qp = new URLSearchParams();
-      if (email) qp.set("email", email);
-      if (name) qp.set("name", name);
-      if (phone) qp.set("phone", phone);
-      const destination = qp.toString() ? `${baseDest}?${qp.toString()}` : baseDest;
+      // Hand the details to BookingCalendar via sessionStorage, not the URL —
+      // query params end up in GA4's page_location, which put families'
+      // names, emails and phone numbers into Analytics.
+      try {
+        sessionStorage.setItem(PREFILL_KEY, JSON.stringify({ email, name, phone }));
+      } catch {
+        // Storage blocked (private mode) — the calendar just won't be prefilled.
+      }
       closeModal();
-      router.push(destination ?? "/timetable");
+      router.push((selected ? programs[selected]?.timetableUrl : undefined) ?? "/timetable");
     } catch {
       setStatus("error");
       setErrorMsg("Something went wrong. Please try again or call us directly.");

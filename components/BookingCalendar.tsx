@@ -1,22 +1,29 @@
 "use client";
 
-import { useRef, useEffect, useMemo, Suspense } from "react";
-import { useSearchParams } from "next/navigation";
+import { useRef, useEffect, useState, Suspense } from "react";
+import { PREFILL_KEY } from "@/lib/bookingPrefill";
 
 function BookingCalendarInner({ url, title }: { url: string; title: string }) {
   const iframeRef = useRef<HTMLIFrameElement>(null);
-  const searchParams = useSearchParams();
+  // Resolved after mount (sessionStorage is browser-only); the iframe waits
+  // for it so Kihon loads once, already prefilled.
+  const [iframeSrc, setIframeSrc] = useState<string | null>(null);
 
-  const iframeSrc = useMemo(() => {
-    const email = searchParams.get("email");
-    const name = searchParams.get("name");
-    const phone = searchParams.get("phone");
-    if (!email) return url;
-    const params = new URLSearchParams({ email });
-    if (name) params.set("name", name);
-    if (phone) params.set("phone", phone);
-    return `${url}?${params.toString()}`;
-  }, [url, searchParams]);
+  useEffect(() => {
+    let src = url;
+    try {
+      const saved = JSON.parse(sessionStorage.getItem(PREFILL_KEY) ?? "null");
+      if (saved?.email) {
+        const params = new URLSearchParams({ email: saved.email });
+        if (saved.name) params.set("name", saved.name);
+        if (saved.phone) params.set("phone", saved.phone);
+        src = `${url}?${params.toString()}`;
+      }
+    } catch {
+      // Storage blocked or malformed — load the calendar unprefilled.
+    }
+    setIframeSrc(src);
+  }, [url]);
 
   useEffect(() => {
     const handler = (e: MessageEvent) => {
@@ -30,13 +37,17 @@ function BookingCalendarInner({ url, title }: { url: string; title: string }) {
 
   return (
     <div className="rounded-lg overflow-hidden border border-gray-200 shadow-sm">
-      <iframe
-        ref={iframeRef}
-        src={iframeSrc}
-        className="w-full"
-        style={{ minHeight: "650px", border: "none" }}
-        title={title}
-      />
+      {iframeSrc ? (
+        <iframe
+          ref={iframeRef}
+          src={iframeSrc}
+          className="w-full"
+          style={{ minHeight: "650px", border: "none" }}
+          title={title}
+        />
+      ) : (
+        <div style={{ minHeight: "650px" }} />
+      )}
     </div>
   );
 }
